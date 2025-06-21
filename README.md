@@ -1,6 +1,6 @@
 # Hotel Marami - Landing Page
 
-O landing page modernă și elegantă pentru Hotel Marami din Sinaia, construită cu React și Tailwind CSS, inspirată de designul site-ului NUSS dar adaptată pentru mobile-first.
+O landing page modernă și elegantă pentru Hotel Marami din Sinaia, construită cu React și Tailwind CSS, .
 
 ## 🚀 Caracteristici
 
