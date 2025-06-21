@@ -2,7 +2,7 @@
   "name": "hotel-marami-landing",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://alexxserban.github.io/Hotel-Marami",
+  "homepage": "https://alexxserban.github.io/Marami-Hotel",
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
