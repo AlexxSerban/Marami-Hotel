@@ -93,37 +93,37 @@ const AmenitiesSection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {amenities.map((amenity, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              className="relative h-80 rounded-2xl overflow-hidden shadow-lg card-hover group cursor-pointer"
-            >
-              {/* Background Image */}
-              <img
-                src={amenity.image}
-                alt={amenity.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
-              
-              {/* Overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              
-              {/* Capacity Badge - Top Right */}
-              <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-lg text-sm font-medium z-10">
-                {amenity.capacity}
-              </div>
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                className="relative h-80 rounded-2xl overflow-hidden shadow-lg card-hover group cursor-pointer"
+              >
+                {/* Background Image */}
+                <img
+                  src={amenity.image}
+                  alt={amenity.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                
+                {/* Capacity Badge - Top Right */}
+                <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-lg text-sm font-medium z-10">
+                  {amenity.capacity}
+                </div>
 
-              {/* Content - Frosted Glass Rectangle */}
-              <div className="absolute bottom-3 left-3 right-3 bg-white/20 backdrop-blur-md rounded-lg p-3 border border-white/30 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95">
-                <h3 className="text-lg font-display font-bold text-white mb-1 drop-shadow-lg">
-                  {amenity.title}
-                </h3>
-                <p className="text-white/90 text-xs leading-relaxed drop-shadow-md">
-                  {amenity.description}
-                </p>
-              </div>
-            </motion.div>
+                {/* Content - Frosted Glass Rectangle */}
+                <div className="absolute bottom-3 left-3 right-3 bg-white/20 backdrop-blur-md rounded-lg p-3 border border-white/30 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95">
+                  <h3 className="text-lg font-display font-bold text-white mb-1 drop-shadow-lg">
+                    {amenity.title}
+                  </h3>
+                  <p className="text-white/90 text-xs leading-relaxed drop-shadow-md">
+                    {amenity.description}
+                  </p>
+                </div>
+              </motion.div>
           ))}
         </motion.div>
       </div>
