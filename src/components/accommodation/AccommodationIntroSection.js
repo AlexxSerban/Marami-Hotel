@@ -27,8 +27,8 @@ const AccommodationIntroSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-background-primary pt-24 md:pt-32 lg:pt-40">
-      <div className="container-custom">
+    <section className="bg-background-primary pt-24 md:pt-32 lg:pt-40">
+      <div className="container-custom px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

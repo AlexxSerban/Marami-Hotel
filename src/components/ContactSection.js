@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   PhoneIcon,
   EnvelopeIcon,
@@ -54,9 +55,9 @@ const ContactSection = () => {
     {
       icon: PhoneIcon,
       title: 'Telefon',
-      value: '+40 244 123 456',
+      value: '+40 759 033 047',
       subtitle: 'Recepție 24/7',
-      link: 'tel:+40244123456'
+      link: 'tel:+40759033047'
     },
     {
       icon: EnvelopeIcon,
@@ -68,15 +69,15 @@ const ContactSection = () => {
     {
       icon: MapPinIcon,
       title: 'Adresă',
-      value: 'Strada Peleșului, nr. 15',
-      subtitle: 'Sinaia, Județul Prahova',
-      link: '#'
+      value: 'Marami, Strada Furnica 52, Sinaia 106100',
+      subtitle: 'România',
+      link: 'https://www.google.com/maps/place/Marami/@45.3574447,25.5398979,15z/data=!4m22!1m12!3m11!1s0x40b310d34e8642e5:0x1396870e25205b19!2sMarami!5m2!4m1!1i2!8m2!3d45.3574801!4d25.5398897!9m1!1b1!16s%2Fg%2F1hc2637yc!3m8!1s0x40b310d34e8642e5:0x1396870e25205b19!5m2!4m1!1i2!8m2!3d45.3574801!4d25.5398897!16s%2Fg%2F1hc2637yc?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D'
     },
     {
       icon: ClockIcon,
       title: 'Program',
-      value: 'Check-in: 14:00',
-      subtitle: 'Check-out: 11:00',
+      value: 'Check-in: 15:00',
+      subtitle: 'Check-out: 12:00',
       link: '#'
     }
   ];
@@ -102,7 +103,7 @@ const ContactSection = () => {
           />
           <p className="text-lg text-text-light max-w-2xl mx-auto">
             Suntem aici să te ajutăm să planifici șederea perfectă. 
-            Contactează-ne pentru orice întrebare sau rezervare.
+            Contactează-ne pentru orice rezervare si obtine pana la 10% reducere.
           </p>
         </motion.div>
 
@@ -200,11 +201,11 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
           >
             {/* Contact Info Cards */}
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 return (
@@ -215,28 +216,24 @@ const ContactSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                   >
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <IconComponent className="w-6 h-6 text-primary-500" />
-                    </div>
-                    <div>
-                      <h4 className="font-display font-semibold text-text-primary mb-1">
-                        {info.title}
-                      </h4>
-                      <p className="text-text-primary font-medium">
-                        {info.value}
-                      </p>
-                      <p className="text-sm text-text-light">
-                        {info.subtitle}
-                      </p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                        <IconComponent className="w-5 h-5 text-primary-500" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-text-primary">{info.title}</h4>
+                        <p className="text-sm text-text-secondary">{info.value}</p>
+                        <p className="text-xs text-text-light">{info.subtitle}</p>
+                      </div>
                     </div>
                   </motion.a>
                 );
               })}
             </div>
 
-            {/* WhatsApp Contact */}
+            {/* WhatsApp Card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -260,13 +257,16 @@ const ContactSection = () => {
               <p className="text-primary-100 mb-4">
                 Vrei să ne scrii rapid? Contactează-ne pe WhatsApp pentru răspunsuri instant și rezervări.
               </p>
-              <motion.button
+              <motion.a
+                href="https://wa.me/40759033047"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-primary-600 px-6 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors"
+                className="inline-block bg-white text-primary-600 px-6 py-2 rounded-lg font-medium hover:bg-primary-50 transition-colors"
               >
                 Scrie pe WhatsApp
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Business Hours */}
@@ -274,33 +274,59 @@ const ContactSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="bg-white rounded-2xl p-6 shadow-lg"
             >
               <h4 className="font-display font-semibold text-text-primary mb-4">
                 Program de Funcționare
               </h4>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Recepție:</span>
-                  <span className="font-medium text-text-primary">24/7</span>
+              <div className="space-y-2 text-sm text-text-secondary">
+                <div className="flex justify-between">
+                  <span>Check-in:</span>
+                  <span className="font-medium">15:00</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Restaurant:</span>
-                  <span className="font-medium text-text-primary">07:00 - 23:00</span>
+                <div className="flex justify-between">
+                  <span>Check-out:</span>
+                  <span className="font-medium">12:00</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Bar:</span>
-                  <span className="font-medium text-text-primary">10:00 - 02:00</span>
+                <div className="flex justify-between">
+                  <span>Recepție:</span>
+                  <span className="font-medium">24/7</span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-text-secondary">Spa:</span>
-                  <span className="font-medium text-text-primary">09:00 - 21:00</span>
+                <div className="flex justify-between">
+                  <span>Restaurant:</span>
+                  <span className="font-medium">08:00 - 22:00</span>
                 </div>
               </div>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-12"
+        >
+          <p className="text-text-light mb-6">
+            Ai întrebări specifice? Contactează-ne pentru sfaturi personalizate!
+          </p>
+          <div className="flex justify-center items-center">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                to="/contact"
+                className="btn-primary"
+              >
+                Contactează-ne
+              </Link>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

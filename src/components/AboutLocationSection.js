@@ -16,23 +16,23 @@ const AboutLocationSection = () => {
   const locationFeatures = [
     {
       icon: MapPinIcon,
-      title: 'Locație Excepțională',
-      description: 'La doar 300m de Castelul Peleș, într-o zonă liniștită, de poveste'
+      title: 'Locație excepțională',
+      description: 'La doar 300m de Castelul Peleș, într-o zonă liniștită, ideală pentru explorare.'
     },
     {
       icon: HomeIcon,
-      title: 'Vedere Panoramică',
-      description: 'Priveliști spectaculoase spre munții Bucegi și Castelul Peleș'
+      title: 'Vederea panoramică',
+      description: 'Priveliști spectaculoase spre munții Bucegi și Castelul Peleș.'
     },
     {
       icon: BuildingOfficeIcon,
-      title: 'Arhitectură Regală',
-      description: 'Stil inspirat din reședințele regale, cu detalii elegante'
+      title: 'Arhitectură primitoare',
+      description: 'Construcția inspirată din stilul local adaugă un farmec autentic, cu detalii care creează o atmosferă caldă.'
     },
     {
       icon: StarIcon,
-      title: 'Ambianță Exclusivă',
-      description: 'Atmosferă intimă și sofisticată, perfectă pentru o escapadă memorabilă'
+      title: 'Ambianță confortabilă',
+      description: 'O atmosferă intimă și sofisticată, perfectă pentru o escapadă memorabilă.'
     }
   ];
 
@@ -62,10 +62,8 @@ const AboutLocationSection = () => {
             onAnimationComplete={handleAnimationComplete}
           />
           
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Hotel Marami se află într-o zonă liniștită, de poveste, la doar 300 de metri de Castelul Peleș. 
-            Poziționarea noastră excepțională îți oferă accesul ușor la principalele atracții turistice, 
-            păstrând în același timp intimitatea și liniștea necesare pentru o ședere relaxantă.
+          <p className="text-lg text-text-light max-w-3xl mx-auto">
+            Hotel Marami se află într-o zonă liniștită, oferindu-ți un loc perfect pentru a te deconecta și a te bucura de frumusețea Sinaiei. Poziționarea noastră excepțională îți oferă accesul facil la principalele atracții turistice, păstrând în același timp intimitatea și liniștea necesară pentru o ședere relaxantă.
           </p>
         </motion.div>
 
@@ -77,10 +75,9 @@ const AboutLocationSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-text-light mb-8 leading-relaxed">
-              Arhitectura hotelului este inspirată din stilul reședințelor regale, cu detalii elegante 
-              și o ambianță sofisticată care se potrivește perfect cu atmosfera nobilă a Sinaiei.
-            </p>
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-text-primary mb-6">
+              Ce te așteaptă la noi
+            </h3>
 
             {/* Location Features */}
             <div className="space-y-4 mb-8">
@@ -132,7 +129,7 @@ const AboutLocationSection = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Locația Hotel Marami - Strada Furnica 52, Sinaia"
+                title="Locația Hotel Marami - Marami, Strada Furnica 52, Sinaia 106100"
                 className="w-full"
               ></iframe>
             </div>

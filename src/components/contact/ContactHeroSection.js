@@ -16,12 +16,12 @@ const ContactHeroSection = () => {
           className="w-full h-full object-cover object-center opacity-60"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
       </div>
       <div className="container-custom relative z-10 flex flex-col items-center justify-center min-h-[400px] py-24">
         <SplitText
           text="Contact"
-          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 text-center drop-shadow-lg"
+          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 text-center drop-shadow-2xl"
           delay={100}
           duration={0.6}
           ease="power3.out"
@@ -37,7 +37,7 @@ const ContactHeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-center drop-shadow"
+          className="text-xl md:text-2xl text-white font-medium max-w-3xl mx-auto text-center drop-shadow-2xl leading-relaxed"
         >
           Suntem aici să te ajutăm cu orice informație, rezervare sau solicitare specială.
         </motion.p>

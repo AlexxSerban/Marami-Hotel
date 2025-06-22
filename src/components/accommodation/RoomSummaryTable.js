@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   UserGroupIcon,
   HomeIcon,
@@ -15,6 +16,7 @@ const RoomSummaryTable = () => {
 
   const roomTypes = [
     {
+      id: 'double',
       type: 'Double',
       capacity: '2 persoane',
       mainAmenities: ['Pat matrimonial', 'Baie cu duș', 'Wi-Fi gratuit', 'TV prin cablu'],
@@ -23,6 +25,7 @@ const RoomSummaryTable = () => {
       size: '≈20 m²'
     },
     {
+      id: 'double-lux',
       type: 'Double de Lux',
       capacity: '2 persoane',
       mainAmenities: ['Pat matrimonial', 'Baie cu cadă', 'Wi-Fi gratuit', 'Vedere panoramică'],
@@ -31,6 +34,7 @@ const RoomSummaryTable = () => {
       size: '≈26 m²'
     },
     {
+      id: 'matrimonial',
       type: 'Matrimonială',
       capacity: '2 persoane',
       mainAmenities: ['Pat matrimonial mare', 'Baie elegantă', 'Balcon privat', 'Decor romantic'],
@@ -39,6 +43,7 @@ const RoomSummaryTable = () => {
       size: '≈24 m²'
     },
     {
+      id: 'single',
       type: 'Single',
       capacity: '1 persoană',
       mainAmenities: ['Pat single', 'Baie cu duș', 'Wi-Fi gratuit', 'Design funcțional'],
@@ -221,13 +226,17 @@ const RoomSummaryTable = () => {
               </div>
 
               {/* CTA Button */}
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full btn-primary text-sm"
               >
-                Rezervă Această Cameră
-              </motion.button>
+                <Link
+                  to={`/rezervare?room=${room.id}`}
+                  className="w-full btn-primary text-sm block text-center"
+                >
+                  Rezervă Această Cameră
+                </Link>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

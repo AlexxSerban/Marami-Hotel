@@ -50,7 +50,7 @@
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply w-full px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
   }
   
   .card-hover {

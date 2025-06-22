@@ -89,7 +89,7 @@ const BookingHeroSection = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-white/80">Check-in: 14:00 - Check-out: 11:00</span>
+                  <span className="text-white/80">Check-in: 15:00 - Check-out: 12:00</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>

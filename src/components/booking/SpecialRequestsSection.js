@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { HeartIcon, StarIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, StarIcon, CheckIcon, ClockIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const SpecialRequestsSection = () => {
@@ -44,10 +44,10 @@ const SpecialRequestsSection = () => {
       icon: '🌅'
     },
     {
-      id: 'lateCheckOut',
-      title: 'Check-out Târziu',
-      description: 'Plecare după ora 11:00',
-      icon: '🌆'
+      icon: ClockIcon,
+      title: 'Check-in Târziu',
+      description: 'Sosire înainte de ora 15:00',
+      price: 'Gratuit'
     },
     {
       id: 'airportTransfer',
@@ -78,6 +78,12 @@ const SpecialRequestsSection = () => {
       title: 'Accesibilitate',
       description: 'Cameră adaptată pentru persoane cu dizabilități',
       icon: '♿'
+    },
+    {
+      icon: ClockIcon,
+      title: 'Check-out Târziu',
+      description: 'Plecare după ora 12:00',
+      price: 'Gratuit'
     }
   ];
 

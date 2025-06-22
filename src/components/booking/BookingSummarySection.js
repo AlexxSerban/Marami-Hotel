@@ -274,7 +274,7 @@ const BookingSummarySection = () => {
                   <ul className="text-sm text-yellow-700 space-y-1">
                     <li>• Rezervarea va fi confirmată în maxim 24 de ore</li>
                     <li>• Anularea gratuită până la 24h înainte de check-in</li>
-                    <li>• Check-in: 14:00 - Check-out: 11:00</li>
+                    <li>• Check-in: 15:00 - Check-out: 12:00</li>
                     <li>• Plățile se fac la hotel (numerar sau card)</li>
                     <li>• Toate prețurile includ TVA</li>
                   </ul>

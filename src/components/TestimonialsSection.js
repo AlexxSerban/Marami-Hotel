@@ -11,35 +11,62 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'Maria Popescu',
+      name: 'Alexandra D.',
+      location: 'Local Guide',
+      rating: 4,
+      text: 'Am stat acum foarte multi ani aici, insa am fost recent la masa, pe terasa restaurantului. Preturile sunt decente (este mult mai accesibil decat restaurantele din centrul orasului). E foarte frumos hotelul, bine pozitionat, cu priveliste, curat. Felicitari!',
+      date: 'acum o săptămână',
+      platform: 'Google'
+    },
+    {
+      id: 2,
+      name: 'Alexandra Salajan',
       location: 'București',
       rating: 5,
-      text: 'Camera mare, curată și elegantă… personal amabil! Vederea spre Castelul Peleș este spectaculoasă. Recomand cu încredere!',
+      text: 'Am mancat la restaurantul hotelului. Mancarea foarte buna, proaspata, gustoasa. Servirea promptă, personalul extrem de amabil, ne a ajutat chiar si cu cateva indicatii turistice. Preturile normale, decente, deloc piperate. Recomandam cu incredere!',
+      date: 'acum o lună',
+      platform: 'Google'
+    },
+    {
+      id: 3,
+      name: 'Mihaela Udrea',
+      location: 'Cluj-Napoca',
+      rating: 5,
+      text: 'Este un hotel cu camere mici, dar plăcute și îngrijite. Hotelul se afla in apropiere de castelul Peleș. Domnul de la recepție a fost foarte amabil si ne-a oferit răspunsuri la toate întrebările.',
+      date: 'acum 3 luni',
+      platform: 'Google'
+    },
+    {
+      id: 4,
+      name: 'Diana',
+      location: 'România',
+      rating: 5,
+      text: 'Totul a fost extraordinar! Recomand cu toata increderea! Personal foarte amabil, curatenie, mancare foarte buna, preturi accesibile, foarte aproape de castelul Peles. Va fi mereu alegerea noastra in Sinaia!',
       date: '2024',
       platform: 'Booking.com'
     },
     {
-      id: 2,
-      name: 'Ioan Dumitrescu',
-      location: 'Cluj-Napoca',
+      id: 5,
+      name: 'Sulina73',
+      location: 'Germania',
       rating: 5,
-      text: 'Vedere superbă spre munte și Castelul Peleș. Camerele sunt spațioase și curate, iar personalul este foarte prietenos și de ajutor.',
+      text: 'Hotelul este f frumos ,calduros,linistit, curat,tv cu netflix, pat comfortabil cu perne multe ptr toate gusturile,lenjerie impecabila,caldura in camera si baie, locatia chiar linga Peleș ',
       date: '2024',
-      platform: 'TripAdvisor'
+      platform: 'Booking.com'
     },
     {
-      id: 3,
-      name: 'Elena Ionescu',
-      location: 'Timișoara',
+      id: 6,
+      name: 'Vasile',
+      location: 'România',
       rating: 5,
-      text: 'Excelentă experiență! Hotelul este foarte bine poziționat, la doar 300m de Castelul Peleș. Camerele sunt moderne și confortabile.',
+      text: 'Locația super, curățenie,mic dejun, personal primitor,totul la superlativ. Mulțumim,vom reveni.',
       date: '2024',
-      platform: 'Google Reviews'
+      platform: 'Booking.com'
     }
   ];
 
-  const overallRating = 9.2;
-  const totalReviews = 847;
+  const overallRating = 4.3;
+  const totalReviews = 775;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -97,7 +124,7 @@ const TestimonialsSection = () => {
             <div className="flex items-center justify-center space-x-2 mb-4">
               {renderStars(Math.floor(overallRating))}
               <span className="text-lg font-bold text-text-primary ml-2">
-                {overallRating}/10
+                {overallRating}/5
               </span>
             </div>
             <p className="text-text-light text-sm mb-4">
@@ -106,11 +133,7 @@ const TestimonialsSection = () => {
             <div className="flex items-center justify-center space-x-4 text-sm">
               <div className="flex items-center space-x-1">
                 <ChatBubbleLeftIcon className="w-4 h-4 text-primary-500" />
-                <span className="text-text-secondary">Booking.com</span>
-              </div>
-              <div className="flex items-center space-x-1">
-                <ChatBubbleLeftIcon className="w-4 h-4 text-primary-500" />
-                <span className="text-text-secondary">TripAdvisor</span>
+                <span className="text-text-secondary">Google</span>
               </div>
             </div>
           </div>
@@ -178,20 +201,26 @@ const TestimonialsSection = () => {
             Vrei să îți împărtășești și tu experiența? Lasă-ne o recenzie!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
+            <motion.a
+              href="https://www.google.com/maps/place/Marami/@45.3574447,25.5398979,15z/data=!4m11!3m10!1s0x40b310d34e8642e5:0x1396870e25205b19!5m2!4m1!1i2!8m2!3d45.3574801!4d25.5398897!9m1!1b1!16s%2Fg%2F1hc2637yc?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary"
             >
-              Lasă o Recenzie
-            </motion.button>
-            <motion.button
+              Recenzii Google Maps
+            </motion.a>
+            <motion.a
+              href="https://www.google.com/maps/place/Marami/@45.3574447,25.5398979,15z/data=!4m11!3m10!1s0x40b310d34e8642e5:0x1396870e25205b19!5m2!4m1!1i2!8m2!3d45.3574801!4d25.5398897!9m1!1b1!16s%2Fg%2F1hc2637yc?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-secondary"
             >
-              Vezi Toate Recenziile
-            </motion.button>
+              Recenzii Booking
+            </motion.a>
           </div>
         </motion.div>
       </div>

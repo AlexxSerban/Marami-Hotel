@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import BlurText from './BlurText';
 
 const RoomsSection = () => {
@@ -76,9 +77,8 @@ const RoomsSection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Fiecare cameră a fost gândită pentru a oferi confortul și luxul pe care îl meriți, 
-            cu facilități moderne și tarife competitive.
+          <p className="text-lg text-text-light max-w-3xl mx-auto">
+            Fiecare cameră este gândită pentru a-ți oferi confortul și liniștea de care ai nevoie, cu facilități moderne și tarife competitive. Fie că ești în căutarea unei escapade relaxante sau a unui loc primitor pentru a te simți ca acasă, te așteptăm cu opțiuni potrivite pentru tine.
           </p>
         </motion.div>
 
@@ -100,13 +100,13 @@ const RoomsSection = () => {
               <img
                 src={room.image}
                 alt={room.name}
-                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
               
               {/* Overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+              
               {/* Price - Top Right */}
               <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
                 <div className="text-xs text-text-light">Începând de la</div>
@@ -133,21 +133,29 @@ const RoomsSection = () => {
           <p className="text-text-light mb-4">
             Nu găsești ce cauți? Contactează-ne pentru opțiuni personalizate.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 justify-center items-center">
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary"
             >
-              Vezi Toate Camerele
-            </motion.button>
-            <motion.button
+              <Link
+                to="/cazare"
+                className="btn-secondary"
+              >
+                Vezi Toate Camerele
+              </Link>
+            </motion.div>
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary"
             >
-              Rezervă
-            </motion.button>
+              <Link
+                to="/rezervare"
+                className="btn-primary"
+              >
+                Rezervă
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 import { CheckIcon, StarIcon, UserIcon, HomeIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
@@ -8,7 +9,16 @@ const RoomSelectionSection = () => {
     console.log('RoomSelection title animation completed!');
   };
 
+  const [searchParams] = useSearchParams();
   const [selectedRoom, setSelectedRoom] = useState(null);
+
+  // Pre-select room based on URL parameter
+  useEffect(() => {
+    const roomParam = searchParams.get('room');
+    if (roomParam && roomTypes.find(room => room.id === roomParam)) {
+      setSelectedRoom(roomParam);
+    }
+  }, [searchParams]);
 
   const roomTypes = [
     {

@@ -7,20 +7,23 @@ const BookingConfirmationSection = () => {
     {
       icon: PhoneIcon,
       title: 'Telefon',
-      value: '+40 244 315 000',
-      description: 'Disponibil 24/7'
+      value: '+40 759 033 047',
+      description: 'Disponibil 24/7',
+      href: 'tel:+40759033047'
     },
     {
       icon: EnvelopeIcon,
       title: 'Email',
       value: 'rezervari@hotelmarami.ro',
-      description: 'Răspuns în 2 ore'
+      description: 'Răspuns în 2 ore',
+      href: 'mailto:rezervari@hotelmarami.ro'
     },
     {
       icon: MapPinIcon,
       title: 'Adresa',
-      value: 'Strada Furnica 52, Sinaia',
-      description: 'România, 106100'
+      value: 'Marami, Strada Furnica 52, Sinaia 106100',
+      description: 'România',
+      href: 'https://www.google.com/maps/search/?api=1&query=Marami%2C+Strada+Furnica+52%2C+Sinaia+106100'
     }
   ];
 
@@ -43,27 +46,30 @@ const BookingConfirmationSection = () => {
               {contactInfo.map((contact, index) => {
                 const IconComponent = contact.icon;
                 return (
-                  <motion.div
+                  <motion.a
                     key={index}
+                    href={contact.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="text-center"
+                    className="text-center group"
                   >
-                    <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
                       <IconComponent className="w-6 h-6 text-primary-600" />
                     </div>
                     <h4 className="font-semibold text-text-primary mb-1">
                       {contact.title}
                     </h4>
-                    <p className="text-text-primary font-medium">
+                    <p className="text-text-primary font-medium group-hover:text-primary-600 transition-colors">
                       {contact.value}
                     </p>
                     <p className="text-sm text-text-secondary">
                       {contact.description}
                     </p>
-                  </motion.div>
+                  </motion.a>
                 );
               })}
             </div>

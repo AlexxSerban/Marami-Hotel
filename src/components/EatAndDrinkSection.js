@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
 
@@ -20,7 +21,7 @@ const EatAndDrinkSection = () => {
           className="text-center mb-16"
         >
           <BlurText
-            text="Eat & Drink"
+            text="Restaurant"
             className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-4"
             delay={150}
             animateBy="words"
@@ -28,10 +29,10 @@ const EatAndDrinkSection = () => {
             onAnimationComplete={handleAnimationComplete}
           />
           <h3 className="text-2xl md:text-3xl font-display font-semibold text-primary-500 mb-6">
-            Kitchen Club - O experiență culinară de zi și noapte
+            O experiență culinară de zi și noapte
           </h3>
           <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Bucură-te de preparate proaspete, cu ingrediente locale, servite într-o atmosferă elegantă. 
+            Bucură-te de preparate proaspete, cu ingrediente locale, servite într-o atmosferă relaxantă. 
             Meniul nostru combină tradiția românească cu influențe internaționale.
           </p>
         </motion.div>
@@ -97,14 +98,18 @@ const EatAndDrinkSection = () => {
             </div>
 
             {/* CTA Button */}
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center space-x-2 bg-primary-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-600 transition-colors duration-300"
             >
-              <span>Vezi meniul</span>
-              <ArrowRightIcon className="w-5 h-5" />
-            </motion.button>
+              <Link
+                to="/restaurant"
+                className="inline-flex items-center space-x-2 bg-primary-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-primary-600 transition-colors duration-300"
+              >
+                <span>Vezi meniul</span>
+                <ArrowRightIcon className="w-5 h-5" />
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>

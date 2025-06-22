@@ -163,7 +163,7 @@ Pentru a actualiza conținutul:
 
 Pentru întrebări sau suport tehnic, contactează-ne la:
 - Email: info@hotelmarami.ro
-- Telefon: +40 244 123 456
+- Telefon: +40 759 033 047
 
 ## 📄 Licență
 

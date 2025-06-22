@@ -17,9 +17,9 @@ const ContactInfoSection = () => {
     {
       icon: PhoneIcon,
       title: 'Telefon',
-      value: '+40 244 315 000',
+      value: '+40 759 033 047',
       description: 'Recepție 24/7',
-      href: 'tel:+40244315000'
+      href: 'tel:+40759033047'
     },
     {
       icon: EnvelopeIcon,
@@ -31,14 +31,14 @@ const ContactInfoSection = () => {
     {
       icon: MapPinIcon,
       title: 'Adresă',
-      value: 'Strada Furnica 52, Sinaia',
-      description: 'România, 106100',
-      href: 'https://maps.google.com/?q=Hotel+Marami,+Strada+Furnica+52,+Sinaia,+Romania'
+      value: 'Marami, Strada Furnica 52, Sinaia 106100',
+      description: 'România',
+      href: 'https://maps.google.com/?q=Marami,+Strada+Furnica+52,+Sinaia,+Romania'
     },
     {
       icon: ClockIcon,
       title: 'Program',
-      value: 'Check-in: 14:00 | Check-out: 11:00',
+      value: 'Check-in: 15:00 | Check-out: 12:00',
       description: 'Recepție 24/7',
       href: null
     }

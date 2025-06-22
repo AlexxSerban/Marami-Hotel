@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PhoneIcon, CalendarIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const RestaurantReservationSection = () => {
@@ -35,21 +35,15 @@ const RestaurantReservationSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12"
+          className="flex justify-center mb-12"
         >
           <a
-            href="tel:+40244123456"
-            className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3 mb-4 md:mb-0"
+            href="tel:+40759033047"
+            className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3"
           >
             <PhoneIcon className="w-6 h-6" />
             Rezervă o masă
           </a>
-          <button
-            className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-primary-600 transition-all duration-300 flex items-center gap-3"
-          >
-            <CalendarIcon className="w-6 h-6" />
-            Rezervare online
-          </button>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   UserGroupIcon,
   CheckIcon
@@ -13,7 +14,7 @@ const RoomTypesSection = () => {
 
   const roomTypes = [
     {
-      id: 1,
+      id: 'double',
       name: 'Camere Double Standard',
       icon: '🛌',
       description: 'Camere spațioase și luminoase, dotate cu toate facilitățile necesare pentru o ședere confortabilă.',
@@ -31,7 +32,7 @@ const RoomTypesSection = () => {
       size: '≈20 m²'
     },
     {
-      id: 2,
+      id: 'double-lux',
       name: 'Camere Double de Lux',
       icon: '🛌',
       description: 'Camere mai mari, pentru un plus de confort și eleganță, perfecte pentru oaspeții care apreciază luxul.',
@@ -49,7 +50,7 @@ const RoomTypesSection = () => {
       size: '≈26 m²'
     },
     {
-      id: 3,
+      id: 'matrimonial',
       name: 'Cameră Matrimonială',
       icon: '🛌',
       description: 'Ideală pentru 2 persoane, confort superior, cu pat mare și priveliște excepțională.',
@@ -67,7 +68,7 @@ const RoomTypesSection = () => {
       size: '≈24 m²'
     },
     {
-      id: 4,
+      id: 'single',
       name: 'Cameră Single',
       icon: '🛏️',
       description: 'Cameră compactă pentru o singură persoană, cu toate dotările standard și confortul necesar.',
@@ -195,13 +196,17 @@ const RoomTypesSection = () => {
                 </div>
                 
                 {/* CTA Button */}
-                <motion.button
+                <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full btn-primary"
                 >
-                  Rezervă Această Cameră
-                </motion.button>
+                  <Link
+                    to={`/rezervare?room=${room.id}`}
+                    className="w-full btn-primary block text-center"
+                  >
+                    Rezervă Această Cameră
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           ))}

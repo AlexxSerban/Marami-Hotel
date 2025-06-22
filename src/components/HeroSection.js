@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 import SplitText from './SplitText';
 
 const HeroSection = () => {
@@ -47,8 +48,8 @@ const HeroSection = () => {
               onLetterAnimationComplete={handleAnimationComplete}
             />
             <SplitText
-              text="Sinaia"
-              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-primary-300 text-shadow-lg leading-tight block mt-2"
+              text="A doua ta casă la poalele Peleșului"
+              className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-primary-300 text-shadow-lg leading-tight block mt-2"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -62,25 +63,16 @@ const HeroSection = () => {
             />
           </div>
 
-          {/* Slogan */}
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold mb-6 text-shadow"
-          >
-            Eleganță regală la poalele Peleșului
-          </motion.h2>
-
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 text-shadow max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 text-shadow max-w-3xl mx-auto leading-relaxed"
           >
-            Descoperă luxul și confortul în inima munților. O experiență memorabilă 
-            așteaptă la fiecare colț al hotelului nostru.
+            La doar 300 m de Castelul Peleș, te așteaptă camere spațioase cu vedere la munți, 
+            un spa relaxant cu jacuzzi, saună și masaj, plus liniștea montană care îți reîncarcă energia. 
+            Descoperă o experiență memorabilă, explorând Sinaia.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -88,24 +80,32 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-6 sm:gap-4 justify-center items-center"
           >
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary text-lg px-8 py-4 flex items-center space-x-2 group"
             >
-              <span>Rezervă Acum</span>
-              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+              <Link
+                to="/rezervare"
+                className="btn-secondary text-lg px-8 py-4 flex items-center space-x-2 group"
+              >
+                <span>Rezervă Acum</span>
+                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
             
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-lg px-8 py-4 rounded-lg"
             >
-              Vezi Camerele
-            </motion.button>
+              <Link
+                to="/cazare"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-lg px-8 py-4 rounded-lg"
+              >
+                Vezi Camerele
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

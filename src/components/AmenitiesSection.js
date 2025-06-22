@@ -17,7 +17,7 @@ const AmenitiesSection = () => {
     {
       icon: UsersIcon,
       title: 'Sală de Conferințe',
-      description: 'Spațiu modern pentru evenimente și conferințe, cu capacitate de până la 40 de persoane.',
+      description: 'Spațiu modern pentru evenimente și conferințe, cu capacitate de 40 de persoane.',
       capacity: '40 persoane',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     },
@@ -98,41 +98,32 @@ const AmenitiesSection = () => {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group"
+                className="relative h-80 rounded-2xl overflow-hidden shadow-lg card-hover group cursor-pointer"
               >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={amenity.image}
-                    alt={amenity.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                  
-                  {/* Capacity Badge */}
-                  <div className="absolute bottom-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-lg text-sm font-medium">
-                    {amenity.capacity}
-                  </div>
+                {/* Background Image */}
+                <img
+                  src={amenity.image}
+                  alt={amenity.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                
+                {/* Capacity Badge - Top Right */}
+                <div className="absolute top-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-lg text-sm font-medium z-10">
+                  {amenity.capacity}
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-display font-bold text-text-primary mb-3">
+                {/* Content - Frosted Glass Rectangle */}
+                <div className="absolute bottom-3 left-3 right-3 bg-white/20 backdrop-blur-md rounded-lg p-3 border border-white/30 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95">
+                  <h3 className="text-lg font-display font-bold text-white mb-1 drop-shadow-lg">
                     {amenity.title}
                   </h3>
-                  <p className="text-text-light text-sm leading-relaxed mb-4">
+                  <p className="text-white/90 text-xs leading-relaxed drop-shadow-md">
                     {amenity.description}
                   </p>
-                  
-                  {/* CTA Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="text-primary-500 font-medium text-sm hover:text-primary-600 transition-colors"
-                  >
-                    Află mai multe →
-                  </motion.button>
                 </div>
               </motion.div>
             );

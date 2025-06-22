@@ -116,7 +116,7 @@ const ContactFormSection = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                      placeholder="+40 123 456 789"
+                      placeholder="+40 759 033 047"
                     />
                   </div>
                 </div>
