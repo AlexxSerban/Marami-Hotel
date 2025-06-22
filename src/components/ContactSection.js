@@ -5,8 +5,7 @@ import {
   PhoneIcon,
   EnvelopeIcon,
   MapPinIcon,
-  ClockIcon,
-  ChatBubbleLeftIcon
+  ClockIcon
 } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
 

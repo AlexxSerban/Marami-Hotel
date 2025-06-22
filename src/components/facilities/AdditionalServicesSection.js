@@ -1,12 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import BlurText from '../BlurText';
 
 const AdditionalServicesSection = () => {
-  const handleAnimationComplete = () => {
-    console.log('AdditionalServices title animation completed!');
-  };
-
   return (
     <section className="section-padding bg-background-secondary">
       <div className="container-custom">
