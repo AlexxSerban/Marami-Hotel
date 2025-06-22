@@ -1,6 +1,7 @@
 {
   "name": "hotel-marami-landing",
   "version": "1.0.0",
+  "homepage": "https://alexserban.github.io/Marami-Hotel",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
