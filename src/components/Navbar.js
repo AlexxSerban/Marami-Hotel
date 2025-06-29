@@ -139,27 +139,30 @@ const Navbar = () => {
             : 'bg-black/20'
         } ${isScrolled ? 'top-0' : 'md:top-10 top-0'}`}
       >
-        <div className="container-custom">
-          <div className="flex items-center justify-between h-16 px-4 md:px-8">
-            {/* Logo */}
-            <Link to="/">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-2"
-              >
-                <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">M</span>
-                </div>
-                <span className={`font-display font-bold text-xl ${
-                  isScrolled ? 'text-text-primary' : 'text-white'
-                }`}>
-                  Hotel Marami
-                </span>
-              </motion.div>
-            </Link>
+        <div className="w-full px-4 md:px-8 lg:px-16">
+          {/* Desktop Layout */}
+          <div className="hidden md:grid md:grid-cols-3 items-center h-16">
+            {/* Logo - Left */}
+            <div className="flex justify-start">
+              <Link to="/">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center space-x-2"
+                >
+                  <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">M</span>
+                  </div>
+                  <span className={`font-display font-bold text-xl ${
+                    isScrolled ? 'text-text-primary' : 'text-white'
+                  }`}>
+                    Hotel Marami
+                  </span>
+                </motion.div>
+              </Link>
+            </div>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Menu - Center */}
+            <div className="flex items-center justify-center space-x-8">
               {navItems.map((item) => (
                 item.isLink ? (
                   <Link
@@ -183,15 +186,41 @@ const Navbar = () => {
                   </button>
                 )
               ))}
+            </div>
+
+            {/* Button - Right */}
+            <div className="flex justify-end items-center">
               <Link to="/rezervare" className="btn-primary">
                 Rezervă Acum
               </Link>
             </div>
+          </div>
 
-            {/* Mobile Menu Button */}
+          {/* Mobile Layout */}
+          <div className="md:hidden flex items-center justify-between h-16">
+            {/* Logo - Left */}
+            <div className="flex justify-start">
+              <Link to="/">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="flex items-center space-x-2"
+                >
+                  <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">M</span>
+                  </div>
+                  <span className={`font-display font-bold text-xl ${
+                    isScrolled ? 'text-text-primary' : 'text-white'
+                  }`}>
+                    Hotel Marami
+                  </span>
+                </motion.div>
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button - Right */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg"
+              className="p-2 rounded-lg"
               aria-label="Toggle menu"
             >
               {isOpen ? (
