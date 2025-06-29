@@ -268,7 +268,17 @@ const Navbar = () => {
                     )
                   ))}
                   <div className="flex justify-center pt-4">
-                    <Link to="/rezervare" className="btn-primary">
+                    <Link 
+                      to="/rezervare" 
+                      className="btn-primary"
+                      onClick={() => {
+                        console.log('Rezervă Acum clicked from mobile menu');
+                        setIsOpen(false);
+                        if (location.pathname === '/rezervare') {
+                          window.scrollTo(0, 0);
+                        }
+                      }}
+                    >
                       Rezervă Acum
                     </Link>
                   </div>

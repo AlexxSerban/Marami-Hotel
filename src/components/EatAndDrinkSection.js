@@ -63,36 +63,36 @@ const EatAndDrinkSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6"
           >
             {/* Features */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4 w-full">
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Mic dejun, ceai și cafea gratuite</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Bucătărie complet utilată</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Restaurant cu 40 de locuri</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Bar modern cu cocktailuri speciale</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Bucătărie românească și mediteraneană</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Room service disponibil</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <div className="flex flex-row items-center justify-center text-center lg:justify-start lg:text-left space-x-3 w-full">
+                <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
                 <span className="text-text-primary font-medium">Evenimente private și corporate</span>
               </div>
             </div>
@@ -101,6 +101,7 @@ const EatAndDrinkSection = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              className="flex justify-center lg:justify-start"
             >
               <Link
                 to="/restaurant"

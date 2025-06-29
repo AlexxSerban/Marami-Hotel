@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const menuData = [
@@ -9,10 +10,22 @@ const menuData = [
     icon: '🥗',
     description: 'Începeți experiența culinară cu aperitivele noastre',
     items: [
-      'Zacuscă de casă cu pâine prăjită',
-      'Platou tradițional românesc (brânzeturi, mezeluri, legume)',
-      'Bruschete cu roșii și busuioc',
-      'Salată caprese cu mozzarella și pesto',
+      {
+        name: 'Zacuscă de casă cu pâine prăjită',
+        ingredients: 'Vinete, roșii, ceapă, usturoi, ulei de măsline, pâine prăjită'
+      },
+      {
+        name: 'Platou tradițional românesc (brânzeturi, mezeluri, legume)',
+        ingredients: 'Brânză de oaie, telemea, salam de Sibiu, șuncă, roșii, castraveți, ardei'
+      },
+      {
+        name: 'Bruschete cu roșii și busuioc',
+        ingredients: 'Pâine prăjită, roșii cherry, busuioc proaspăt, mozzarella, ulei de măsline'
+      },
+      {
+        name: 'Salată caprese cu mozzarella și pesto',
+        ingredients: 'Mozzarella di bufala, roșii, busuioc, pesto, ulei de măsline, balsamic'
+      },
     ],
   },
   {
@@ -21,9 +34,18 @@ const menuData = [
     icon: '🍲',
     description: 'Supele tradiționale românești, preparate cu ingrediente proaspete',
     items: [
-      'Ciorbă de burtă',
-      'Ciorbă țărănească de legume',
-      'Supă cremă de ciuperci',
+      {
+        name: 'Ciorbă de burtă',
+        ingredients: 'Burtă de vită, smântână, ouă, lămâie, pătrunjel, usturoi'
+      },
+      {
+        name: 'Ciorbă țărănească de legume',
+        ingredients: 'Cartofi, morcovi, pătrunjel, ceapă, roșii, smântână, ouă'
+      },
+      {
+        name: 'Supă cremă de ciuperci',
+        ingredients: 'Ciuperci proaspete, smântână, ceapă, usturoi, pătrunjel, crutoane'
+      },
     ],
   },
   {
@@ -32,10 +54,22 @@ const menuData = [
     icon: '🍝',
     description: 'Felurile principale, de la tradițional la internațional',
     items: [
-      'Tochitură moldovenească cu mămăliguță',
-      'File de doradă cu legume la grătar',
-      'Piept de pui cu sos de lămâie și ierburi',
-      'Paste cu fructe de mare',
+      {
+        name: 'Tochitură moldovenească cu mămăliguță',
+        ingredients: 'Carne de porc, cârnați, slănină, mămăligă, brânză, smântână'
+      },
+      {
+        name: 'File de doradă cu legume la grătar',
+        ingredients: 'Doradă proaspătă, ardei, dovlecei, roșii, ulei de măsline, lămâie'
+      },
+      {
+        name: 'Piept de pui cu sos de lămâie și ierburi',
+        ingredients: 'Piept de pui, lămâie, rozmarin, cimbru, usturoi, unt, vin alb'
+      },
+      {
+        name: 'Paste cu fructe de mare',
+        ingredients: 'Paste, creveți, scoici, calamari, usturoi, pătrunjel, vin alb'
+      },
     ],
   },
   {
@@ -44,10 +78,22 @@ const menuData = [
     icon: '🍰',
     description: 'Încheiați masa cu deserturile noastre delicioase',
     items: [
-      'Papanași cu smântână și dulceață de afine',
-      'Tiramisu',
-      'Tartă cu fructe de sezon',
-      'Lava cake cu înghețată',
+      {
+        name: 'Papanași cu smântână și dulceață de afine',
+        ingredients: 'Branză dulce, ouă, făină, smântână, dulceață de afine, zahăr pudră'
+      },
+      {
+        name: 'Tiramisu',
+        ingredients: 'Mascarpone, ouă, zahăr, cafea espresso, biscuiți savoiardi, cacao'
+      },
+      {
+        name: 'Tartă cu fructe de sezon',
+        ingredients: 'Aluat de tartă, cremă de vanilie, fructe proaspete, jeleu de fructe'
+      },
+      {
+        name: 'Lava cake cu înghețată',
+        ingredients: 'Ciocolată neagră, unt, ouă, zahăr, făină, înghețată de vanilie'
+      },
     ],
   },
   {
@@ -56,10 +102,22 @@ const menuData = [
     icon: '🍷',
     description: 'Vinuri selecte și băuturi rafinate pentru a acompania masa',
     items: [
-      'Vinuri românești de cramă (Fetească, Merlot, Sauvignon Blanc etc.)',
-      'Cocktailuri clasice (Mojito, Aperol, Negroni)',
-      'Cafea espresso, cappuccino',
-      'Sucuri naturale & apă minerală',
+      {
+        name: 'Vinuri românești de cramă (Fetească, Merlot, Sauvignon Blanc etc.)',
+        ingredients: 'Vinuri selecte din regiunile viticole românești, servite la temperatura optimă'
+      },
+      {
+        name: 'Cocktailuri clasice (Mojito, Aperol, Negroni)',
+        ingredients: 'Rom, mentă, lime, zahăr, Aperol, prosecco, gin, vermut roșu'
+      },
+      {
+        name: 'Cafea espresso, cappuccino',
+        ingredients: 'Boabe de cafea proaspete, lapte integral, spumă de lapte'
+      },
+      {
+        name: 'Sucuri naturale & apă minerală',
+        ingredients: 'Sucuri proaspete din fructe de sezon, apă minerală naturală'
+      },
     ],
   },
 ];
@@ -70,63 +128,65 @@ const MenuSection = () => {
   };
 
   const [activeTab, setActiveTab] = useState(menuData[0].id);
+  const [expandedItems, setExpandedItems] = useState({});
+
+  const toggleItem = (itemId) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [itemId]: !prev[itemId]
+    }));
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerChildren: 0.08,
+        delayChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: "easeOut",
       },
     },
   };
 
   return (
-    <section className="section-padding bg-background-secondary relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-secondary-500 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-accent-500 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container-custom relative z-10">
+    <section className="section-padding bg-white relative">
+      <div className="container-custom">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
           <BlurText
-            text="Meniul Restaurantului"
-            className="text-4xl md:text-5xl font-display font-bold text-text-primary mb-6"
-            delay={150}
+            text="Meniul"
+            className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary mb-6 tracking-tight"
+            delay={100}
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <p className="text-xl text-text-light max-w-3xl mx-auto leading-relaxed">
-            Descoperă preparatele noastre, de la aperitive proaspete la deserturi delicioase și vinuri selecte.
+          <p className="text-lg text-text-light max-w-2xl mx-auto leading-relaxed font-sans">
+            Preparate rafinate, ingrediente proaspete, experiențe memorabile.
           </p>
         </motion.div>
 
-        {/* Modern Tab Navigation */}
+        {/* Minimalist Tab Navigation */}
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -137,81 +197,112 @@ const MenuSection = () => {
               key={cat.id}
               variants={itemVariants}
               onClick={() => setActiveTab(cat.id)}
-              className={`group relative px-8 py-4 rounded-2xl font-medium transition-all duration-500 text-lg flex items-center gap-3 border-2 ${
+              className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm tracking-wide font-button ${
                 activeTab === cat.id
-                  ? 'bg-primary-500 text-white border-primary-600 shadow-2xl shadow-primary-500/20 scale-105'
-                  : 'bg-white text-text-secondary border-gray-200 hover:bg-primary-50 hover:text-primary-500 hover:border-primary-200 hover:scale-105'
+                  ? 'bg-primary-500 text-white shadow-sm'
+                  : 'text-text-light hover:text-primary-500 hover:bg-gray-50'
               }`}
             >
-              <span className="text-2xl transition-transform duration-300 group-hover:scale-110">{cat.icon}</span>
-              <span>{cat.label}</span>
-              {activeTab === cat.id && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-2xl -z-10"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
+              <span className="mr-2 text-base">{cat.icon}</span>
+              <span className="font-medium">{cat.label}</span>
             </motion.button>
           ))}
         </motion.div>
 
         {/* Menu Content */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <AnimatePresence mode="wait">
             {menuData.map((cat) =>
               activeTab === cat.id ? (
                 <motion.div
                   key={cat.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="space-y-8"
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="space-y-12"
                 >
                   {/* Category Header */}
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                    className="text-center mb-8"
+                    transition={{ delay: 0.1, duration: 0.4 }}
+                    className="text-center mb-12"
                   >
-                    <div className="inline-flex items-center gap-4 bg-white rounded-2xl px-8 py-4 border border-gray-200 shadow-lg">
-                      <span className="text-4xl">{cat.icon}</span>
+                    <div className="inline-flex flex-col items-center space-y-4">
+                      <span className="text-5xl mb-2">{cat.icon}</span>
                       <div>
-                        <h3 className="text-2xl font-bold text-text-primary mb-2">{cat.label}</h3>
-                        <p className="text-text-light text-lg">{cat.description}</p>
+                        <h3 className="text-3xl font-display font-bold text-text-primary mb-3 tracking-wide">{cat.label}</h3>
+                        <p className="text-text-light text-lg font-sans max-w-md mx-auto leading-relaxed">{cat.description}</p>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Menu Items Grid */}
+                  {/* Menu Items - Apple Style */}
                   <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="space-y-8"
                   >
-                    {cat.items.map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        variants={itemVariants}
-                        className="group relative"
-                      >
-                        <div className="bg-white rounded-2xl p-6 border border-gray-200 hover:bg-primary-50 hover:border-primary-200 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/20">
-                          <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                              {idx + 1}
+                    {cat.items.map((item, idx) => {
+                      const itemId = `${cat.id}-${idx}`;
+                      const isExpanded = expandedItems[itemId];
+                      
+                      return (
+                        <motion.div
+                          key={idx}
+                          variants={itemVariants}
+                          className="group"
+                        >
+                          <div className="bg-gray-50/50 rounded-2xl border border-gray-100 hover:bg-gray-50 hover:border-gray-200 transition-all duration-300 overflow-hidden">
+                            <div className="p-8">
+                              <div className="flex items-center justify-between">
+                                <div className="flex-1">
+                                  <p className="text-xl text-text-primary font-sans leading-relaxed group-hover:text-text-primary transition-colors duration-300">
+                                    {item.name}
+                                  </p>
+                                </div>
+                                <div className="ml-6 flex-shrink-0">
+                                  <button
+                                    onClick={() => toggleItem(itemId)}
+                                    className="w-8 h-8 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500 hover:bg-primary-500/20 transition-all duration-300 group-hover:bg-primary-500/20"
+                                  >
+                                    <ChevronDownIcon 
+                                      className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                                    />
+                                  </button>
+                                </div>
+                              </div>
                             </div>
-                            <div className="flex-1">
-                              <p className="text-lg text-text-primary font-medium leading-relaxed group-hover:text-text-primary group-hover:font-semibold transition-all duration-300">
-                                {item}
-                              </p>
-                            </div>
+                            
+                            {/* Expanded Content */}
+                            <AnimatePresence>
+                              {isExpanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: 'auto', opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.3, ease: "easeOut" }}
+                                  className="border-t border-gray-100"
+                                >
+                                  <div className="p-8 pt-0">
+                                    <div className="bg-white/50 rounded-xl p-6">
+                                      <h4 className="text-sm font-button font-medium text-primary-500 mb-3 uppercase tracking-wide">
+                                        Ingrediente
+                                      </h4>
+                                      <p className="text-text-light font-sans leading-relaxed">
+                                        {item.ingredients}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
                           </div>
-                        </div>
-                      </motion.div>
-                    ))}
+                        </motion.div>
+                      );
+                    })}
                   </motion.div>
                 </motion.div>
               ) : null
@@ -219,25 +310,25 @@ const MenuSection = () => {
           </AnimatePresence>
         </div>
 
-        {/* Call to Action */}
+        {/* Minimalist Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-16"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-20"
         >
-          <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl p-8 text-white shadow-2xl">
-            <h3 className="text-2xl font-bold mb-4">
-              Rezervă o masă la restaurant
+          <div className="bg-gray-50 rounded-3xl p-12 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-display font-bold text-text-primary mb-4 tracking-wide">
+              Rezervă o masă
             </h3>
-            <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-              Pentru a vă asigura o experiență culinară de neuitat, vă recomandăm să faceți o rezervare.
+            <p className="text-text-light text-lg mb-8 font-sans leading-relaxed">
+              Pentru o experiență culinară personalizată, vă recomandăm să faceți o rezervare.
             </p>
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-primary-500 px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-primary-500 text-white px-8 py-4 rounded-lg font-button font-medium text-lg shadow-sm hover:shadow-md transition-all duration-300"
               onClick={() => window.open('tel:+40759033047', '_self')}
             >
               Rezervă acum

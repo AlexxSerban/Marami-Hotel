@@ -85,11 +85,11 @@ const AboutLocationSection = () => {
               {locationFeatures.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
-                  <div key={index} className="flex items-start space-x-3 lg:justify-start justify-center">
-                    <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div key={index} className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left lg:justify-start space-y-2 lg:space-y-0 lg:space-x-3">
+                    <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mb-2 lg:mb-0">
                       <IconComponent className="w-3 h-3 text-primary-500" />
                     </div>
-                    <div className="text-center lg:text-left">
+                    <div>
                       <h4 className="font-display font-semibold text-text-primary mb-1">
                         {feature.title}
                       </h4>
