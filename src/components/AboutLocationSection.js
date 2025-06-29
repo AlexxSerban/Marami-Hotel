@@ -74,6 +74,7 @@ const AboutLocationSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
           >
             <h3 className="text-2xl md:text-3xl font-display font-bold text-text-primary mb-6">
               Ce te așteaptă la noi
@@ -84,11 +85,11 @@ const AboutLocationSection = () => {
               {locationFeatures.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
-                  <div key={index} className="flex items-start space-x-3">
+                  <div key={index} className="flex items-start space-x-3 lg:justify-start justify-center">
                     <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <IconComponent className="w-3 h-3 text-primary-500" />
                     </div>
-                    <div>
+                    <div className="text-center lg:text-left">
                       <h4 className="font-display font-semibold text-text-primary mb-1">
                         {feature.title}
                       </h4>
@@ -105,7 +106,7 @@ const AboutLocationSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary"
+              className="btn-primary mx-auto lg:mx-0"
             >
               Vezi Pe Hartă
             </motion.button>
