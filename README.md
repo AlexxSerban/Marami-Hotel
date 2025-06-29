@@ -172,3 +172,4 @@ Acest proiect este creat pentru Hotel Marami din Sinaia. Toate drepturile rezerv
 ---
 
 **Hotel Marami** - Lux și Confort în Inima Munților 🏔️ 
+# Trigger redeploy with updated permissions
