@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HomeIcon, StarIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import doubleRoom from '../../assets/rooms/Double_camera.jpg';
 
 const ComfortableRoomsSection = () => {
   const handleAnimationComplete = () => {
@@ -79,7 +80,7 @@ const ComfortableRoomsSection = () => {
           className="relative"
         >
           <img
-            src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80"
+            src={doubleRoom}
             alt="Camere confortabile Hotel Marami"
             className="rounded-xl shadow-lg w-full h-80 object-cover"
             loading="lazy"

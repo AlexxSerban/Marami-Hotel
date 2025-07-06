@@ -6,6 +6,10 @@ import {
   CheckIcon
 } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import doubleRoom from '../../assets/rooms/Double_camera.jpg';
+import doubleLux from '../../assets/rooms/Double de lux.jpg';
+import matrimoniala from '../../assets/rooms/Matrimoniala.jpg';
+import singleRoom from '../../assets/rooms/Single.jpg';
 
 const RoomTypesSection = () => {
   const handleAnimationComplete = () => {
@@ -27,7 +31,7 @@ const RoomTypesSection = () => {
         'Balcon cu vedere spre munte'
       ],
       target: 'Cupluri, turiști relaxați',
-      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: doubleRoom,
       price: '65 USD',
       size: '≈20 m²'
     },
@@ -45,7 +49,7 @@ const RoomTypesSection = () => {
         'Design premium'
       ],
       target: 'Cupluri, escapade romantice, oaspeți premium',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: doubleLux,
       price: '95 USD',
       size: '≈26 m²'
     },
@@ -63,7 +67,7 @@ const RoomTypesSection = () => {
         'Spațiu generos'
       ],
       target: 'Cupluri, escapade romantice',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: matrimoniala,
       price: '85 USD',
       size: '≈24 m²'
     },
@@ -81,7 +85,7 @@ const RoomTypesSection = () => {
         'Design funcțional'
       ],
       target: 'Călători individuali, business',
-      image: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+      image: singleRoom,
       price: '45 USD',
       size: '≈16 m²'
     }

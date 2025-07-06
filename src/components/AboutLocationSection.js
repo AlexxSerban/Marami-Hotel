@@ -7,6 +7,7 @@ import {
   StarIcon
 } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
+import pelesCastle from '../assets/peles-castle-sinaia-romania.jpg';
 
 const AboutLocationSection = () => {
   const handleAnimationComplete = () => {
@@ -17,22 +18,22 @@ const AboutLocationSection = () => {
     {
       icon: MapPinIcon,
       title: 'Locație excepțională',
-      description: 'La doar 300m de Castelul Peleș, într-o zonă liniștită, ideală pentru explorare.'
+      description: 'Ne aflăm la doar 300 m de Castelul Peleș, într-o zonă retrasă și liniștită, aproape de cele mai frumoase obiective din Sinaia.'
     },
     {
       icon: HomeIcon,
       title: 'Vederea panoramică',
-      description: 'Priveliști spectaculoase spre munții Bucegi și Castelul Peleș.'
+      description: 'Priveliștile către munții Bucegi și Castelul Peleș adaugă un farmec aparte fiecărei dimineți.'
     },
     {
       icon: BuildingOfficeIcon,
       title: 'Arhitectură primitoare',
-      description: 'Construcția inspirată din stilul local adaugă un farmec autentic, cu detalii care creează o atmosferă caldă.'
+      description: 'Inspirată din stilul local, construcția hotelului aduce un plus de autenticitate și creează o atmosferă caldă, plină de personalitate.'
     },
     {
       icon: StarIcon,
       title: 'Ambianță confortabilă',
-      description: 'O atmosferă intimă și sofisticată, perfectă pentru o escapadă memorabilă.'
+      description: 'Un spațiu intim și liniștit, unde te poți relaxa cu adevărat. Perfect pentru o escapadă în care să te simți ca acasă.'
     }
   ];
 
@@ -62,8 +63,11 @@ const AboutLocationSection = () => {
             onAnimationComplete={handleAnimationComplete}
           />
           
-          <p className="text-lg text-text-light max-w-3xl mx-auto">
-            Hotel Marami se află într-o zonă liniștită, oferindu-ți un loc perfect pentru a te deconecta și a te bucura de frumusețea Sinaiei. Poziționarea noastră excepțională îți oferă accesul facil la principalele atracții turistice, păstrând în același timp intimitatea și liniștea necesară pentru o ședere relaxantă.
+          <p className="text-lg text-text-light max-w-4xl mx-auto">
+            Hotel Marami este amplasat într-o zonă liniștită, departe de agitația orașului, dar suficient de aproape de tot ce merită vizitat. Ai acces rapid la Castelul Peleș, la centrul orașului și la principalele atracții din Sinaia, fără să renunți la liniștea și intimitatea de care ai nevoie în vacanță.
+          </p>
+          <p className="text-lg text-text-light max-w-3xl mx-auto mt-4">
+            Un sejur relaxant, într-un loc care îți oferă echilibrul perfect între relaxare și explorare.
           </p>
         </motion.div>
 
@@ -138,8 +142,8 @@ const AboutLocationSection = () => {
             {/* Hotel Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Hotel Marami și împrejurimile - Peleș, pădure, munte"
+                src={pelesCastle}
+                alt="Castelul Peleș - Sinaia, România"
                 className="w-full h-48 md:h-64 object-cover"
                 loading="lazy"
               />

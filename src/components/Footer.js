@@ -24,7 +24,6 @@ const Footer = () => {
     {
       title: 'Servicii',
       links: [
-        { name: 'Rezervări Online', href: '#booking' },
         { name: 'Transfer Aeroport', href: '#transfer' },
         { name: 'Restaurant', href: '#restaurant' },
         { name: 'Spa & Wellness', href: '#spa' },

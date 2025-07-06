@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, PlayIcon } from '@heroicons/react/24/outline';
+import doubleRoom from '../assets/rooms/Double_camera.jpg';
+import doubleLux from '../assets/rooms/Double de lux.jpg';
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -9,13 +11,13 @@ const GallerySection = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: doubleRoom,
       alt: 'Camera Standard - Hotel Marami',
       category: 'camere'
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: doubleLux,
       alt: 'Camera Lux - Hotel Marami',
       category: 'camere'
     },

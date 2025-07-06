@@ -78,9 +78,8 @@ const AmenitiesSection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Descoperă toate facilitățile și serviciile pe care le oferim pentru a-ți face șederea 
-            cât mai confortabilă și memorabilă.
+          <p className="text-lg text-text-light max-w-4xl mx-auto">
+            Ne dorim ca timpul petrecut la Hotel Marami să fie cât mai plăcut, lipsit de griji și adaptat nevoilor tale. Punem la dispoziție toate facilitățile esențiale pentru un sejur confortabil, într-un cadru liniștit și primitor.
           </p>
         </motion.div>
 

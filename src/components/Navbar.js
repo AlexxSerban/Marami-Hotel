@@ -24,7 +24,6 @@ const Navbar = () => {
     { name: 'Dotări', href: '/dotari', isLink: true },
     { name: 'Activități', href: '/activitati', isLink: true },
     { name: 'Contact', href: '/contact', isLink: true },
-    { name: 'Rezervare', href: '/rezervare', isLink: true },
   ];
 
   const socialLinks = [

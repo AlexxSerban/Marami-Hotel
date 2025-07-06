@@ -29,11 +29,10 @@ const EatAndDrinkSection = () => {
             onAnimationComplete={handleAnimationComplete}
           />
           <h3 className="text-2xl md:text-3xl font-display font-semibold text-primary-500 mb-6">
-            O experiență culinară de zi și noapte
+            O experiență culinară autentică, într-un cadru relaxant
           </h3>
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Bucură-te de preparate proaspete, cu ingrediente locale, servite într-o atmosferă relaxantă. 
-            Meniul nostru combină tradiția românească cu influențe internaționale.
+          <p className="text-lg text-text-light max-w-4xl mx-auto">
+            Fie că iei micul dejun, prânzul sau cina, la restaurantul nostru te așteaptă preparate proaspete, gătite cu atenție și inspirație. Folosim ingrediente locale, de calitate, iar meniul îmbină gusturile tradiționale românești cu influențe internaționale, pentru o experiență echilibrată și savuroasă.
           </p>
         </motion.div>
 

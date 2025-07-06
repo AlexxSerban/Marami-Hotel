@@ -2,31 +2,56 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import restaurant1 from '../../assets/restaurantImages/restaurant1.jpg';
+import restaurant2 from '../../assets/restaurantImages/restaurant2.jpg';
+import restaurant3 from '../../assets/restaurantImages/restaurant3.jpg';
+import restaurant4 from '../../assets/restaurantImages/restaurant4.jpg';
+import restaurant5 from '../../assets/restaurantImages/restaurant5.jpg';
+import restaurant6 from '../../assets/restaurantImages/restaurant6.jpg';
+import restaurant7 from '../../assets/restaurantImages/restaurant7.jpg';
 
 const galleryImages = [
   {
     id: 1,
-    src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
-    alt: 'Sala interioară elegantă',
-    title: 'Sala interioară',
+    src: restaurant1,
+    alt: 'Restaurant Hotel Marami - Sala principală',
+    title: 'Sala principală',
   },
   {
     id: 2,
-    src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80',
-    alt: 'Grădina de vară',
-    title: 'Grădina de vară',
+    src: restaurant2,
+    alt: 'Restaurant Hotel Marami - Atmosferă elegantă',
+    title: 'Atmosferă elegantă',
   },
   {
     id: 3,
-    src: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=800&q=80',
-    alt: 'Mese servite',
-    title: 'Mese servite',
+    src: restaurant3,
+    alt: 'Restaurant Hotel Marami - Preparate culinare',
+    title: 'Preparate culinare',
   },
   {
     id: 4,
-    src: 'https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80',
-    alt: 'Detalii cu mâncare și vinuri',
-    title: 'Detalii culinare',
+    src: restaurant4,
+    alt: 'Restaurant Hotel Marami - Detalii interioare',
+    title: 'Detalii interioare',
+  },
+  {
+    id: 5,
+    src: restaurant5,
+    alt: 'Restaurant Hotel Marami - Mese servite',
+    title: 'Mese servite',
+  },
+  {
+    id: 6,
+    src: restaurant6,
+    alt: 'Restaurant Hotel Marami - Decor elegant',
+    title: 'Decor elegant',
+  },
+  {
+    id: 7,
+    src: restaurant7,
+    alt: 'Restaurant Hotel Marami - Experiență culinară',
+    title: 'Experiență culinară',
   },
 ];
 
@@ -59,12 +84,12 @@ const RestaurantGallerySection = () => {
             onAnimationComplete={handleAnimationComplete}
           />
           <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Descoperă atmosfera și preparatele restaurantului nostru.
+            Descoperă atmosfera autentică și preparatele restaurantului nostru prin aceste imagini reale.
           </p>
         </motion.div>
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           <AnimatePresence mode="wait">
             {galleryImages.map((image, index) => (

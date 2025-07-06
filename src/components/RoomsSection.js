@@ -2,6 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import BlurText from './BlurText';
+import doubleRoom from '../assets/rooms/Double_camera.jpg';
+import doubleLux from '../assets/rooms/Double de lux.jpg';
+import matrimoniala from '../assets/rooms/Matrimoniala.jpg';
+import singleRoom from '../assets/rooms/Single.jpg';
 
 const RoomsSection = () => {
   const handleAnimationComplete = () => {
@@ -15,7 +19,7 @@ const RoomsSection = () => {
       persons: '2 persoane',
       bathroom: 'Baie privată',
       price: '280',
-      image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: doubleRoom
     },
     {
       id: 2,
@@ -23,7 +27,7 @@ const RoomsSection = () => {
       persons: '2 persoane',
       bathroom: 'Baie privată',
       price: '420',
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: doubleLux
     },
     {
       id: 3,
@@ -31,7 +35,7 @@ const RoomsSection = () => {
       persons: '2 persoane',
       bathroom: 'Baie privată',
       price: '380',
-      image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80'
+      image: matrimoniala
     },
     {
       id: 4,
@@ -39,7 +43,7 @@ const RoomsSection = () => {
       persons: '1 persoană',
       bathroom: 'Baie privată',
       price: '180',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80'
+      image: singleRoom
     }
   ];
 
@@ -77,8 +81,11 @@ const RoomsSection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <p className="text-lg text-text-light max-w-3xl mx-auto">
-            Fiecare cameră este gândită pentru a-ți oferi confortul și liniștea de care ai nevoie, cu facilități moderne și tarife competitive. Fie că ești în căutarea unei escapade relaxante sau a unui loc primitor pentru a te simți ca acasă, te așteptăm cu opțiuni potrivite pentru tine.
+          <p className="text-lg text-text-light max-w-4xl mx-auto">
+            Camerele Hotelului Marami sunt amenajate cu atenție pentru a oferi confort, funcționalitate și liniște. Ambientul este plăcut, liniștit și bine organizat, ideal pentru o ședere relaxantă.
+          </p>
+          <p className="text-lg text-text-light max-w-3xl mx-auto mt-4">
+            Poți alege între mai multe tipuri de camere, în funcție de nevoile tale — cu prețuri echilibrate, adaptate confortului oferit.
           </p>
         </motion.div>
 

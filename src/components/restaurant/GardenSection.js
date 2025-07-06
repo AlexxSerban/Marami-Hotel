@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SunIcon, SparklesIcon, HomeIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import terrace10 from '../../assets/terraceImages/Terrace10.jpg';
 
 const GardenSection = () => {
   const handleAnimationComplete = () => {
@@ -56,8 +57,8 @@ const GardenSection = () => {
           className="relative"
         >
           <img
-            src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=900&q=80"
-            alt="Grădina de vară Hotel Marami"
+            src={terrace10}
+            alt="Grădina de vară Hotel Marami - Terasă cu vedere panoramică"
             className="rounded-xl shadow-lg w-full h-80 object-cover"
             loading="lazy"
           />

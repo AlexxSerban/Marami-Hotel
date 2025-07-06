@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import SplitText from './SplitText';
+import exteriorView1 from '../assets/exteriorViewImages/Exterior_View1.jpg';
 
 const HeroSection = () => {
   const handleAnimationComplete = () => {
@@ -14,8 +15,8 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="Hotel Marami Sinaia - Vedere panoramică"
+          src={exteriorView1}
+          alt="Hotel Marami Sinaia - Vedere exterioară"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -48,7 +49,7 @@ const HeroSection = () => {
               onLetterAnimationComplete={handleAnimationComplete}
             />
             <SplitText
-              text="A doua ta casă la poalele Peleșului"
+              text="Locul în care te simți ca acasă, la poalele Castelului Peleș"
               className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-primary-300 text-shadow-lg leading-tight block mt-2"
               delay={100}
               duration={0.6}
@@ -64,16 +65,28 @@ const HeroSection = () => {
           </div>
 
           {/* Subtitle */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 text-shadow max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl lg:text-2xl mb-8 text-gray-200 text-shadow max-w-4xl mx-auto leading-relaxed space-y-4"
           >
-            La doar 300 m de Castelul Peleș, te așteaptă camere spațioase cu vedere la munți, 
-            un spa relaxant cu jacuzzi, saună și masaj, plus liniștea montană care îți reîncarcă energia. 
-            Descoperă o experiență memorabilă, explorând Sinaia.
-          </motion.p>
+            <p>
+              Situat la doar 300 de metri de Peleș, într-o zonă liniștită și înconjurată de natură, Hotel Marami îți oferă tot ce ai nevoie pentru un sejur confortabil: aer curat, priveliști superbe către munți și o atmosferă relaxantă.
+            </p>
+            <p>
+              Fără agitație, fără aglomerație. Doar liniște, confort și ospitalitate.
+            </p>
+            <p>
+              Un loc în care te simți bine cu tine și unde îți vei dori să revii.
+            </p>
+            <p>
+              Descoperă Sinaia într-un cadru intim, autentic și relaxant.
+            </p>
+            <p className="text-primary-300 font-semibold">
+              Bine ai venit acasă, la Marami.
+            </p>
+          </motion.div>
 
           {/* CTA Buttons */}
           <motion.div

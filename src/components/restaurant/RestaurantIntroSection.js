@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SplitText from '../SplitText';
+import restaurant3 from '../../assets/restaurantImages/restaurant3.jpg';
 
 const RestaurantIntroSection = () => {
   const handleAnimationComplete = () => {
@@ -11,8 +12,8 @@ const RestaurantIntroSection = () => {
     <section className="section-padding bg-background-primary relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80"
-          alt="Grădina de vară Restaurant Marami"
+          src={restaurant3}
+          alt="Restaurant Hotel Marami - Interior elegant"
           className="w-full h-full object-cover object-center opacity-40"
           loading="lazy"
         />

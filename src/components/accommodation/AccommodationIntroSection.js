@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HomeIcon, StarIcon, WifiIcon } from '@heroicons/react/24/outline';
 import SplitText from '../SplitText';
+import matrimoniala2 from '../../assets/rooms/Matrimoniala2.jpg';
 
 const AccommodationIntroSection = () => {
   const handleAnimationComplete = () => {
@@ -115,8 +116,8 @@ const AccommodationIntroSection = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Cameră Hotel Marami"
+                src={matrimoniala2}
+                alt="Cameră Matrimonială Hotel Marami"
                 className="rounded-xl shadow-lg"
                 loading="lazy"
               />

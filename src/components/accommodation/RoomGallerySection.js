@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import doubleRoom from '../../assets/rooms/Double_camera.jpg';
+import doubleLux from '../../assets/rooms/Double de lux.jpg';
+import doubleLux1 from '../../assets/rooms/Double de lux1.jpg';
+import matrimoniala from '../../assets/rooms/Matrimoniala.jpg';
+import matrimoniala2 from '../../assets/rooms/Matrimoniala2.jpg';
+import singleRoom from '../../assets/rooms/Single.jpg';
+import singleRoom2 from '../../assets/rooms/Single2.jpg';
+import doubleRoom2 from '../../assets/rooms/Double2.jpg';
+import doubleRoom3 from '../../assets/rooms/Double3.jpg';
+import baie from '../../assets/rooms/baie.jpg';
 
 const RoomGallerySection = () => {
   const handleAnimationComplete = () => {
@@ -22,7 +32,7 @@ const RoomGallerySection = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: doubleRoom,
       alt: 'Cameră Double',
       category: 'double-standard',
       title: 'Cameră Double',
@@ -30,7 +40,7 @@ const RoomGallerySection = () => {
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: doubleLux,
       alt: 'Cameră Double de Lux',
       category: 'double-lux',
       title: 'Cameră Double de Lux',
@@ -38,7 +48,7 @@ const RoomGallerySection = () => {
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      src: matrimoniala,
       alt: 'Cameră Matrimonială',
       category: 'matrimonial',
       title: 'Cameră Matrimonială',
@@ -46,7 +56,7 @@ const RoomGallerySection = () => {
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+      src: singleRoom,
       alt: 'Cameră Single',
       category: 'single',
       title: 'Cameră Single',
@@ -54,7 +64,7 @@ const RoomGallerySection = () => {
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+      src: baie,
       alt: 'Baie Cameră',
       category: 'double-standard',
       title: 'Baie Modernă',
@@ -62,27 +72,43 @@ const RoomGallerySection = () => {
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
-      alt: 'Balcon cu Vedere',
+      src: doubleLux1,
+      alt: 'Cameră Double de Lux - Vedere',
       category: 'double-lux',
-      title: 'Balcon cu Vedere',
+      title: 'Double de Lux - Vedere',
       description: 'Priveliște panoramică spre munții Bucegi'
     },
     {
       id: 7,
-      src: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Decor Interior',
+      src: matrimoniala2,
+      alt: 'Cameră Matrimonială - Interior',
       category: 'matrimonial',
-      title: 'Decor Romantic',
+      title: 'Matrimonială - Interior',
       description: 'Amenajare elegantă pentru momente speciale'
     },
     {
       id: 8,
-      src: 'https://images.unsplash.com/photo-1590490359683-658d3d23f972?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
-      alt: 'Cameră Single Interior',
+      src: singleRoom2,
+      alt: 'Cameră Single - Interior',
       category: 'single',
-      title: 'Design Funcțional',
+      title: 'Single - Interior',
       description: 'Spațiu optimizat pentru confort maxim'
+    },
+    {
+      id: 9,
+      src: doubleRoom2,
+      alt: 'Cameră Double - Vedere',
+      category: 'double-standard',
+      title: 'Double - Vedere',
+      description: 'Cameră cu vedere spre exterior'
+    },
+    {
+      id: 10,
+      src: doubleRoom3,
+      alt: 'Cameră Double - Interior',
+      category: 'double-standard',
+      title: 'Double - Interior',
+      description: 'Design modern și confortabil'
     }
   ];
 
