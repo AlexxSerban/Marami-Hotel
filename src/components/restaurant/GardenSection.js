@@ -9,11 +9,7 @@ const GardenSection = () => {
     console.log('Garden title animation completed!');
   };
 
-  const features = [
-    { icon: SunIcon, text: 'Atmosferă relaxantă' },
-    { icon: HomeIcon, text: 'Decor natural, înconjurat de flori și vegetație' },
-    { icon: SparklesIcon, text: 'Potrivit pentru mic dejun, prânz și cină' },
-  ];
+
 
   return (
     <section className="section-padding bg-background-secondary">
@@ -32,21 +28,37 @@ const GardenSection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
+          <h3 className="text-xl md:text-2xl font-display font-semibold text-primary-500 mb-4">
+            Un colț de liniște în aer liber
+          </h3>
           <p className="text-lg text-text-light mb-6">
-            Spațiu verde, umbros și liniștit, ideal pentru mese în aer liber în sezonul cald.
+            Fie că începi ziua cu un mic dejun în lumina blândă a dimineții, savurezi un prânz liniștit sau închei seara la cină, grădina de vară oferă un cadru natural și plin de farmec.
           </p>
-          <ul className="space-y-3 mb-6">
-            {features.map((f, idx) => {
-              const Icon = f.icon;
-              return (
-                <li key={idx} className="flex items-center space-x-3">
-                  <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
-                    <Icon className="w-5 h-5 text-primary-500" />
-                  </span>
-                  <span className="text-text-secondary">{f.text}</span>
-                </li>
-              );
-            })}
+          <ul className="space-y-4 mb-6">
+            <li className="flex items-center space-x-3">
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
+                <SunIcon className="w-5 h-5 text-primary-500" />
+              </span>
+              <span className="text-text-secondary">Atmosferă relaxantă, departe de agitație</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
+                <HomeIcon className="w-5 h-5 text-primary-500" />
+              </span>
+              <span className="text-text-secondary">Decor natural, cu flori, vegetație și aer curat</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
+                <SparklesIcon className="w-5 h-5 text-primary-500" />
+              </span>
+              <span className="text-text-secondary">Potrivită pentru orice masă a zilei — mic dejun, prânz sau cină</span>
+            </li>
+            <li className="flex items-center space-x-3">
+              <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
+                <SparklesIcon className="w-5 h-5 text-primary-500" />
+              </span>
+              <span className="text-text-secondary">Un loc unde mâncarea bună și natura se întâlnesc în armonie</span>
+            </li>
           </ul>
         </motion.div>
         <motion.div

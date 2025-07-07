@@ -114,15 +114,44 @@ const TerraceSection = () => {
   const openLightbox = (image) => setSelectedImage(image);
   const closeLightbox = () => setSelectedImage(null);
 
+  // Professional animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+      },
+    },
+  };
+
   return (
     <section className="section-padding bg-gradient-to-br from-background-secondary to-background-primary">
       <div className="container-custom">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-center mb-16"
         >
           <BlurText
             text="Terasă cu Vedere Panoramică"
@@ -140,18 +169,18 @@ const TerraceSection = () => {
 
         {/* Featured Image */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="mb-16"
         >
           <div className="relative overflow-hidden rounded-2xl shadow-2xl">
             <img
               src={terrace1}
               alt="Terasă Hotel Marami - Vedere panoramică principală"
               className="w-full h-96 md:h-[500px] object-cover"
-              loading="lazy"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
               <div className="absolute bottom-8 left-8 right-8">
@@ -166,56 +195,54 @@ const TerraceSection = () => {
           </div>
         </motion.div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Professional Animation */}
         <motion.div
-          layout
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-          <AnimatePresence mode="wait">
-            {terraceImages.slice(1).map((image, index) => (
-              <motion.div
-                key={image.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-                onClick={() => openLightbox(image)}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold mb-1">{image.title}</h3>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <MagnifyingGlassIcon className="w-6 h-6 text-white" />
-                  </div>
+          {terraceImages.slice(1).map((image) => (
+            <motion.div
+              key={image.id}
+              variants={itemVariants}
+              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+              onClick={() => openLightbox(image)}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-64 object-cover transition-all duration-500 ease-out group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                <div className="absolute bottom-4 left-4 right-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <h3 className="text-white font-semibold mb-1">{image.title}</h3>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+                <div className="absolute top-4 right-4 transform scale-90 group-hover:scale-100 transition-transform duration-500 ease-out">
+                  <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-12"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-center mt-16"
         >
           <p className="text-lg text-text-light mb-6">
             Rezervă o masă pe terasă și bucură-te de experiența completă
           </p>
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="btn-primary text-lg px-8 py-4"
           >
             Rezervă o Masă
@@ -229,19 +256,21 @@ const TerraceSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
               onClick={closeLightbox}
             >
               <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.8, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="relative max-w-4xl max-h-full"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={closeLightbox}
-                  className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+                  className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200"
                 >
                   <XMarkIcon className="w-8 h-8" />
                 </button>

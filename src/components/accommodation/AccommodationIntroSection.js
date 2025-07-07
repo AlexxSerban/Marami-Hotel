@@ -51,10 +51,11 @@ const AccommodationIntroSection = () => {
             onLetterAnimationComplete={handleAnimationComplete}
           />
           <p className="text-xl md:text-2xl text-text-light max-w-4xl mx-auto leading-relaxed mb-8">
-            Hotel Marami pune la dispoziție 17 camere amenajate modern, în culori calde și elegante, 
-            oferind confort deplin și priveliști superbe spre munți.
+            Camere primitoare, gândite pentru relaxarea ta
           </p>
-          
+          <p className="text-lg md:text-xl text-text-light max-w-4xl mx-auto leading-relaxed mb-8">
+            La Marami, fiecare dintre cele 17 camere este un refugiu liniștit, unde confortul modern se îmbină cu o atmosferă caldă și plină de rafinament.
+          </p>
           {/* Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {highlights.map((highlight, index) => {
@@ -92,25 +93,39 @@ const AccommodationIntroSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-bold text-text-primary mb-4">
-                Experiență de Cazare Excepțională
+                O experiență de cazare excepțională
               </h2>
+              <h3 className="text-xl md:text-2xl font-display font-semibold text-primary-500 mb-4">
+                Mai mult decât o cameră — un loc în care te regăsești
+              </h3>
               <p className="text-text-light mb-6 leading-relaxed">
-                Fiecare cameră a fost gândită pentru a oferi confortul și intimitatea pe care îi meriți. 
-                Cu priveliști spectaculoase spre munții Bucegi și Castelul Peleș, șederea ta va fi 
-                memorabilă în fiecare detaliu.
+                Fiecare spațiu de la Marami a fost gândit cu grijă pentru a-ți oferi acel sentiment de acasă, departe de agitația cotidiană.
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-text-secondary">Curățenie zilnică</span>
+              
+              <h4 className="text-lg md:text-xl font-display font-semibold text-text-primary mb-4">
+                Totul pentru starea ta de bine
+              </h4>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                  <div>
+                    <span className="text-text-secondary font-medium">Curățenie zilnică</span>
+                    <p className="text-text-light text-sm mt-1">pentru ca tu să te bucuri de un spațiu impecabil și proaspăt în fiecare zi</p>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-text-secondary">Acces gratuit la centrul de relaxare</span>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                  <div>
+                    <span className="text-text-secondary font-medium">Acces gratuit la centrul de relaxare</span>
+                    <p className="text-text-light text-sm mt-1">locul ideal unde respiri adânc și te reconectezi cu tine</p>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-text-secondary">Recepție 24/7</span>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                  <div>
+                    <span className="text-text-secondary font-medium">Recepție deschisă 24/7</span>
+                    <p className="text-text-light text-sm mt-1">mereu aici pentru tine, cu zâmbetul pe buze și dorința de a ajuta</p>
+                  </div>
                 </div>
               </div>
             </div>

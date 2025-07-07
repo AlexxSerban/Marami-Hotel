@@ -24,12 +24,22 @@ const CuisineSection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <ul className="list-disc pl-5 text-text-light mb-6 space-y-2">
-            <li>Meniul îmbină tradiția românească cu arome mediteraneene proaspete</li>
-            <li>Preparatele sunt realizate cu ingrediente locale și de sezon</li>
-            <li>Vinuri selecte din crame românești</li>
-            <li>Deserturi ușoare, create în casă</li>
+          <p className="text-lg text-text-light mb-6">
+            Fiecare farfurie spune o poveste despre grijă, simplitate și bucuria gustului bine făcut.
+          </p>
+          <p className="text-lg text-text-light mb-6">
+            Folosim ingrediente locale, de sezon, atent alese, pentru a oferi preparate echilibrate, aromate și mereu proaspete.
+          </p>
+          
+          <ul className="list-disc pl-5 text-text-light mb-6 space-y-3">
+            <li>Mâncăruri inspirate din tradiția românească și din bucătăria mediteraneană</li>
+            <li>Ingrediente locale, proaspete și de sezon</li>
+            <li>Vinuri selecte din crame românești, potrivite fiecărui fel de mâncare</li>
+            <li>Deserturi ușoare, făcute în casă, cu gust autentic</li>
           </ul>
+          <p className="text-lg text-text-light">
+            Un meniu creat pentru a te face să încetinești ritmul și să te bucuri de fiecare îmbucătură.
+          </p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 30 }}

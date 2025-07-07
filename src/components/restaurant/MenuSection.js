@@ -179,8 +179,11 @@ const MenuSection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <p className="text-lg text-text-light max-w-2xl mx-auto leading-relaxed font-sans">
-            Preparate rafinate, ingrediente proaspete, experiențe memorabile.
+          <h3 className="text-xl md:text-2xl font-display font-semibold text-primary-500 mb-4">
+            Gustul mâncării de acasă, pregătit cu grijă și ingrediente proaspete
+          </h3>
+          <p className="text-lg text-text-light max-w-3xl mx-auto leading-relaxed font-sans mb-4">
+            Mâncarea noastră te invită să te relaxezi, să te simți bine și să savurezi momentele petrecute alături de cei dragi, exact ca la tine acasă.
           </p>
         </motion.div>
 

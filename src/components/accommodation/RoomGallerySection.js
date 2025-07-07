@@ -143,9 +143,14 @@ const RoomGallerySection = () => {
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
-            Explorează camerele noastre prin această galerie interactivă. 
-            Fiecare imagine poate fi vizualizată în format complet.
+          <p className="text-xl md:text-2xl text-text-light max-w-4xl mx-auto mb-4">
+            Lasă-te inspirat de atmosfera Marami
+          </p>
+          <p className="text-lg text-text-light max-w-3xl mx-auto mb-4">
+            Descoperă camerele noastre așa cum sunt în realitate: primitoare, luminoase și gândite pentru relaxarea ta.
+          </p>
+          <p className="text-lg text-text-light max-w-3xl mx-auto">
+            O privire în interiorul locului unde te vei simți ca acasă.
           </p>
         </motion.div>
 
