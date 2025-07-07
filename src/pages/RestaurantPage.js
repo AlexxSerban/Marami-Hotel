@@ -7,6 +7,7 @@ import CuisineSection from '../components/restaurant/CuisineSection';
 import MenuSection from '../components/restaurant/MenuSection';
 import CulinaryExperienceSection from '../components/restaurant/CulinaryExperienceSection';
 import RestaurantGallerySection from '../components/restaurant/RestaurantGallerySection';
+import TerraceSection from '../components/TerraceSection';
 import RestaurantReservationSection from '../components/restaurant/RestaurantReservationSection';
 
 const RestaurantPage = () => {
@@ -20,6 +21,7 @@ const RestaurantPage = () => {
         <MenuSection />
         <CulinaryExperienceSection />
         <RestaurantGallerySection />
+        <TerraceSection />
         <RestaurantReservationSection />
       </main>
       <Footer />

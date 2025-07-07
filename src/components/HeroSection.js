@@ -74,15 +74,6 @@ const HeroSection = () => {
             <p>
               Situat la doar 300 de metri de Peleș, într-o zonă liniștită și înconjurată de natură, Hotel Marami îți oferă tot ce ai nevoie pentru un sejur confortabil: aer curat, priveliști superbe către munți și o atmosferă relaxantă.
             </p>
-            <p>
-              Fără agitație, fără aglomerație. Doar liniște, confort și ospitalitate.
-            </p>
-            <p>
-              Un loc în care te simți bine cu tine și unde îți vei dori să revii.
-            </p>
-            <p>
-              Descoperă Sinaia într-un cadru intim, autentic și relaxant.
-            </p>
             <p className="text-primary-300 font-semibold">
               Bine ai venit acasă, la Marami.
             </p>
