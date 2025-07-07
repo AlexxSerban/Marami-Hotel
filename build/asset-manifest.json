@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Hotel-Marami/static/css/main.24c1770a.css",
+    "main.js": "/Hotel-Marami/static/js/main.0d08b7a3.js",
+    "index.html": "/Hotel-Marami/index.html",
+    "main.24c1770a.css.map": "/Hotel-Marami/static/css/main.24c1770a.css.map",
+    "main.0d08b7a3.js.map": "/Hotel-Marami/static/js/main.0d08b7a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24c1770a.css",
+    "static/js/main.0d08b7a3.js"
+  ]
+}
