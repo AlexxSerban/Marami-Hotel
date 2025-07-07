@@ -22,7 +22,7 @@ function ScrollToTop() {
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App no-overflow">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />

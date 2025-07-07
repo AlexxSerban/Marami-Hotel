@@ -11,9 +11,9 @@ import AdditionalServicesSection from '../components/facilities/AdditionalServic
 
 const FacilitiesPage = () => {
   return (
-    <div className="FacilitiesPage">
+    <div className="FacilitiesPage no-overflow">
       <Navbar />
-      <main>
+      <main className="no-overflow">
         <FacilitiesIntroSection />
         <ComfortableRoomsSection />
         <RestaurantBarSection />

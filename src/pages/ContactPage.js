@@ -9,9 +9,9 @@ import ContactCTASection from '../components/contact/ContactCTASection';
 
 const ContactPage = () => {
   return (
-    <div className="ContactPage">
+    <div className="ContactPage no-overflow">
       <Navbar />
-      <main>
+      <main className="no-overflow">
         <ContactHeroSection />
         <ContactInfoSection />
         <ContactMapSection />

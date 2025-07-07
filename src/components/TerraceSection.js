@@ -144,7 +144,7 @@ const TerraceSection = () => {
   };
 
   return (
-    <section className="section-padding bg-gradient-to-br from-background-secondary to-background-primary">
+    <section className="section-padding bg-gradient-to-br from-background-secondary to-background-primary no-overflow">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

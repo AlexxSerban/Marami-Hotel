@@ -138,7 +138,7 @@ const Navbar = () => {
             : 'bg-black/20'
         } ${isScrolled ? 'top-0' : 'md:top-10 top-0'}`}
       >
-        <div className="w-full px-4 md:px-8 lg:px-16">
+        <div className="w-full px-4 md:px-6 lg:px-8 xl:px-16 max-w-full overflow-hidden">
           {/* Desktop Layout */}
           <div className="hidden md:grid md:grid-cols-3 items-center h-16">
             {/* Logo - Left */}

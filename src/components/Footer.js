@@ -114,9 +114,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-text-primary text-white">
+    <footer className="bg-text-primary text-white no-overflow">
       {/* Main Footer Content */}
-      <div className="container-custom py-16 px-4 sm:px-6 lg:px-8">
+      <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-center lg:text-left">
           {/* Contact Info */}
           <div className="lg:col-span-2">
@@ -197,7 +197,7 @@ const Footer = () => {
 
       {/* Newsletter Section */}
       <div className="border-t border-gray-700 py-8">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
+        <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-center lg:text-left">
             <div>
               <h3 className="font-display font-semibold text-xl mb-2">
@@ -227,7 +227,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 py-6">
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
+        <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
             <div className="text-gray-400 text-sm">
               © {currentYear} Hotel Marami. Toate drepturile rezervate.

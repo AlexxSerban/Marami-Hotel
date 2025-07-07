@@ -9,9 +9,9 @@ import AccommodationCTASection from '../components/accommodation/AccommodationCT
 
 const AccommodationPage = () => {
   return (
-    <div className="AccommodationPage">
+    <div className="AccommodationPage no-overflow">
       <Navbar />
-      <main>
+      <main className="no-overflow">
         <AccommodationIntroSection />
         <RoomTypesSection />
         <RoomGallerySection />

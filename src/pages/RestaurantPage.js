@@ -12,9 +12,9 @@ import RestaurantReservationSection from '../components/restaurant/RestaurantRes
 
 const RestaurantPage = () => {
   return (
-    <div className="RestaurantPage">
+    <div className="RestaurantPage no-overflow">
       <Navbar />
-      <main>
+      <main className="no-overflow">
         <RestaurantIntroSection />
         <GardenSection />
         <CuisineSection />

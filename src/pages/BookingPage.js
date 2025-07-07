@@ -6,9 +6,9 @@ import BookingConfirmationSection from '../components/booking/BookingConfirmatio
 
 const BookingPage = () => {
   return (
-    <div className="BookingPage">
+    <div className="BookingPage no-overflow">
       <Navbar />
-      <main className="pt-24">
+      <main className="pt-24 no-overflow">
         <BookingFormSection />
         <BookingConfirmationSection />
       </main>

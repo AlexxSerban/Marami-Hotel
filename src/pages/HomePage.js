@@ -12,9 +12,9 @@ import FloatingBookButton from '../components/FloatingBookButton';
 
 const HomePage = () => {
   return (
-    <div className="HomePage">
+    <div className="HomePage no-overflow">
       <Navbar />
-      <main>
+      <main className="no-overflow">
         <HeroSection />
         <AboutLocationSection />
         <RoomsSection />

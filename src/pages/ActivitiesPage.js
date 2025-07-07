@@ -11,9 +11,9 @@ import Footer from '../components/Footer';
 
 const ActivitiesPage = () => {
   return (
-    <div className="ActivitiesPage">
+    <div className="ActivitiesPage no-overflow">
       <Navbar />
-      <main>
+      <main className="no-overflow">
         <ActivitiesHeroSection />
         <AvailableActivitiesSection />
         <RecommendationsSection />

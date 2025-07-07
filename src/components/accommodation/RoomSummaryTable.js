@@ -85,8 +85,8 @@ const RoomSummaryTable = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hidden lg:block"
         >
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden no-overflow">
+            <div className="overflow-x-auto max-w-full">
               <table className="w-full">
                 <thead className="bg-primary-50">
                   <tr>

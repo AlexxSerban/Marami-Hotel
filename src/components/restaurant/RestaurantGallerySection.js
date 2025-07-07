@@ -95,7 +95,7 @@ const RestaurantGallerySection = () => {
   };
 
   return (
-    <section className="section-padding bg-background-secondary">
+    <section className="section-padding bg-background-secondary no-overflow">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
