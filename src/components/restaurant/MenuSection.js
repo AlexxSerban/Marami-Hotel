@@ -169,7 +169,7 @@ const menuData = [
         allergens: '-'
       },
     ],
-    },
+  },
   {
     id: 'supe',
     label: 'Supe & Ciorbe',
@@ -809,7 +809,7 @@ const MenuSection = () => {
                                         </p>
                                       </div>
                                     )}
-                                  </div>
+                                    </div>
                                   </div>
                                 </motion.div>
                               )}
