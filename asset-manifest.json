@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Marami-Hotel/static/css/main.87e1f70a.css",
-    "main.js": "/Marami-Hotel/static/js/main.d0a394b7.js",
+    "main.css": "/Marami-Hotel/static/css/main.e04b244a.css",
+    "main.js": "/Marami-Hotel/static/js/main.dc370f09.js",
     "static/media/restaurant7.jpg": "/Marami-Hotel/static/media/restaurant7.f2426aafa6cd161af8d3.jpg",
     "static/media/Terrace10.jpg": "/Marami-Hotel/static/media/Terrace10.51c2ea9afbc690ebdc65.jpg",
     "static/media/restaurant4.jpg": "/Marami-Hotel/static/media/restaurant4.78784def11b67a107d93.jpg",
@@ -36,11 +36,11 @@
     "static/media/Single.jpg": "/Marami-Hotel/static/media/Single.e9983d8264197cfc7aca.jpg",
     "static/media/Matrimoniala.jpg": "/Marami-Hotel/static/media/Matrimoniala.daeb15905d94909ced13.jpg",
     "index.html": "/Marami-Hotel/index.html",
-    "main.87e1f70a.css.map": "/Marami-Hotel/static/css/main.87e1f70a.css.map",
-    "main.d0a394b7.js.map": "/Marami-Hotel/static/js/main.d0a394b7.js.map"
+    "main.e04b244a.css.map": "/Marami-Hotel/static/css/main.e04b244a.css.map",
+    "main.dc370f09.js.map": "/Marami-Hotel/static/js/main.dc370f09.js.map"
   },
   "entrypoints": [
-    "static/css/main.87e1f70a.css",
-    "static/js/main.d0a394b7.js"
+    "static/css/main.e04b244a.css",
+    "static/js/main.dc370f09.js"
   ]
 }
