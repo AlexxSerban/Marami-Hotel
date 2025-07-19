@@ -84,7 +84,20 @@ const ContactInfoSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="block"
               >
-                <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center">
+                <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center h-full flex flex-col justify-between">
+                  <div>
+                    <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Icon className="w-6 h-6 text-primary-500" />
+                    </div>
+                    <h3 className="font-semibold text-text-primary mb-2">{info.title}</h3>
+                    <p className="text-primary-500 font-medium mb-1">{info.value}</p>
+                    <p className="text-text-secondary text-sm">{info.description}</p>
+                  </div>
+                </div>
+              </motion.a>
+            ) : (
+              <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center h-full flex flex-col justify-between">
+                <div>
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-6 h-6 text-primary-500" />
                   </div>
@@ -92,15 +105,6 @@ const ContactInfoSection = () => {
                   <p className="text-primary-500 font-medium mb-1">{info.value}</p>
                   <p className="text-text-secondary text-sm">{info.description}</p>
                 </div>
-              </motion.a>
-            ) : (
-              <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-6 h-6 text-primary-500" />
-                </div>
-                <h3 className="font-semibold text-text-primary mb-2">{info.title}</h3>
-                <p className="text-primary-500 font-medium mb-1">{info.value}</p>
-                <p className="text-text-secondary text-sm">{info.description}</p>
               </div>
             );
 
