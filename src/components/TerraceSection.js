@@ -179,7 +179,7 @@ const TerraceSection = () => {
             <img
               src={terrace1}
               alt="Terasă Hotel Marami - Vedere panoramică principală"
-              className="w-full h-96 md:h-[500px] object-cover"
+                              className="w-full min-h-96 md:min-h-[500px] object-cover"
               loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">

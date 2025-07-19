@@ -101,7 +101,7 @@ const RoomsSection = () => {
             <motion.div
               key={room.id}
               variants={cardVariants}
-              className="relative h-80 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer"
+              className="relative min-h-80 rounded-2xl overflow-hidden shadow-lg card-hover cursor-pointer"
             >
               {/* Background Image */}
               <img

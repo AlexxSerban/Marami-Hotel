@@ -114,7 +114,7 @@ const AboutSection = () => {
               <img
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
                 alt="Hotel Marami Sinaia - Exterior"
-                className="w-full h-96 md:h-[500px] object-cover"
+                className="w-full min-h-96 md:min-h-[500px] object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>

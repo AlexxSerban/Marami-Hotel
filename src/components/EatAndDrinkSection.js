@@ -45,7 +45,7 @@ const EatAndDrinkSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative min-h-96 lg:min-h-[500px] rounded-2xl overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
                 alt="Kitchen Club Restaurant"
