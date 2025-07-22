@@ -135,12 +135,12 @@ const RoomsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-12"
+          className="text-center mt-12 pb-8 md:pb-12 lg:pb-16"
         >
           <p className="text-text-light mb-4">
             Nu găsești ce cauți? Contactează-ne pentru opțiuni personalizate.
           </p>
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-10 justify-center items-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
