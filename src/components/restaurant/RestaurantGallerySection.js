@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
@@ -55,6 +55,97 @@ const galleryImages = [
   },
 ];
 
+const GalleryCarousel = ({ images, onImageClick }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  // Preload images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = images.map((image) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = image.src;
+        });
+      });
+      
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true); // Continue anyway
+      }
+    };
+    
+    preloadImages();
+  }, [images]);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative h-96 md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={currentImageIndex}
+          className="absolute inset-0 cursor-pointer"
+          onClick={() => onImageClick(images[currentImageIndex])}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          style={{ willChange: 'transform, opacity' }}
+        >
+          <img
+            src={images[currentImageIndex].src}
+            alt={images[currentImageIndex].alt}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ willChange: 'transform, opacity' }}
+          />
+          
+          {/* Overlay with title */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+            <div className="absolute bottom-6 left-6 right-6">
+              <h3 className="text-white text-xl md:text-2xl font-semibold mb-2">
+                {images[currentImageIndex].title}
+              </h3>
+              <div className="flex items-center space-x-2">
+                <MagnifyingGlassIcon className="w-5 h-5 text-white" />
+                <span className="text-white/90 text-sm">Click pentru a mări</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      
+      {/* Dots indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <motion.button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'bg-white scale-125' 
+                : 'bg-white/50 hover:bg-white/75'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const RestaurantGallerySection = () => {
   const handleAnimationComplete = () => {
     console.log('RestaurantGallery title animation completed!');
@@ -65,34 +156,7 @@ const RestaurantGallerySection = () => {
   const openLightbox = (image) => setSelectedImage(image);
   const closeLightbox = () => setSelectedImage(null);
 
-  // Professional animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 30,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-      },
-    },
-  };
 
   return (
     <section className="section-padding bg-background-secondary no-overflow">
@@ -117,37 +181,15 @@ const RestaurantGallerySection = () => {
           </p>
         </motion.div>
 
-        {/* Gallery Grid - Professional Animation */}
+        {/* Gallery Carousel */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
         >
-          {galleryImages.map((image) => (
-            <motion.div
-              key={image.id}
-              variants={itemVariants}
-              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-              onClick={() => openLightbox(image)}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-64 object-cover transition-all duration-500 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <h3 className="text-white font-semibold mb-1">{image.title}</h3>
-                </div>
-                <div className="absolute top-4 right-4 transform scale-90 group-hover:scale-100 transition-transform duration-500 ease-out">
-                  <MagnifyingGlassIcon className="w-6 h-6 text-white" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <GalleryCarousel images={galleryImages} onImageClick={openLightbox} />
         </motion.div>
 
         {/* Lightbox */}

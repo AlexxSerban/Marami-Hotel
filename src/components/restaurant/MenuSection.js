@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 import BlurText from '../BlurText';
 
 const menuData = [
@@ -610,246 +611,165 @@ const menuData = [
   },
 ];
 
+const ImageCarousel = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  const images = [
+    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+  ];
+
+  // Preload images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = images.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = src;
+        });
+      });
+      
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesLoaded(true); // Continue anyway
+      }
+    };
+    
+    preloadImages();
+  }, [images]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.img
+          key={currentImageIndex}
+          src={images[currentImageIndex]}
+          alt={`Restaurant image ${currentImageIndex + 1}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          style={{ willChange: 'transform, opacity' }}
+        />
+      </AnimatePresence>
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+      
+      {/* Dots indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <motion.button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentImageIndex 
+                ? 'bg-white scale-125' 
+                : 'bg-white/50 hover:bg-white/75'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const MenuSection = () => {
   const handleAnimationComplete = () => {
     console.log('Menu title animation completed!');
   };
 
-  const [activeTab, setActiveTab] = useState(menuData[0].id);
-  const [expandedItems, setExpandedItems] = useState({});
 
-  const toggleItem = (itemId) => {
-    setExpandedItems(prev => ({
-      ...prev,
-      [itemId]: !prev[itemId]
-    }));
-  };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut",
-      },
-    },
-  };
 
   return (
     <section className="section-padding bg-white relative">
       <div className="container-custom">
-        {/* Header */}
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Image Carousel */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <ImageCarousel />
+          </motion.div>
+
+          {/* Right Column - Content */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center lg:text-left"
         >
           <BlurText
             text="Meniul"
-            className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-text-primary mb-6 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text-primary mb-6 tracking-tight"
             delay={100}
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
           />
-          <h3 className="text-xl md:text-2xl font-display font-semibold text-primary-500 mb-4">
-            Gustul mâncării de acasă, pregătit cu grijă și ingrediente proaspete
-          </h3>
-          <p className="text-lg text-text-light max-w-3xl mx-auto leading-relaxed font-sans mb-4">
-            Mâncarea noastră te invită să te relaxezi, să te simți bine și să savurezi momentele petrecute alături de cei dragi, exact ca la tine acasă.
-          </p>
-        </motion.div>
-
-        {/* Minimalist Tab Navigation */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-2 mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {menuData.map((cat) => (
-            <motion.button
-              key={cat.id}
-              variants={itemVariants}
-              onClick={() => setActiveTab(cat.id)}
-              className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 text-sm tracking-wide font-button ${
-                activeTab === cat.id
-                  ? 'bg-primary-500 text-white shadow-sm'
-                  : 'text-text-light hover:text-primary-500 hover:bg-gray-50'
-              }`}
-            >
-              <span className="mr-2 text-base">{cat.icon}</span>
-              <span className="font-medium">{cat.label}</span>
-            </motion.button>
-          ))}
-        </motion.div>
-
-        {/* Menu Content */}
-        <div className="max-w-5xl mx-auto">
-          <AnimatePresence mode="wait">
-            {menuData.map((cat) =>
-              activeTab === cat.id ? (
-                <motion.div
-                  key={cat.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="space-y-12"
-                >
-                  {/* Category Header */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1, duration: 0.4 }}
-                    className="text-center mb-12"
-                  >
-                    <div className="inline-flex flex-col items-center space-y-4">
-                      <span className="text-5xl mb-2">{cat.icon}</span>
-                      <div>
-                        <h3 className="text-3xl font-display font-bold text-text-primary mb-3 tracking-wide">{cat.label}</h3>
-                        <p className="text-text-light text-lg font-sans max-w-md mx-auto leading-relaxed">{cat.description}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Menu Items - Apple Style */}
-                  <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="space-y-8"
-                  >
-                    {cat.items.map((item, idx) => {
-                      const itemId = `${cat.id}-${idx}`;
-                      const isExpanded = expandedItems[itemId];
-                      
-                      return (
-                        <motion.div
-                          key={idx}
-                          variants={itemVariants}
-                          className="group"
-                        >
-                          <div className="bg-gray-50/50 rounded-2xl border border-gray-100 hover:bg-gray-50 hover:border-gray-200 transition-all duration-300 overflow-hidden">
-                            <div className="p-8">
-                              <div className="flex items-center justify-between">
-                                <div className="flex-1">
-                                  <p className="text-xl text-text-primary font-sans leading-relaxed group-hover:text-text-primary transition-colors duration-300">
-                                    {item.name}
-                                  </p>
-                                </div>
-                                <div className="ml-6 flex-shrink-0">
-                                  <button
-                                    onClick={() => toggleItem(itemId)}
-                                    className="w-8 h-8 bg-primary-500/10 rounded-full flex items-center justify-center text-primary-500 hover:bg-primary-500/20 transition-all duration-300 group-hover:bg-primary-500/20"
-                                  >
-                                    <ChevronDownIcon 
-                                      className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
-                                    />
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            {/* Expanded Content */}
-                            <AnimatePresence>
-                              {isExpanded && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: 'auto', opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.3, ease: "easeOut" }}
-                                  className="border-t border-gray-100"
-                                >
-                                  <div className="p-8 pt-0">
-                                                                      <div className="space-y-4">
-                                    <div className="bg-white/50 rounded-xl p-6">
-                                      <h4 className="text-sm font-button font-medium text-primary-500 mb-3 uppercase tracking-wide">
-                                        Ingrediente
-                                      </h4>
-                                      <p className="text-text-light font-sans leading-relaxed">
-                                        {item.ingredients}
-                                      </p>
-                                    </div>
-                                    
-                                    {item.nutrition && (
-                                      <div className="bg-blue-50/50 rounded-xl p-6">
-                                        <h4 className="text-sm font-button font-medium text-blue-600 mb-3 uppercase tracking-wide">
-                                          Valori Nutritionale / 100g
-                                        </h4>
-                                        <p className="text-text-light font-sans leading-relaxed text-sm">
-                                          {item.nutrition}
-                                        </p>
-                                      </div>
-                                    )}
-                                    
-                                    {item.allergens && (
-                                      <div className="bg-orange-50/50 rounded-xl p-6">
-                                        <h4 className="text-sm font-button font-medium text-orange-600 mb-3 uppercase tracking-wide">
-                                          Alergeni
-                                        </h4>
-                                        <p className="text-text-light font-sans leading-relaxed text-sm">
-                                          {item.allergens}
-                                        </p>
-                                      </div>
-                                    )}
-                                    </div>
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </motion.div>
-                </motion.div>
-              ) : null
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Minimalist Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center mt-20"
-        >
-          <div className="bg-gray-50 rounded-3xl p-12 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-display font-bold text-text-primary mb-4 tracking-wide">
-              Rezervă o masă
+            <h3 className="text-xl md:text-2xl font-display font-semibold text-primary-500 mb-6">
+              Gustul mâncării de acasă, pregătit cu grijă și ingrediente proaspete
             </h3>
-            <p className="text-text-light text-lg mb-8 font-sans leading-relaxed">
-              Pentru o experiență culinară personalizată, vă recomandăm să faceți o rezervare.
+            <p className="text-lg text-text-light leading-relaxed font-sans mb-8">
+              Mâncarea noastră te invită să te relaxezi, să te simți bine și să savurezi momentele petrecute alături de cei dragi, exact ca la tine acasă.
             </p>
+            
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <motion.div 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Link
+                  to="/meniu"
+                  className="bg-primary-500 text-white px-8 py-4 rounded-lg font-button font-medium text-lg shadow-sm hover:shadow-md transition-all duration-300 inline-block"
+                >
+                  Vezi meniul complet
+                </Link>
+                </motion.div>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-primary-500 text-white px-8 py-4 rounded-lg font-button font-medium text-lg shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white text-primary-500 border-2 border-primary-500 px-8 py-4 rounded-lg font-button font-medium text-lg shadow-sm hover:shadow-md transition-all duration-300"
               onClick={() => window.open('tel:+40759033047', '_self')}
             >
               Rezervă acum
             </motion.button>
           </div>
         </motion.div>
+        </div>
+
+
+
+        
       </div>
     </section>
   );
