@@ -104,113 +104,24 @@ const terraceImages = [
   },
 ];
 
-const TerraceCarousel = ({ images, onImageClick }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  
-  // Preload images
-  useEffect(() => {
-    const preloadImages = async () => {
-      const imagePromises = images.map((image) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.onload = resolve;
-          img.onerror = reject;
-          img.src = image.src;
-        });
-      });
-      
-      try {
-        await Promise.all(imagePromises);
-        setImagesLoaded(true);
-      } catch (error) {
-        console.error('Error preloading images:', error);
-        setImagesLoaded(true); // Continue anyway
-      }
-    };
-    
-    preloadImages();
-  }, [images]);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  return (
-    <div className="relative h-96 md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={currentImageIndex}
-          className="absolute inset-0 cursor-pointer"
-          onClick={() => onImageClick(images[currentImageIndex])}
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          style={{ willChange: 'transform, opacity' }}
-        >
-          <img
-            src={images[currentImageIndex].src}
-            alt={images[currentImageIndex].alt}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ willChange: 'transform, opacity' }}
-          />
-          
-          {/* Overlay with title */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
-            <div className="absolute bottom-6 left-6 right-6">
-              <h3 className="text-white text-xl md:text-2xl font-semibold mb-2">
-                {images[currentImageIndex].title}
-              </h3>
-              <div className="flex items-center space-x-2">
-                <MagnifyingGlassIcon className="w-5 h-5 text-white" />
-                <span className="text-white/90 text-sm">Click pentru a mări</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
-      
-      {/* Dots indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
-          <motion.button
-            key={index}
-            onClick={() => setCurrentImageIndex(index)}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentImageIndex 
-                ? 'bg-white scale-125' 
-                : 'bg-white/50 hover:bg-white/75'
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const TerraceSplitCarousel = ({ images, onImageClick }) => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0); // -1 left, 1 right
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Preload images
+  // Preload images for better performance
   useEffect(() => {
     const preloadImages = async () => {
       const imagePromises = images.map((image) => {
-        return new window.Image();
+        return new Promise((resolve) => {
+          const img = new window.Image();
+          img.onload = resolve;
+          img.src = image.src;
+        });
       });
       try {
         await Promise.all(imagePromises);
-        setImagesLoaded(true);
       } catch {
-        setImagesLoaded(true);
+        // Continue even if some images fail to load
       }
     };
     preloadImages();
