@@ -11,9 +11,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative py-20 md:py-32 flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-8 md:py-16 lg:py-24">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 min-h-screen">
+      <div className="absolute inset-0 z-0">
         <img
           src={exteriorView1}
           alt="Hotel Marami Sinaia - Vedere exterioară"
@@ -33,10 +33,10 @@ const HeroSection = () => {
           className="max-w-4xl mx-auto"
         >
           {/* Main Headline with SplitText */}
-          <div className="mb-8 md:mb-12">
+          <div className="mb-6 md:mb-8 lg:mb-12">
             <SplitText
               text="Hotel Marami"
-              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-shadow-lg leading-tight block"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-shadow-lg leading-tight block"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -50,7 +50,7 @@ const HeroSection = () => {
             />
             <SplitText
               text="Locul în care te simți ca acasă, la poalele Castelului Peleș"
-              className="text-2xl md:text-3xl lg:text-4xl font-display font-semibold text-primary-300 text-shadow-lg leading-tight block mt-2"
+              className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-display font-semibold text-primary-300 text-shadow-lg leading-tight block mt-2"
               delay={100}
               duration={0.6}
               ease="power3.out"
@@ -69,7 +69,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl lg:text-2xl mb-10 md:mb-12 text-gray-200 text-shadow max-w-4xl mx-auto leading-relaxed space-y-4"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 lg:mb-12 text-gray-200 text-shadow max-w-4xl mx-auto leading-relaxed space-y-3 md:space-y-4"
           >
             <p>
               Situat la doar 300 de metri de Peleș, într-o zonă liniștită și înconjurată de natură, Hotel Marami îți oferă tot ce ai nevoie pentru un sejur confortabil: aer curat, priveliști superbe către munți și o atmosferă relaxantă.
@@ -84,7 +84,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-6 sm:gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -92,7 +92,7 @@ const HeroSection = () => {
             >
               <Link
                 to="/rezervare"
-                className="btn-secondary text-lg px-8 py-4 flex items-center space-x-2 group"
+                className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center space-x-2 group"
               >
                 <span>Rezervă Acum</span>
                 <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -105,7 +105,7 @@ const HeroSection = () => {
             >
               <Link
                 to="/cazare"
-                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-lg px-8 py-4 rounded-lg"
+                className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/30 transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-lg"
               >
                 Vezi Camerele
               </Link>
