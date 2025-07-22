@@ -106,14 +106,7 @@ const AboutLocationSection = () => {
               })}
             </div>
 
-            {/* CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary mx-auto lg:mx-0"
-            >
-              Vezi Pe Hartă
-            </motion.button>
+
           </motion.div>
 
           {/* Map and Image */}
