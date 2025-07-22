@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import { 
   PhoneIcon,
   EnvelopeIcon,
@@ -10,6 +11,8 @@ import {
 import BlurText from './BlurText';
 
 const ContactSection = () => {
+  const form = useRef();
+  
   const handleAnimationComplete = () => {
     console.log('Contact title animation completed!');
   };
@@ -22,6 +25,7 @@ const ContactSection = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -34,20 +38,33 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-      newsletter: false
-    });
-    
-    alert('Mulțumim pentru mesaj! Vom răspunde în cel mai scurt timp.');
+    try {
+      const result = await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Înlocuiește cu Service ID-ul tău
+        'YOUR_TEMPLATE_ID', // Înlocuiește cu Template ID-ul tău
+        form.current,
+        'YOUR_PUBLIC_KEY' // Înlocuiește cu Public Key-ul tău
+      );
+      
+      console.log('SUCCESS!', result.text);
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+        newsletter: false
+      });
+      
+    } catch (error) {
+      console.log('FAILED...', error.text);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -119,7 +136,7 @@ const ContactSection = () => {
                 Formular de Contact
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
                     Nume complet *
@@ -191,6 +208,27 @@ const ContactSection = () => {
                 >
                   {isSubmitting ? 'Se trimite...' : 'Trimite Întrebarea'}
                 </motion.button>
+                
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+                  >
+                    ✅ Mulțumim pentru mesaj! Vom răspunde în cel mai scurt timp.
+                  </motion.div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+                  >
+                    ❌ A apărut o eroare. Te rugăm să încerci din nou sau să ne contactezi direct.
+                  </motion.div>
+                )}
               </form>
             </div>
           </motion.div>
