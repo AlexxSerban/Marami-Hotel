@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import BlurText from './BlurText';
 import doubleRoom from '../assets/rooms/Double_camera.jpg';
 import doubleLux from '../assets/rooms/Double de lux.jpg';
