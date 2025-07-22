@@ -3,7 +3,6 @@ import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-d
 import HomePage from './pages/HomePage';
 import AccommodationPage from './pages/AccommodationPage';
 import RestaurantPage from './pages/RestaurantPage';
-import MenuPage from './pages/MenuPage';
 import FacilitiesPage from './pages/FacilitiesPage';
 import ActivitiesPage from './pages/ActivitiesPage';
 import ContactPage from './pages/ContactPage';
@@ -29,7 +28,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/cazare" element={<AccommodationPage />} />
           <Route path="/restaurant" element={<RestaurantPage />} />
-          <Route path="/meniu" element={<MenuPage />} />
           <Route path="/dotari" element={<FacilitiesPage />} />
           <Route path="/activitati" element={<ActivitiesPage />} />
           <Route path="/contact" element={<ContactPage />} />

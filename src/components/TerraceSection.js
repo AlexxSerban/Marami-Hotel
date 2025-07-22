@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
@@ -104,122 +104,6 @@ const terraceImages = [
   },
 ];
 
-const TerraceSplitCarousel = ({ images, onImageClick }) => {
-  const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 left, 1 right
-
-  // Preload images for better performance
-  useEffect(() => {
-    const preloadImages = async () => {
-      const imagePromises = images.map((image) => {
-        return new Promise((resolve) => {
-          const img = new window.Image();
-          img.onload = resolve;
-          img.src = image.src;
-        });
-      });
-      try {
-        await Promise.all(imagePromises);
-      } catch {
-        // Continue even if some images fail to load
-      }
-    };
-    preloadImages();
-  }, [images]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'ArrowRight') next();
-    };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  });
-
-  const next = () => {
-    if (current < images.length - 1) {
-      setDirection(1);
-      setCurrent((c) => c + 1);
-    }
-  };
-  const prev = () => {
-    if (current > 0) {
-      setDirection(-1);
-      setCurrent((c) => c - 1);
-    }
-  };
-  const goTo = (idx) => {
-    setDirection(idx > current ? 1 : -1);
-    setCurrent(idx);
-  };
-
-  return (
-    <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch">
-      {/* Thumbnails */}
-      <div className="order-2 md:order-1 flex md:flex-col gap-2 md:overflow-y-auto overflow-x-auto max-h-[600px] md:max-h-[600px] md:w-32 w-full pb-2 md:pb-0">
-        {images.map((img, idx) => (
-          <button
-            key={img.id}
-            onClick={() => goTo(idx)}
-            className={`shrink-0 border-2 rounded-md overflow-hidden cursor-pointer w-20 h-20 md:w-28 md:h-28 transition-all duration-200 ${idx === current ? 'border-primary-500 ring-2 ring-primary-400' : 'border-gray-200'}`}
-            aria-label={`Miniatura ${img.title}`}
-          >
-            <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
-          </button>
-        ))}
-      </div>
-      {/* Main image + controls */}
-      <div className="order-1 md:order-2 relative grow min-h-96 bg-white rounded-lg flex items-center justify-center">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.img
-            key={current}
-            src={images[current].src}
-            alt={images[current].alt}
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-lg shadow-xl"
-            initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            style={{ willChange: 'transform, opacity' }}
-            onClick={() => onImageClick(images[current])}
-          />
-        </AnimatePresence>
-        {/* Overlay with title */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent pointer-events-none rounded-lg" />
-        <div className="absolute bottom-6 left-6 right-6 z-10">
-          <h3 className="text-white text-xl md:text-2xl font-semibold mb-2 drop-shadow-lg">
-            {images[current].title}
-          </h3>
-          <div className="flex items-center space-x-2">
-            <MagnifyingGlassIcon className="w-5 h-5 text-white" />
-            <span className="text-white/90 text-sm">Click pentru a mări</span>
-          </div>
-        </div>
-        {/* Prev/Next buttons */}
-        <button
-          type="button"
-          onClick={prev}
-          disabled={current === 0}
-          className="absolute inset-y-0 left-0 flex items-center justify-center w-12 h-full text-white hover:bg-black/10 focus:outline-none focus:bg-black/10 rounded-s-lg disabled:opacity-50 disabled:pointer-events-none z-20"
-          aria-label="Previous"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg>
-        </button>
-        <button
-          type="button"
-          onClick={next}
-          disabled={current === images.length - 1}
-          className="absolute inset-y-0 right-0 flex items-center justify-center w-12 h-full text-white hover:bg-black/10 focus:outline-none focus:bg-black/10 rounded-e-lg disabled:opacity-50 disabled:pointer-events-none z-20"
-          aria-label="Next"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg>
-        </button>
-      </div>
-    </div>
-  );
-};
-
 const TerraceSection = () => {
   const handleAnimationComplete = () => {
     console.log('TerraceSection title animation completed!');
@@ -230,7 +114,34 @@ const TerraceSection = () => {
   const openLightbox = (image) => setSelectedImage(image);
   const closeLightbox = () => setSelectedImage(null);
 
+  // Professional animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+  };
 
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      scale: 0.95
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
+      },
+    },
+  };
 
   return (
     <section className="section-padding bg-gradient-to-br from-background-secondary to-background-primary no-overflow">
@@ -284,15 +195,37 @@ const TerraceSection = () => {
           </div>
         </motion.div>
 
-        {/* Terrace Gallery Carousel */}
+        {/* Gallery Grid - Professional Animation */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-6xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-          <TerraceSplitCarousel images={terraceImages} onImageClick={openLightbox} />
+          {terraceImages.slice(1).map((image) => (
+            <motion.div
+              key={image.id}
+              variants={itemVariants}
+              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+              onClick={() => openLightbox(image)}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-64 object-cover transition-all duration-500 ease-out group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                <div className="absolute bottom-4 left-4 right-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <h3 className="text-white font-semibold mb-1">{image.title}</h3>
+                </div>
+                <div className="absolute top-4 right-4 transform scale-90 group-hover:scale-100 transition-transform duration-500 ease-out">
+                  <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Call to Action */}
