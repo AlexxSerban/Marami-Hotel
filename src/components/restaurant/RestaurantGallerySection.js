@@ -57,26 +57,23 @@ const galleryImages = [
 
 const GalleryCarousel = ({ images, onImageClick }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
   
-  // Preload images
+  // Preload images for better performance
   useEffect(() => {
     const preloadImages = async () => {
       const imagePromises = images.map((image) => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           const img = new Image();
           img.onload = resolve;
-          img.onerror = reject;
+          img.onerror = resolve; // Continue even if some images fail
           img.src = image.src;
         });
       });
       
       try {
         await Promise.all(imagePromises);
-        setImagesLoaded(true);
       } catch (error) {
         console.error('Error preloading images:', error);
-        setImagesLoaded(true); // Continue anyway
       }
     };
     
