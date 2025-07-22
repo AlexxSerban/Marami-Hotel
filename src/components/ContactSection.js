@@ -42,10 +42,10 @@ const ContactSection = () => {
     
     try {
       const result = await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Înlocuiește cu Service ID-ul tău
-        'YOUR_TEMPLATE_ID', // Înlocuiește cu Template ID-ul tău
+        'service_hb4fqx9', // Service ID-ul tău
+        'template_jzriavm', // Template ID pentru contact form
         form.current,
-        'YOUR_PUBLIC_KEY' // Înlocuiește cu Public Key-ul tău
+        '0fpRZnYAsQkskOz54' // Public Key-ul tău
       );
       
       console.log('SUCCESS!', result.text);

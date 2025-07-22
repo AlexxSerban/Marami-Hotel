@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { CalendarIcon, UserGroupIcon, HomeIcon, CheckIcon, StarIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const BookingFormSection = () => {
+  const form = useRef();
+  
   const handleAnimationComplete = () => {
     console.log('BookingForm title animation completed!');
   };
@@ -21,6 +24,9 @@ const BookingFormSection = () => {
     phone: '',
     specialRequests: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const roomTypes = [
     {
@@ -59,6 +65,45 @@ const BookingFormSection = () => {
       ...prev,
       [name]: value
     }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const result = await emailjs.sendForm(
+        'service_hb4fqx9', // Service ID-ul tău
+        'template_1mkmooe', // Template ID pentru booking form
+        form.current,
+        '0fpRZnYAsQkskOz54' // Public Key-ul tău
+      );
+      
+      console.log('SUCCESS!', result.text);
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        checkIn: '',
+        checkOut: '',
+        adults: 1,
+        children: 0,
+        rooms: 1,
+        selectedRoom: null,
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        specialRequests: ''
+      });
+      
+    } catch (error) {
+      console.log('FAILED...', error.text);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const calculateNights = () => {
@@ -106,7 +151,7 @@ const BookingFormSection = () => {
           className="max-w-6xl mx-auto"
         >
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <form className="space-y-8">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-8">
               {/* Date and Guest Selection */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
@@ -354,12 +399,34 @@ const BookingFormSection = () => {
               {/* Submit Button */}
               <motion.button
                 type="submit"
+                disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-primary-500 text-white py-4 px-8 rounded-xl font-semibold text-lg hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="w-full bg-primary-500 text-white py-4 px-8 rounded-xl font-semibold text-lg hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Trimite Rezervarea
+                {isSubmitting ? 'Se trimite...' : 'Trimite Rezervarea'}
               </motion.button>
+              
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+                >
+                  ✅ Mulțumim pentru rezervare! Vom confirma în cel mai scurt timp.
+                </motion.div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+                >
+                  ❌ A apărut o eroare. Te rugăm să încerci din nou sau să ne contactezi direct.
+                </motion.div>
+              )}
             </form>
           </div>
         </motion.div>

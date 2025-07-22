@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { EnvelopeIcon, PhoneIcon, UserIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const ContactFormSection = () => {
+  const form = useRef();
+  
   const handleAnimationComplete = () => {
     console.log('ContactForm title animation completed!');
   };
@@ -16,6 +19,9 @@ const ContactFormSection = () => {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -23,10 +29,37 @@ const ContactFormSection = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const result = await emailjs.sendForm(
+        'service_hb4fqx9', // Service ID-ul tău
+        'template_jzriavm', // Template ID pentru contact form
+        form.current,
+        '0fpRZnYAsQkskOz54' // Public Key-ul tău
+      );
+      
+      console.log('SUCCESS!', result.text);
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      
+    } catch (error) {
+      console.log('FAILED...', error.text);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -63,7 +96,7 @@ const ContactFormSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
@@ -160,12 +193,34 @@ const ContactFormSection = () => {
 
                 <motion.button
                   type="submit"
+                  disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-primary-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300"
+                  className="w-full bg-primary-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Trimite Mesajul
+                  {isSubmitting ? 'Se trimite...' : 'Trimite Mesajul'}
                 </motion.button>
+                
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+                  >
+                    ✅ Mulțumim pentru mesaj! Vom răspunde în cel mai scurt timp.
+                  </motion.div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg"
+                  >
+                    ❌ A apărut o eroare. Te rugăm să încerci din nou sau să ne contactezi direct.
+                  </motion.div>
+                )}
               </form>
             </div>
 
