@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Marami-Hotel/static/css/main.4c780e49.css",
-    "main.js": "/Marami-Hotel/static/js/main.c1725c19.js",
+    "main.css": "/Marami-Hotel/static/css/main.9aa70632.css",
+    "main.js": "/Marami-Hotel/static/js/main.03c71f14.js",
     "static/media/restaurant7.jpg": "/Marami-Hotel/static/media/restaurant7.f2426aafa6cd161af8d3.jpg",
     "static/media/Terrace10.jpg": "/Marami-Hotel/static/media/Terrace10.51c2ea9afbc690ebdc65.jpg",
     "static/media/restaurant4.jpg": "/Marami-Hotel/static/media/restaurant4.78784def11b67a107d93.jpg",
     "static/media/Terrace9.jpg": "/Marami-Hotel/static/media/Terrace9.fd05ffd9078d60600450.jpg",
     "static/media/Terrace14.jpg": "/Marami-Hotel/static/media/Terrace14.732d6af3e32438f3845b.jpg",
-    "static/media/baie.JPG": "/Marami-Hotel/static/media/baie.ef3e17497e476ed2ef51.JPG",
+    "static/media/baie.jpg": "/Marami-Hotel/static/media/baie.ef3e17497e476ed2ef51.jpg",
     "static/media/restaurant1.jpg": "/Marami-Hotel/static/media/restaurant1.e6943500e2035a8eb874.jpg",
     "static/media/restaurant6.jpg": "/Marami-Hotel/static/media/restaurant6.b8a78459c6bdc83368e6.jpg",
     "static/media/Exterior_View1.jpg": "/Marami-Hotel/static/media/Exterior_View1.ebecb01fa6f345a3036a.jpg",
@@ -36,11 +36,11 @@
     "static/media/Single.jpg": "/Marami-Hotel/static/media/Single.e9983d8264197cfc7aca.jpg",
     "static/media/Matrimoniala.jpg": "/Marami-Hotel/static/media/Matrimoniala.daeb15905d94909ced13.jpg",
     "index.html": "/Marami-Hotel/index.html",
-    "main.4c780e49.css.map": "/Marami-Hotel/static/css/main.4c780e49.css.map",
-    "main.c1725c19.js.map": "/Marami-Hotel/static/js/main.c1725c19.js.map"
+    "main.9aa70632.css.map": "/Marami-Hotel/static/css/main.9aa70632.css.map",
+    "main.03c71f14.js.map": "/Marami-Hotel/static/js/main.03c71f14.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c780e49.css",
-    "static/js/main.c1725c19.js"
+    "static/css/main.9aa70632.css",
+    "static/js/main.03c71f14.js"
   ]
 }
