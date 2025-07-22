@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+// eslint-disable-next-line no-unused-vars
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import BlurText from '../BlurText';
 
+// eslint-disable-next-line no-unused-vars
 const menuData = [
   {
     id: 'mic-dejun',
@@ -613,15 +615,16 @@ const menuData = [
 
 const ImageCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
-  const images = [
+  const images = React.useMemo(() => [
     'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
     'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-  ];
+  ], []);
 
   // Preload images
   useEffect(() => {

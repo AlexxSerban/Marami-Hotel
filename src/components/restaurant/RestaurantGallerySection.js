@@ -57,6 +57,7 @@ const galleryImages = [
 
 const GalleryCarousel = ({ images, onImageClick }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // eslint-disable-next-line no-unused-vars
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
   // Preload images

@@ -1,13 +1,46 @@
 {
   "files": {
-    "main.css": "/Hotel-Marami/static/css/main.24c1770a.css",
-    "main.js": "/Hotel-Marami/static/js/main.0d08b7a3.js",
-    "index.html": "/Hotel-Marami/index.html",
-    "main.24c1770a.css.map": "/Hotel-Marami/static/css/main.24c1770a.css.map",
-    "main.0d08b7a3.js.map": "/Hotel-Marami/static/js/main.0d08b7a3.js.map"
+    "main.css": "/Marami-Hotel/static/css/main.fd2c5dab.css",
+    "main.js": "/Marami-Hotel/static/js/main.09ca8f90.js",
+    "static/media/restaurant7.jpg": "/Marami-Hotel/static/media/restaurant7.f2426aafa6cd161af8d3.jpg",
+    "static/media/Terrace10.jpg": "/Marami-Hotel/static/media/Terrace10.51c2ea9afbc690ebdc65.jpg",
+    "static/media/restaurant4.jpg": "/Marami-Hotel/static/media/restaurant4.78784def11b67a107d93.jpg",
+    "static/media/Terrace9.jpg": "/Marami-Hotel/static/media/Terrace9.fd05ffd9078d60600450.jpg",
+    "static/media/Terrace14.jpg": "/Marami-Hotel/static/media/Terrace14.732d6af3e32438f3845b.jpg",
+    "static/media/baie.JPG": "/Marami-Hotel/static/media/baie.ef3e17497e476ed2ef51.JPG",
+    "static/media/restaurant1.jpg": "/Marami-Hotel/static/media/restaurant1.e6943500e2035a8eb874.jpg",
+    "static/media/restaurant6.jpg": "/Marami-Hotel/static/media/restaurant6.b8a78459c6bdc83368e6.jpg",
+    "static/media/Exterior_View1.jpg": "/Marami-Hotel/static/media/Exterior_View1.ebecb01fa6f345a3036a.jpg",
+    "static/media/restaurant5.jpg": "/Marami-Hotel/static/media/restaurant5.16617cb664222dca5de4.jpg",
+    "static/media/Terrace11.jpg": "/Marami-Hotel/static/media/Terrace11.b75f06a72378152d8cba.jpg",
+    "static/media/Terrace7.jpg": "/Marami-Hotel/static/media/Terrace7.8167fa3596b57a5fddb9.jpg",
+    "static/media/Terrace12.jpg": "/Marami-Hotel/static/media/Terrace12.a30095adb597a0857551.jpg",
+    "static/media/Terrace13.jpg": "/Marami-Hotel/static/media/Terrace13.ab63ba00ffa813ea7f2d.jpg",
+    "static/media/Terrace8.jpg": "/Marami-Hotel/static/media/Terrace8.2562ca94ee8780a2edee.jpg",
+    "static/media/Terrace1.jpg": "/Marami-Hotel/static/media/Terrace1.e1ddcf23c9bd5cf5c0f7.jpg",
+    "static/media/Terrace3.jpg": "/Marami-Hotel/static/media/Terrace3.51f5987c21fd414ab157.jpg",
+    "static/media/Terrace6.jpg": "/Marami-Hotel/static/media/Terrace6.a198d5d8abecd592f7bb.jpg",
+    "static/media/Terrace2.jpg": "/Marami-Hotel/static/media/Terrace2.e7585ef4223d60a5893b.jpg",
+    "static/media/restaurant2.jpg": "/Marami-Hotel/static/media/restaurant2.e526b47d7e43070e4db9.jpg",
+    "static/media/restaurant3.jpg": "/Marami-Hotel/static/media/restaurant3.4de24b7412d963af876f.jpg",
+    "static/media/Terrace5.jpg": "/Marami-Hotel/static/media/Terrace5.0f63f3ee474f7dcca28f.jpg",
+    "static/media/Terrace4.jpg": "/Marami-Hotel/static/media/Terrace4.f52c19c57fd250805e9b.jpg",
+    "static/media/peles-castle-sinaia-romania.jpg": "/Marami-Hotel/static/media/peles-castle-sinaia-romania.c7d9d9a31a0d80e12db8.jpg",
+    "static/media/Matrimoniala2.jpg": "/Marami-Hotel/static/media/Matrimoniala2.0347e126428807491ba4.jpg",
+    "static/media/Double2.jpg": "/Marami-Hotel/static/media/Double2.78e0077b40b9f219164d.jpg",
+    "static/media/Double3.jpg": "/Marami-Hotel/static/media/Double3.1a470dad028dd24b1483.jpg",
+    "static/media/Double de lux1.jpg": "/Marami-Hotel/static/media/Double de lux1.d2ded8f4b50a7ede20e4.jpg",
+    "static/media/Single2.jpg": "/Marami-Hotel/static/media/Single2.c97cf667d77989c8d8a2.jpg",
+    "static/media/Double_camera.jpg": "/Marami-Hotel/static/media/Double_camera.ebc2d022c1f461a00ffb.jpg",
+    "static/media/Double de lux.jpg": "/Marami-Hotel/static/media/Double de lux.8db193f6af1bd9b083b4.jpg",
+    "static/media/Single.jpg": "/Marami-Hotel/static/media/Single.e9983d8264197cfc7aca.jpg",
+    "static/media/Matrimoniala.jpg": "/Marami-Hotel/static/media/Matrimoniala.daeb15905d94909ced13.jpg",
+    "index.html": "/Marami-Hotel/index.html",
+    "main.fd2c5dab.css.map": "/Marami-Hotel/static/css/main.fd2c5dab.css.map",
+    "main.09ca8f90.js.map": "/Marami-Hotel/static/js/main.09ca8f90.js.map"
   },
   "entrypoints": [
-    "static/css/main.24c1770a.css",
-    "static/js/main.0d08b7a3.js"
+    "static/css/main.fd2c5dab.css",
+    "static/js/main.09ca8f90.js"
   ]
 }
