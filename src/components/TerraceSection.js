@@ -104,10 +104,8 @@ const terraceImages = [
   },
 ];
 
-// eslint-disable-next-line no-unused-vars
 const TerraceCarousel = ({ images, onImageClick }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // eslint-disable-next-line no-unused-vars
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
   // Preload images
@@ -200,7 +198,6 @@ const TerraceCarousel = ({ images, onImageClick }) => {
 const TerraceSplitCarousel = ({ images, onImageClick }) => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0); // -1 left, 1 right
-  // eslint-disable-next-line no-unused-vars
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // Preload images
