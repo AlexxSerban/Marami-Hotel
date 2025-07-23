@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { 
   CalendarIcon,
   MapPinIcon,
@@ -369,42 +368,7 @@ const RecommendationsSection = () => {
           </div>
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <p className="text-text-light mb-6">
-            Ai întrebări specifice? Contactează-ne pentru sfaturi personalizate!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="/contact"
-                className="btn-primary"
-              >
-                Contactează-ne
-              </Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="/contact"
-                className="btn-secondary"
-              >
-                FAQ
-              </Link>
-            </motion.div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

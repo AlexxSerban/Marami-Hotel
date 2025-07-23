@@ -339,31 +339,7 @@ const ContactSection = () => {
           </motion.div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <p className="text-text-light mb-6">
-            Ai întrebări specifice? Contactează-ne pentru sfaturi personalizate!
-          </p>
-          <div className="flex justify-center items-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                to="/contact"
-                className="btn-primary"
-              >
-                Contactează-ne
-              </Link>
-            </motion.div>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
