@@ -126,28 +126,28 @@ const RestaurantGallerySection = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {galleryImages.map((image) => (
-            <motion.div
-              key={image.id}
+              <motion.div
+                key={image.id}
               variants={itemVariants}
-              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-              onClick={() => openLightbox(image)}
-            >
-              <img
-                src={image.src}
-                alt={image.alt}
+                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+                onClick={() => openLightbox(image)}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
                 className="w-full h-64 object-cover transition-all duration-500 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
+                  loading="lazy"
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                 <div className="absolute bottom-4 left-4 right-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <h3 className="text-white font-semibold mb-1">{image.title}</h3>
-                </div>
+                    <h3 className="text-white font-semibold mb-1">{image.title}</h3>
+                  </div>
                 <div className="absolute top-4 right-4 transform scale-90 group-hover:scale-100 transition-transform duration-500 ease-out">
-                  <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+                    <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
         </motion.div>
 
         {/* Lightbox */}

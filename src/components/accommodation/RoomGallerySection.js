@@ -11,7 +11,7 @@ import singleRoom from '../../assets/rooms/Single.jpg';
 import singleRoom2 from '../../assets/rooms/Single2.jpg';
 import doubleRoom2 from '../../assets/rooms/Double2.jpg';
 import doubleRoom3 from '../../assets/rooms/Double3.jpg';
-import baie from '../../assets/rooms/baie.jpg';
+import baie from '../../assets/rooms/baie.JPG';
 
 const RoomGallerySection = () => {
   const handleAnimationComplete = () => {

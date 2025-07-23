@@ -54,11 +54,11 @@ const GardenSection = () => {
               <span className="text-text-secondary">Potrivită pentru orice masă a zilei — mic dejun, prânz sau cină</span>
             </li>
             <li className="flex items-center space-x-3">
-              <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
+                  <span className="inline-flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full">
                 <SparklesIcon className="w-5 h-5 text-primary-500" />
-              </span>
+                  </span>
               <span className="text-text-secondary">Un loc unde mâncarea bună și natura se întâlnesc în armonie</span>
-            </li>
+                </li>
           </ul>
         </motion.div>
         <motion.div

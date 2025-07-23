@@ -143,21 +143,21 @@ const Navbar = () => {
           <div className="hidden md:grid md:grid-cols-3 items-center h-16">
             {/* Logo - Left */}
             <div className="flex justify-start">
-              <Link to="/">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center space-x-2"
-                >
-                  <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">M</span>
-                  </div>
-                  <span className={`font-display font-bold text-xl ${
-                    isScrolled ? 'text-text-primary' : 'text-white'
-                  }`}>
-                    Hotel Marami
-                  </span>
-                </motion.div>
-              </Link>
+            <Link to="/">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center space-x-2"
+              >
+                <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">M</span>
+                </div>
+                <span className={`font-display font-bold text-xl ${
+                  isScrolled ? 'text-text-primary' : 'text-white'
+                }`}>
+                  Hotel Marami
+                </span>
+              </motion.div>
+            </Link>
             </div>
 
             {/* Desktop Menu - Center */}
