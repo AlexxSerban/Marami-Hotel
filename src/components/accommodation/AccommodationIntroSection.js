@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HomeIcon, StarIcon, WifiIcon } from '@heroicons/react/24/outline';
 import SplitText from '../SplitText';
-import matrimoniala2 from '../../assets/rooms/Matrimoniala2.jpg';
+import matrimoniala2 from '../../assets/rooms/CameraMatrimoniala2.JPG';
 
 const AccommodationIntroSection = () => {
   const handleAnimationComplete = () => {

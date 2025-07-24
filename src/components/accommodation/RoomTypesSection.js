@@ -6,10 +6,10 @@ import {
   CheckIcon
 } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
-import doubleRoom from '../../assets/rooms/Double_camera.jpg';
-import doubleLux from '../../assets/rooms/Double de lux.jpg';
-import matrimoniala from '../../assets/rooms/Matrimoniala.jpg';
-import singleRoom from '../../assets/rooms/Single.jpg';
+import doubleRoom from '../../assets/rooms/CameraDouble Standard.JPG';
+import doubleLux from '../../assets/rooms/CamereDoublede Lux.jpg';
+import matrimoniala from '../../assets/rooms/CameraMatrimoniala.JPG';
+import singleRoom from '../../assets/rooms/CameraSingle.JPG';
 
 const RoomTypesSection = () => {
   const handleAnimationComplete = () => {

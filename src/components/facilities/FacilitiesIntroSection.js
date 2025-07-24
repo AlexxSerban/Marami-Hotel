@@ -6,6 +6,7 @@ import {
   StarIcon 
 } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import hotelExterior from '../../assets/exteriorViewImages/Exterior_View1.jpg';
 
 const FacilitiesIntroSection = () => {
   const handleAnimationComplete = () => {
@@ -112,8 +113,8 @@ const FacilitiesIntroSection = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
-                alt="Facilități Hotel Marami"
+                src={hotelExterior}
+                alt="Hotel Marami - Experiență completă de cazare la poalele Peleșului"
                 className="rounded-xl shadow-lg"
                 loading="lazy"
               />

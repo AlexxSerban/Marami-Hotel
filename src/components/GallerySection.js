@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, PlayIcon } from '@heroicons/react/24/outline';
-import doubleRoom from '../assets/rooms/Double_camera.jpg';
-import doubleLux from '../assets/rooms/Double de lux.jpg';
+import doubleRoom from '../assets/rooms/CameraDouble Standard.JPG';
+import doubleLux from '../assets/rooms/CamereDoublede Lux.jpg';
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null);

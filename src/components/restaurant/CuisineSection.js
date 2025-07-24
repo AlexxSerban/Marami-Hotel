@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import BlurText from '../BlurText';
+import food1 from '../../assets/food/food1.JPG';
+import food2 from '../../assets/food/food2.JPG';
+import food3 from '../../assets/food/food3.JPG';
+import food4 from '../../assets/food/food4.JPG';
 
 const CuisineSection = () => {
   const handleAnimationComplete = () => {
@@ -49,26 +53,26 @@ const CuisineSection = () => {
           className="grid grid-cols-2 gap-4"
         >
           <img
-            src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80"
-            alt="Preparat principal"
+            src={food1}
+            alt="Preparat principal - Bucătărie românească"
             className="rounded-xl shadow-lg object-cover h-36 w-full"
             loading="lazy"
           />
           <img
-            src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
-            alt="Vinuri selecte"
+            src={food2}
+            alt="Preparat mediteranean - Hotel Marami"
             className="rounded-xl shadow-lg object-cover h-36 w-full"
             loading="lazy"
           />
           <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
-            alt="Deserturi de casă"
+            src={food3}
+            alt="Deserturi de casă - Restaurant Marami"
             className="rounded-xl shadow-lg object-cover h-36 w-full"
             loading="lazy"
           />
           <img
-            src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80"
-            alt="Arome mediteraneene"
+            src={food4}
+            alt="Arome rafinate - Bucătărie Marami"
             className="rounded-xl shadow-lg object-cover h-36 w-full"
             loading="lazy"
           />

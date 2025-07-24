@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HomeIcon, StarIcon, CheckIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import restaurantImage from '../../assets/restaurantImages/restaurant1.jpg';
 
 const RestaurantBarSection = () => {
   const handleAnimationComplete = () => {
@@ -79,8 +80,8 @@ const RestaurantBarSection = () => {
           className="relative"
         >
           <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80"
-            alt="Restaurant Hotel Marami"
+            src={restaurantImage}
+            alt="Restaurant & Bar Hotel Marami - Atmosferă elegantă și rafinată"
             className="rounded-xl shadow-lg w-full h-80 object-cover"
             loading="lazy"
           />

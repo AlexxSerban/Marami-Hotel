@@ -5,7 +5,6 @@ import AvailableActivitiesSection from '../components/activities/AvailableActivi
 import RecommendationsSection from '../components/activities/RecommendationsSection';
 import SurroundingsSection from '../components/activities/SurroundingsSection';
 import SeasonalInfoSection from '../components/activities/SeasonalInfoSection';
-import LogisticsTipsSection from '../components/activities/LogisticsTipsSection';
 import ActivitiesCTASection from '../components/activities/ActivitiesCTASection';
 import Footer from '../components/Footer';
 
@@ -19,7 +18,6 @@ const ActivitiesPage = () => {
         <RecommendationsSection />
         <SurroundingsSection />
         <SeasonalInfoSection />
-        <LogisticsTipsSection />
         <ActivitiesCTASection />
       </main>
       <Footer />

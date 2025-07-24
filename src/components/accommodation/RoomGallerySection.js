@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
-import doubleRoom from '../../assets/rooms/Double_camera.jpg';
-import doubleLux from '../../assets/rooms/Double de lux.jpg';
-import doubleLux1 from '../../assets/rooms/Double de lux1.jpg';
-import matrimoniala from '../../assets/rooms/Matrimoniala.jpg';
-import matrimoniala2 from '../../assets/rooms/Matrimoniala2.jpg';
-import singleRoom from '../../assets/rooms/Single.jpg';
-import singleRoom2 from '../../assets/rooms/Single2.jpg';
-import doubleRoom2 from '../../assets/rooms/Double2.jpg';
-import doubleRoom3 from '../../assets/rooms/Double3.jpg';
-import baie from '../../assets/rooms/baie2.JPG';
+import doubleRoom from '../../assets/rooms/CameraDouble Standard.JPG';
+import doubleLux from '../../assets/rooms/CamereDoublede Lux.jpg';
+import doubleLux1 from '../../assets/rooms/CamereDoublede Lux2.jpg';
+import matrimoniala from '../../assets/rooms/CameraMatrimoniala.JPG';
+import matrimoniala2 from '../../assets/rooms/CameraMatrimoniala2.JPG';
+import singleRoom from '../../assets/rooms/CameraSingle.JPG';
+import singleRoom2 from '../../assets/rooms/CameraSingle2.JPG';
+import doubleRoom2 from '../../assets/rooms/CameraDouble Standard2.JPG';
+import doubleRoom3 from '../../assets/rooms/CameraDouble Standard3.JPG';
+import baie from '../../assets/rooms/BaieDouble Standard.JPG';
 
 const RoomGallerySection = () => {
   const handleAnimationComplete = () => {
