@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
+import food6 from '../assets/food/food6.JPG';
 
 const EatAndDrinkSection = () => {
   const handleAnimationComplete = () => {
@@ -47,8 +48,8 @@ const EatAndDrinkSection = () => {
           >
             <div className="relative min-h-96 lg:min-h-[500px] rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Kitchen Club Restaurant"
+                src={food6}
+                alt="Restaurant Hotel Marami - Experiență culinară autentică"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

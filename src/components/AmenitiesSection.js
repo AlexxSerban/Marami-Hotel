@@ -7,6 +7,7 @@ import {
   BuildingOfficeIcon
 } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
+import restaurant1 from '../assets/restaurantImages/restaurant1.jpg';
 
 const AmenitiesSection = () => {
   const handleAnimationComplete = () => {
@@ -40,7 +41,7 @@ const AmenitiesSection = () => {
       title: 'Bar',
       description: 'Bar modern cu cocktailuri și băuturi de calitate, perfect pentru relaxare.',
       capacity: 'Cocktailuri & Băuturi',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: restaurant1
     }
   ];
 
