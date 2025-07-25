@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Marami-Hotel/static/css/main.5a503f93.css",
-    "main.js": "/Marami-Hotel/static/js/main.a85566b4.js",
+    "main.css": "/Marami-Hotel/static/css/main.f19ed0b7.css",
+    "main.js": "/Marami-Hotel/static/js/main.64b22fa0.js",
     "static/media/BaieDouble Standard.JPG": "/Marami-Hotel/static/media/BaieDouble Standard.8de8c3513c293479b5c2.JPG",
     "static/media/restaurant7.jpg": "/Marami-Hotel/static/media/restaurant7.f2426aafa6cd161af8d3.jpg",
     "static/media/Terrace10.jpg": "/Marami-Hotel/static/media/Terrace10.51c2ea9afbc690ebdc65.jpg",
@@ -30,6 +30,7 @@
     "static/media/food2.JPG": "/Marami-Hotel/static/media/food2.69a5b04c318caa8b57e5.JPG",
     "static/media/food4.JPG": "/Marami-Hotel/static/media/food4.6cb0a398a3963f2a1cbb.JPG",
     "static/media/Terrace2.jpg": "/Marami-Hotel/static/media/Terrace2.e7585ef4223d60a5893b.jpg",
+    "static/media/food5.JPG": "/Marami-Hotel/static/media/food5.b4bbe1b4d23921ac5aea.JPG",
     "static/media/food1.JPG": "/Marami-Hotel/static/media/food1.c8143de18d0d81fc869b.JPG",
     "static/media/restaurant2.jpg": "/Marami-Hotel/static/media/restaurant2.e526b47d7e43070e4db9.jpg",
     "static/media/restaurant3.jpg": "/Marami-Hotel/static/media/restaurant3.4de24b7412d963af876f.jpg",
@@ -41,11 +42,11 @@
     "static/media/CamereDoublede Lux2.jpg": "/Marami-Hotel/static/media/CamereDoublede Lux2.1c82fb0a2acc30d69ba1.jpg",
     "static/media/peles-castle-sinaia-romania.jpg": "/Marami-Hotel/static/media/peles-castle-sinaia-romania.c7d9d9a31a0d80e12db8.jpg",
     "index.html": "/Marami-Hotel/index.html",
-    "main.5a503f93.css.map": "/Marami-Hotel/static/css/main.5a503f93.css.map",
-    "main.a85566b4.js.map": "/Marami-Hotel/static/js/main.a85566b4.js.map"
+    "main.f19ed0b7.css.map": "/Marami-Hotel/static/css/main.f19ed0b7.css.map",
+    "main.64b22fa0.js.map": "/Marami-Hotel/static/js/main.64b22fa0.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a503f93.css",
-    "static/js/main.a85566b4.js"
+    "static/css/main.f19ed0b7.css",
+    "static/js/main.64b22fa0.js"
   ]
 }
