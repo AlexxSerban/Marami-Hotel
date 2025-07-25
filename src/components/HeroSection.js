@@ -36,11 +36,11 @@ const HeroSection = () => {
           <div className="mb-6 md:mb-8 lg:mb-12">
             <SplitText
               text="Hotel Marami"
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-shadow-lg leading-tight block"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold text-shadow-lg leading-tight block break-words hyphens-none"
               delay={100}
               duration={0.6}
               ease="power3.out"
-              splitType="chars"
+              splitType="words"
               from={{ opacity: 0, y: 40 }}
               to={{ opacity: 1, y: 0 }}
               threshold={0.1}
@@ -50,11 +50,11 @@ const HeroSection = () => {
             />
             <SplitText
               text="Locul în care te simți ca acasă, la poalele Castelului Peleș"
-              className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-display font-semibold text-primary-300 text-shadow-lg leading-tight block mt-2"
+              className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-display font-semibold text-primary-300 text-shadow-lg leading-tight block mt-2 break-words hyphens-none"
               delay={100}
               duration={0.6}
               ease="power3.out"
-              splitType="chars"
+              splitType="words"
               from={{ opacity: 0, y: 40 }}
               to={{ opacity: 1, y: 0 }}
               threshold={0.1}

@@ -30,11 +30,11 @@ const ActivitiesHeroSection = () => {
         >
           <SplitText
             text="Activități & Experiențe"
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 break-words hyphens-none"
             delay={100}
             duration={0.6}
             ease="power3.out"
-            splitType="chars"
+            splitType="words"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}

@@ -23,11 +23,11 @@ const RestaurantIntroSection = () => {
         <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10">
           <SplitText
             text="Răsfăț culinar într-un colț liniștit de natură"
-            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 text-center drop-shadow-2xl"
+            className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 text-center drop-shadow-2xl break-words hyphens-none"
             delay={100}
             duration={0.6}
             ease="power3.out"
-            splitType="chars"
+            splitType="words"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}

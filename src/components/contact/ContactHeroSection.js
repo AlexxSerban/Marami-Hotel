@@ -21,11 +21,11 @@ const ContactHeroSection = () => {
       <div className="container-custom relative z-10 flex flex-col items-center justify-center min-h-[400px] py-24">
         <SplitText
           text="Contact"
-          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 text-center drop-shadow-2xl"
+          className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 text-center drop-shadow-2xl break-words hyphens-none"
           delay={100}
           duration={0.6}
           ease="power3.out"
-          splitType="chars"
+          splitType="words"
           from={{ opacity: 0, y: 40 }}
           to={{ opacity: 1, y: 0 }}
           threshold={0.1}
