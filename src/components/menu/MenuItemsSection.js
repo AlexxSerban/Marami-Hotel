@@ -182,12 +182,12 @@ const MenuItemsSection = ({ selectedCategory }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8 md:mb-12 lg:mb-16"
+          className="text-center mb-6 md:mb-8 lg:mb-10"
         >
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-text-primary mb-3 md:mb-4 lg:mb-6">
+          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold text-text-primary mb-2 md:mb-3 lg:mb-4">
             Preparatele Noastre
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-text-light max-w-2xl lg:max-w-3xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-text-light max-w-2xl lg:max-w-3xl mx-auto">
             Fiecare preparat este gătit cu atenție și ingrediente proaspete
           </p>
         </motion.div>
@@ -199,7 +199,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="space-y-4 md:space-y-6 lg:space-y-8"
+            className="space-y-3 md:space-y-4 lg:space-y-5"
           >
             {filteredItems.map((item, index) => (
               <motion.div
@@ -207,31 +207,31 @@ const MenuItemsSection = ({ selectedCategory }) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 max-w-4xl mx-auto"
+                className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 max-w-4xl mx-auto"
               >
-                <div className="p-4 md:p-6 lg:p-8">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 lg:gap-6">
+                <div className="p-4 md:p-5 lg:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 lg:gap-4">
                     {/* Content */}
-                    <div className="flex-1 space-y-3 lg:space-y-4">
+                    <div className="flex-1 space-y-2 lg:space-y-3">
                       <div className="flex items-start justify-between sm:justify-start gap-3 lg:gap-4">
-                        <h3 className="font-display font-semibold text-base md:text-lg lg:text-xl text-text-primary leading-tight">
+                        <h3 className="font-display font-semibold text-sm md:text-base lg:text-lg text-text-primary leading-tight">
                           {item.name}
                         </h3>
-                        <span className="font-bold text-primary-500 text-base md:text-lg lg:text-xl flex-shrink-0">
+                        <span className="font-bold text-primary-500 text-sm md:text-base lg:text-lg flex-shrink-0">
                           {item.price}
                         </span>
                       </div>
                       
-                      <p className="text-text-light text-sm md:text-base lg:text-lg leading-relaxed">
+                      <p className="text-text-light text-xs md:text-sm lg:text-base leading-relaxed">
                         {item.description}
                       </p>
                       
                       {/* Tags */}
-                      <div className="flex flex-wrap gap-2 lg:gap-3">
+                      <div className="flex flex-wrap gap-1.5 lg:gap-2">
                         {item.tags.map((tag, tagIndex) => (
                           <div
                             key={tagIndex}
-                            className="inline-flex items-center gap-1 bg-gray-50 px-2 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-600"
+                            className="inline-flex items-center gap-1 bg-gray-50 px-2 py-0.5 md:px-2.5 md:py-1 rounded-full text-xs font-medium text-gray-600"
                           >
                             {getTagIcon(tag)}
                             <span>{getTagLabel(tag)}</span>
