@@ -182,12 +182,12 @@ const MenuItemsSection = ({ selectedCategory }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-text-primary mb-3 md:mb-4 lg:mb-6">
             Preparatele Noastre
           </h2>
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-text-light max-w-2xl lg:max-w-3xl mx-auto">
             Fiecare preparat este gătit cu atenție și ingrediente proaspete
           </p>
         </motion.div>
@@ -199,49 +199,47 @@ const MenuItemsSection = ({ selectedCategory }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="space-y-4 md:space-y-6 lg:space-y-8"
           >
             {filteredItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 max-w-4xl mx-auto"
               >
-                <div className="h-48 bg-gray-200 relative">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 right-3 flex gap-1">
-                    {item.tags.map((tag, tagIndex) => (
-                      <div
-                        key={tagIndex}
-                        className="bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs font-medium flex items-center gap-1"
-                      >
-                        {getTagIcon(tag)}
-                        <span>{getTagLabel(tag)}</span>
+                <div className="p-4 md:p-6 lg:p-8">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 lg:gap-6">
+                    {/* Content */}
+                    <div className="flex-1 space-y-3 lg:space-y-4">
+                      <div className="flex items-start justify-between sm:justify-start gap-3 lg:gap-4">
+                        <h3 className="font-display font-semibold text-base md:text-lg lg:text-xl text-text-primary leading-tight">
+                          {item.name}
+                        </h3>
+                        <span className="font-bold text-primary-500 text-base md:text-lg lg:text-xl flex-shrink-0">
+                          {item.price}
+                        </span>
                       </div>
-                    ))}
+                      
+                      <p className="text-text-light text-sm md:text-base lg:text-lg leading-relaxed">
+                        {item.description}
+                      </p>
+                      
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 lg:gap-3">
+                        {item.tags.map((tag, tagIndex) => (
+                          <div
+                            key={tagIndex}
+                            className="inline-flex items-center gap-1 bg-gray-50 px-2 md:px-3 py-1 md:py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-600"
+                          >
+                            {getTagIcon(tag)}
+                            <span>{getTagLabel(tag)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-display font-semibold text-lg text-text-primary">
-                      {item.name}
-                    </h3>
-                    <span className="font-bold text-primary-500 text-lg">
-                      {item.price}
-                    </span>
-                  </div>
-                  
-                  <p className="text-text-light text-sm leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
               </motion.div>
             ))}
