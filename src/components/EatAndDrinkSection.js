@@ -46,14 +46,14 @@ const EatAndDrinkSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative min-h-96 lg:min-h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative rounded-2xl overflow-hidden">
               <img
                 src={food6}
                 alt="Restaurant Hotel Marami - Experiență culinară autentică"
-                className="w-full h-full object-cover"
+                className="w-full h-auto object-cover rounded-2xl"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
             </div>
           </motion.div>
 
