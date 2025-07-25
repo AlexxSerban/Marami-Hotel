@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  CoffeeIcon, 
+  ClockIcon, 
   CakeIcon, 
   FireIcon, 
-  WineIcon,
+  BeakerIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline';
 
@@ -19,13 +19,13 @@ const MenuCategoriesSection = ({ selectedCategory, onCategoryChange }) => {
     {
       id: 'breakfast',
       name: 'Mic dejun',
-      icon: CoffeeIcon,
+      icon: ClockIcon,
       description: 'Cereale, ouă, pâine proaspătă'
     },
     {
       id: 'starters',
       name: 'Aperitive',
-      icon: WineIcon,
+      icon: BeakerIcon,
       description: 'Salate, bruschete, antipasti'
     },
     {
