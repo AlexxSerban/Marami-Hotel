@@ -93,7 +93,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Bar with Contact Info */}
-      <div className="bg-primary-600 text-white py-2 hidden md:block">
+      <div className="bg-primary-600 text-white py-2 hidden lg:block">
         <div className="container-custom">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
@@ -136,11 +136,11 @@ const Navbar = () => {
           isScrolled 
             ? 'bg-white/80 shadow-lg border-b border-white/20 top-0' 
             : 'bg-black/20'
-        } ${isScrolled ? 'top-0' : 'md:top-10 top-0'}`}
+        } ${isScrolled ? 'top-0' : 'lg:top-10 top-0'}`}
       >
         <div className="w-full px-4 md:px-6 lg:px-8 xl:px-16 max-w-full overflow-hidden">
           {/* Desktop Layout */}
-          <div className="hidden md:grid md:grid-cols-3 items-center h-16">
+          <div className="hidden lg:grid lg:grid-cols-3 items-center h-16">
             {/* Logo - Left */}
             <div className="flex justify-start">
             <Link to="/">
@@ -196,7 +196,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Layout */}
-          <div className="md:hidden flex items-center justify-between h-16">
+          <div className="lg:hidden flex items-center justify-between h-16">
             {/* Logo - Left */}
             <div className="flex justify-start">
               <Link to="/">
@@ -241,7 +241,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
-                className="md:hidden bg-white/80 backdrop-blur-md border-t border-white/20"
+                className="lg:hidden bg-white/80 backdrop-blur-md border-t border-white/20"
               >
                 <div className="px-4 py-6 space-y-4">
                   {/* Mobile Contact Info */}

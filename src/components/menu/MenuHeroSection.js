@@ -19,11 +19,11 @@ const MenuHeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
       </div>
-      <div className="container-custom relative z-10 flex flex-col items-center justify-center min-h-[300px] md:min-h-[400px] py-16 md:py-24">
-        <div className="bg-black/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 border border-white/10">
+      <div className="container-custom relative z-10 flex flex-col items-center justify-center min-h-[300px] md:min-h-[400px] py-16 md:py-24 text-center">
+        <div className="bg-black/30 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 border border-white/10 w-full max-w-4xl mx-auto">
           <SplitText
             text="Meniul Nostru"
-            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white mb-4 md:mb-6 text-center drop-shadow-2xl break-words hyphens-none"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-white mb-4 md:mb-6 text-center drop-shadow-2xl break-words hyphens-none flex justify-center items-center"
             delay={100}
             duration={0.6}
             ease="power3.out"
