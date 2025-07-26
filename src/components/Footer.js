@@ -110,10 +110,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center lg:text-left">
           {/* Contact Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6 justify-center lg:justify-start">
-              <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
+            <div className="flex items-center justify-center lg:justify-start mb-6">
               <span className="font-display font-bold text-xl">
                 Hotel Marami
               </span>
@@ -151,8 +148,8 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors"
+                    whileTap={{ scale: 0.95 }}
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-500 transition-colors"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -164,7 +161,7 @@ const Footer = () => {
 
           {/* Footer Links */}
           {footerSections.map((section, index) => (
-            <div key={index}>
+            <div key={index} className="text-center lg:text-left">
               <h3 className="font-display font-semibold text-lg mb-4">
                 {section.title}
               </h3>
@@ -188,8 +185,8 @@ const Footer = () => {
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 py-6">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
-            <div className="text-gray-400 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-sm text-gray-400">
               © {currentYear} Hotel Marami. Toate drepturile rezervate.
             </div>
             <div className="flex space-x-6 text-sm">

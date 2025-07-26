@@ -146,11 +146,8 @@ const Navbar = () => {
             <Link to="/">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center space-x-2"
+                className="flex items-center"
               >
-                <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">M</span>
-                </div>
                 <span className={`font-display font-bold text-xl ${
                   isScrolled ? 'text-text-primary' : 'text-white'
                 }`}>
@@ -202,11 +199,8 @@ const Navbar = () => {
               <Link to="/">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="flex items-center space-x-2"
+                  className="flex items-center"
                 >
-                  <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">M</span>
-                  </div>
                   <span className={`font-display font-bold text-xl ${
                     isScrolled ? 'text-text-primary' : 'text-white'
                   }`}>

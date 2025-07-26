@@ -197,7 +197,7 @@ const TerraceSection = () => {
                     </h3>
                   </div>
                 </div>
-              </motion.div>
+        </motion.div>
             </AnimatePresence>
 
             {/* Navigation Arrows */}
