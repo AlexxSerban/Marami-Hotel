@@ -11,6 +11,7 @@ import BookingPage from './pages/BookingPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import CookiesPage from './pages/CookiesPage';
+import CookieConsent from './components/CookieConsent';
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/termeni-conditii" element={<TermsAndConditionsPage />} />
           <Route path="/cookies" element={<CookiesPage />} />
         </Routes>
+        <CookieConsent />
       </div>
     </Router>
   );
