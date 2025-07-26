@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 import doubleRoom from '../../assets/rooms/CameraDouble Standard.JPG';
 import doubleLux from '../../assets/rooms/CamereDoublede Lux.jpg';
@@ -20,6 +20,7 @@ const RoomGallerySection = () => {
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const categories = [
     { id: 'all', name: 'Toate' },
@@ -75,8 +76,8 @@ const RoomGallerySection = () => {
       src: doubleLux1,
       alt: 'Cameră Double de Lux - Vedere',
       category: 'double-lux',
-      title: 'Double de Lux - Vedere',
-      description: 'Priveliște panoramică spre munții Bucegi'
+      title: 'Double de Lux',
+      description: 'Cameră elegantă cu design premium și confort superior'
     },
     {
       id: 7,
@@ -115,6 +116,23 @@ const RoomGallerySection = () => {
   const filteredImages = selectedCategory === 'all' 
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
+
+  // Reset current slide when category changes
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [selectedCategory]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % filteredImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + filteredImages.length) % filteredImages.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
   const openLightbox = (image) => {
     setSelectedImage(image);
@@ -177,41 +195,88 @@ const RoomGallerySection = () => {
           ))}
         </motion.div>
 
-        {/* Gallery Grid */}
+        {/* Carousel */}
         <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative max-w-4xl mx-auto"
         >
-          <AnimatePresence mode="wait">
-            {filteredImages.map((image, index) => (
+          {/* Carousel Container */}
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <AnimatePresence mode="wait">
               <motion.div
-                key={image.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-                onClick={() => openLightbox(image)}
+                key={currentSlide}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0"
               >
                 <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  src={filteredImages[currentSlide]?.src}
+                  alt={filteredImages[currentSlide]?.alt}
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-semibold mb-1">{image.title}</h3>
-                    <p className="text-white/80 text-sm">{image.description}</p>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-white text-2xl md:text-3xl font-bold mb-2">
+                      {filteredImages[currentSlide]?.title}
+                    </h3>
+                    <p className="text-white/90 text-lg">
+                      {filteredImages[currentSlide]?.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 group"
+            >
+              <ChevronLeftIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 group"
+            >
+              <ChevronRightIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            </button>
+
+            {/* Lightbox Button */}
+            <button
+              onClick={() => openLightbox(filteredImages[currentSlide])}
+              className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 group"
+            >
+              <MagnifyingGlassIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            </button>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {filteredImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-primary-500 scale-125'
+                    : 'bg-gray-300 hover:bg-primary-300'
+                }`}
+              />
             ))}
-          </AnimatePresence>
+          </div>
+
+          {/* Slide Counter */}
+          <div className="text-center mt-4 text-text-secondary">
+            <span className="text-sm">
+              {currentSlide + 1} / {filteredImages.length}
+            </span>
+          </div>
         </motion.div>
 
         {/* Lightbox */}

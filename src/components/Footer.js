@@ -195,36 +195,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      <div className="border-t border-gray-700 py-8">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-center lg:text-left">
-            <div>
-              <h3 className="font-display font-semibold text-xl mb-2">
-                Newsletter
-              </h3>
-              <p className="text-gray-300">
-                Înscrie-te pentru oferte speciale și noutăți despre Hotel Marami.
-              </p>
-            </div>
-            <div className="flex space-x-3">
-              <input
-                type="email"
-                placeholder="Adresa ta de email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-white placeholder-gray-400"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors"
-              >
-                Înscrie-te
-              </motion.button>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 py-6">
         <div className="container-custom">

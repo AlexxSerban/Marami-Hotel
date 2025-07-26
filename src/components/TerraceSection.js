@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, MagnifyingGlassIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
 import terrace1 from '../assets/terraceImages/Terrace1.jpg';
 import terrace2 from '../assets/terraceImages/Terrace2.jpg';
@@ -23,84 +23,98 @@ const terraceImages = [
     src: terrace1,
     alt: 'Terasă Hotel Marami - Vedere panoramică',
     title: 'Vedere panoramică',
+    description: 'Vedere spectaculoasă la munții Bucegi și Castelul Peleș'
   },
   {
     id: 2,
     src: terrace2,
     alt: 'Terasă Hotel Marami - Atmosferă relaxantă',
     title: 'Atmosferă relaxantă',
+    description: 'Spațiu perfect pentru relaxare în inima naturii'
   },
   {
     id: 3,
     src: terrace3,
     alt: 'Terasă Hotel Marami - Mese în aer liber',
     title: 'Mese în aer liber',
+    description: 'Experiență gastronomică unică în aer liber'
   },
   {
     id: 4,
     src: terrace4,
     alt: 'Terasă Hotel Marami - Decor elegant',
     title: 'Decor elegant',
+    description: 'Design rafinat care combină eleganța cu natura'
   },
   {
     id: 5,
     src: terrace5,
     alt: 'Terasă Hotel Marami - Vedere la munți',
     title: 'Vedere la munți',
+    description: 'Priveliște panoramică spre munții Bucegi'
   },
   {
     id: 6,
     src: terrace6,
     alt: 'Terasă Hotel Marami - Serile de vară',
     title: 'Serile de vară',
+    description: 'Momente memorabile în serile de vară pe terasă'
   },
   {
     id: 7,
     src: terrace7,
     alt: 'Terasă Hotel Marami - Experiență outdoor',
     title: 'Experiență outdoor',
+    description: 'Conectare cu natura în cel mai elegant mod'
   },
   {
     id: 8,
     src: terrace8,
     alt: 'Terasă Hotel Marami - Relaxare în natură',
     title: 'Relaxare în natură',
+    description: 'Spațiu dedicat pentru odihnă și contemplare'
   },
   {
     id: 9,
     src: terrace9,
     alt: 'Terasă Hotel Marami - Atmosferă montană',
     title: 'Atmosferă montană',
+    description: 'Autenticitatea atmosferei montane în Sinaia'
   },
   {
     id: 10,
     src: terrace10,
     alt: 'Terasă Hotel Marami - Detalii interioare',
     title: 'Detalii interioare',
+    description: 'Atenția la detalii în fiecare colț al terasei'
   },
   {
     id: 11,
     src: terrace11,
     alt: 'Terasă Hotel Marami - Vedere la castel',
     title: 'Vedere la castel',
+    description: 'Vedere directă la Castelul Peleș, la doar 300m'
   },
   {
     id: 12,
     src: terrace12,
     alt: 'Terasă Hotel Marami - Serile romantice',
     title: 'Serile romantice',
+    description: 'Spațiu perfect pentru momente romantice'
   },
   {
     id: 13,
     src: terrace13,
     alt: 'Terasă Hotel Marami - Experiență completă',
     title: 'Experiență completă',
+    description: 'O experiență completă de relaxare și gastronomie'
   },
   {
     id: 14,
     src: terrace14,
     alt: 'Terasă Hotel Marami - Momentul perfect',
     title: 'Momentul perfect',
+    description: 'Fiecare moment pe terasă este o experiență unică'
   },
 ];
 
@@ -110,38 +124,22 @@ const TerraceSection = () => {
   };
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % terraceImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + terraceImages.length) % terraceImages.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
 
   const openLightbox = (image) => setSelectedImage(image);
   const closeLightbox = () => setSelectedImage(null);
-
-  // Professional animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 30,
-      scale: 0.95
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-      },
-    },
-  };
 
   return (
     <section className="section-padding bg-gradient-to-br from-background-secondary to-background-primary no-overflow">
@@ -167,65 +165,85 @@ const TerraceSection = () => {
           </p>
         </motion.div>
 
-        {/* Featured Image */}
+        {/* Carousel */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative max-w-4xl mx-auto"
         >
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-            <img
-              src={terrace1}
-              alt="Terasă Hotel Marami - Vedere panoramică principală"
-                              className="w-full min-h-96 md:min-h-[500px] object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-              <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-white text-2xl md:text-3xl font-bold mb-2">
-                  Terasa cu Vedere la Castelul Peleș
-                </h3>
-                <p className="text-white/90 text-lg">
-                  La doar 300m de Castelul Peleș, cu vedere panoramică la munții Bucegi
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+          {/* Carousel Container */}
+          <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0"
+              >
+                <img
+                  src={terraceImages[currentSlide]?.src}
+                  alt={terraceImages[currentSlide]?.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-white text-2xl md:text-3xl font-bold mb-2">
+                      {terraceImages[currentSlide]?.title}
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
-        {/* Gallery Grid - Professional Animation */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
-          {terraceImages.slice(1).map((image) => (
-            <motion.div
-              key={image.id}
-              variants={itemVariants}
-              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-              onClick={() => openLightbox(image)}
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 group"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-64 object-cover transition-all duration-500 ease-out group-hover:scale-105"
-                loading="lazy"
+              <ChevronLeftIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 group"
+            >
+              <ChevronRightIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            </button>
+
+            {/* Lightbox Button */}
+            <button
+              onClick={() => openLightbox(terraceImages[currentSlide])}
+              className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 group"
+            >
+              <MagnifyingGlassIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            </button>
+          </div>
+
+          {/* Dots Navigation */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {terraceImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-primary-500 scale-125'
+                    : 'bg-gray-300 hover:bg-primary-300'
+                }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <h3 className="text-white font-semibold mb-1">{image.title}</h3>
-                </div>
-                <div className="absolute top-4 right-4 transform scale-90 group-hover:scale-100 transition-transform duration-500 ease-out">
-                  <MagnifyingGlassIcon className="w-6 h-6 text-white" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
+
+          {/* Slide Counter */}
+          <div className="text-center mt-4 text-text-secondary">
+            <span className="text-sm">
+              {currentSlide + 1} / {terraceImages.length}
+            </span>
+          </div>
         </motion.div>
 
         {/* Lightbox */}
@@ -260,6 +278,7 @@ const TerraceSection = () => {
                 />
                 <div className="mt-4 text-center text-white">
                   <h3 className="text-xl font-semibold mb-2">{selectedImage.title}</h3>
+                  <p className="text-white/80">{selectedImage.description}</p>
                 </div>
               </motion.div>
             </motion.div>
