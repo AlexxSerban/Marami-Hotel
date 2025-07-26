@@ -38,10 +38,37 @@ const MenuItemsSection = ({ selectedCategory }) => {
       image: food4,
       tags: ['vegetarian', 'healthy']
     },
+    {
+      id: 4,
+      name: 'Croissant cu unt și gem',
+      description: 'Croissant proaspăt cu unt și gem de căpșuni',
+      price: '15 RON',
+      category: 'breakfast',
+      image: food5,
+      tags: ['vegetarian']
+    },
+    {
+      id: 5,
+      name: 'Ochiuri cu bacon',
+      description: 'Ouă ochiuri cu bacon crocant și pâine prăjită',
+      price: '28 RON',
+      category: 'breakfast',
+      image: food6,
+      tags: ['popular']
+    },
+    {
+      id: 6,
+      name: 'Bowl cu iaurt și granola',
+      description: 'Iaurt natural cu granola de casă și fructe proaspete',
+      price: '20 RON',
+      category: 'breakfast',
+      image: food1,
+      tags: ['vegetarian', 'healthy']
+    },
 
     // Aperitive
     {
-      id: 4,
+      id: 7,
       name: 'Salată Cezar',
       description: 'Salată cu pui la grătar, crutoane, parmezan și dressing Cezar',
       price: '35 RON',
@@ -50,7 +77,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['popular']
     },
     {
-      id: 5,
+      id: 8,
       name: 'Bruschete cu roșii și busuioc',
       description: 'Pâine prăjită cu roșii cherry, busuioc proaspăt și ulei de măsline',
       price: '28 RON',
@@ -59,7 +86,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['vegetarian', 'vegan']
     },
     {
-      id: 6,
+      id: 9,
       name: 'Antipasti mediteraneene',
       description: 'Selecție de antipasti: prosciutto, mozzarella, măsline și ardei copți',
       price: '42 RON',
@@ -67,10 +94,37 @@ const MenuItemsSection = ({ selectedCategory }) => {
       image: food1,
       tags: ['popular']
     },
+    {
+      id: 10,
+      name: 'Supa de pui cu taitei',
+      description: 'Supă tradițională cu pui și taitei de casă',
+      price: '32 RON',
+      category: 'starters',
+      image: food2,
+      tags: ['traditional']
+    },
+    {
+      id: 11,
+      name: 'Ciorbă de burtă',
+      description: 'Ciorbă tradițională cu burtă de vită și smântână',
+      price: '38 RON',
+      category: 'starters',
+      image: food3,
+      tags: ['traditional']
+    },
+    {
+      id: 12,
+      name: 'Supa cremă de ciuperci',
+      description: 'Supă cremă cu ciuperci de pădure și crutoane',
+      price: '30 RON',
+      category: 'starters',
+      image: food4,
+      tags: ['vegetarian']
+    },
 
     // Feluri principale
     {
-      id: 7,
+      id: 13,
       name: 'Sarmale în foi de viță',
       description: 'Sarmale tradiționale cu carne de porc și orez, servite cu smântână',
       price: '45 RON',
@@ -79,7 +133,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['traditional', 'popular']
     },
     {
-      id: 8,
+      id: 14,
       name: 'Piept de pui la grătar',
       description: 'Piept de pui marinat cu rozmarin și usturoi, servit cu legume la grătar',
       price: '38 RON',
@@ -88,7 +142,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['healthy']
     },
     {
-      id: 9,
+      id: 15,
       name: 'Paste Carbonara',
       description: 'Paste cu ouă, parmezan, guanciale și piper negru proaspăt',
       price: '32 RON',
@@ -97,7 +151,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['popular']
     },
     {
-      id: 10,
+      id: 16,
       name: 'Scoici la grătar',
       description: 'Scoici proaspete la grătar cu unt cu usturoi și pătrunjel',
       price: '55 RON',
@@ -105,10 +159,55 @@ const MenuItemsSection = ({ selectedCategory }) => {
       image: food5,
       tags: ['seafood']
     },
+    {
+      id: 17,
+      name: 'Muschi de vită la grătar',
+      description: 'Muschi de vită la grătar cu sos de roșii și cartofi wedges',
+      price: '65 RON',
+      category: 'main-courses',
+      image: food6,
+      tags: ['popular']
+    },
+    {
+      id: 18,
+      name: 'Somon la grătar',
+      description: 'Somon la grătar cu legume la grătar și sos de lămâie',
+      price: '48 RON',
+      category: 'main-courses',
+      image: food1,
+      tags: ['seafood', 'healthy']
+    },
+    {
+      id: 19,
+      name: 'Snitel de pui',
+      description: 'Snitel de pui cu cartofi prăjiți și salată de varză',
+      price: '35 RON',
+      category: 'main-courses',
+      image: food2,
+      tags: ['popular']
+    },
+    {
+      id: 20,
+      name: 'Ciorbă de fasole cu ciolan',
+      description: 'Ciorbă tradițională cu fasole și ciolan afumat',
+      price: '40 RON',
+      category: 'main-courses',
+      image: food3,
+      tags: ['traditional']
+    },
+    {
+      id: 21,
+      name: 'Mamaligă cu brânză',
+      description: 'Mămăligă cu brânză de burduf și smântână',
+      price: '28 RON',
+      category: 'main-courses',
+      image: food4,
+      tags: ['traditional', 'vegetarian']
+    },
 
     // Deserturi
     {
-      id: 11,
+      id: 22,
       name: 'Papanăși tradiționali',
       description: 'Papanăși cu smântână și dulceață de vișine, poliveri cu zahăr pudră',
       price: '25 RON',
@@ -117,7 +216,7 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['traditional', 'popular']
     },
     {
-      id: 12,
+      id: 23,
       name: 'Tiramisu clasic',
       description: 'Tiramisu cu mascarpone, cafea și cacao, servit rece',
       price: '28 RON',
@@ -126,12 +225,48 @@ const MenuItemsSection = ({ selectedCategory }) => {
       tags: ['popular']
     },
     {
-      id: 13,
+      id: 24,
       name: 'Gelato artigianale',
       description: 'Gelato făcut în casă cu vanilie, ciocolată sau căpșuni',
       price: '20 RON',
       category: 'desserts',
       image: food2,
+      tags: ['vegetarian']
+    },
+    {
+      id: 25,
+      name: 'Clătite cu ciocolată',
+      description: 'Clătite cu ciocolată topită și frișcă',
+      price: '22 RON',
+      category: 'desserts',
+      image: food3,
+      tags: ['popular']
+    },
+    {
+      id: 26,
+      name: 'Cheesecake cu fructe',
+      description: 'Cheesecake cu topping de fructe proaspete',
+      price: '30 RON',
+      category: 'desserts',
+      image: food4,
+      tags: ['vegetarian']
+    },
+    {
+      id: 27,
+      name: 'Baklava',
+      description: 'Baklava cu nuci și sirop de miere',
+      price: '26 RON',
+      category: 'desserts',
+      image: food5,
+      tags: ['traditional']
+    },
+    {
+      id: 28,
+      name: 'Înghețată cu topping',
+      description: 'Înghețată cu topping de ciocolată și alune',
+      price: '18 RON',
+      category: 'desserts',
+      image: food6,
       tags: ['vegetarian']
     }
   ];

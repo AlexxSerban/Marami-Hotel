@@ -60,37 +60,21 @@ const MenuCategoriesSection = ({ selectedCategory, onCategoryChange }) => {
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4">
-          {categories.map((category, index) => {
-            const IconComponent = category.icon;
+        <div className="flex flex-row flex-wrap justify-center gap-1 md:gap-2 lg:gap-3">
+          {categories.map((category) => {
             const isSelected = selectedCategory === category.id;
-            
             return (
-              <motion.button
+              <button
                 key={category.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 onClick={() => onCategoryChange(category.id)}
                 className={`
-                  flex flex-col items-center p-3 md:p-4 lg:p-5 rounded-lg transition-all duration-300 cursor-pointer min-w-[100px] md:min-w-[120px] lg:min-w-[140px]
-                  ${isSelected 
-                    ? 'bg-primary-500 text-white shadow-md' 
-                    : 'bg-white text-text-primary hover:bg-primary-50 border border-gray-200'
-                  }
+                  px-3 md:px-4 py-1 md:py-1.5 rounded-full font-display font-semibold text-xs md:text-sm lg:text-base transition-all duration-200
+                  border border-primary-500
+                  ${isSelected ? 'bg-primary-500 text-white' : 'bg-white text-primary-500 hover:bg-primary-100'}
                 `}
               >
-                <IconComponent className={`w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 mb-1.5 md:mb-2 lg:mb-2.5 ${isSelected ? 'text-white' : 'text-primary-500'}`} />
-                <h3 className="font-display font-semibold text-xs md:text-sm lg:text-base mb-0.5 text-center">
-                  {category.name}
-                </h3>
-                <p className={`text-xs text-center ${isSelected ? 'text-white/80' : 'text-text-light'}`}>
-                  {category.description}
-                </p>
-              </motion.button>
+                {category.name}
+              </button>
             );
           })}
         </div>
