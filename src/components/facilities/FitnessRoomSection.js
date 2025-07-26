@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HomeIcon, StarIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const FitnessRoomSection = () => {
