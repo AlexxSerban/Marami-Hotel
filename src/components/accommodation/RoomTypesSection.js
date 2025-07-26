@@ -32,7 +32,6 @@ const RoomTypesSection = () => {
       ],
       target: 'Cupluri, turiști relaxați',
       image: doubleRoom,
-      price: '65 USD',
       size: '≈20 m²'
     },
     {
@@ -50,7 +49,6 @@ const RoomTypesSection = () => {
       ],
       target: 'Cupluri, escapade romantice, oaspeți premium',
       image: doubleLux,
-      price: '95 USD',
       size: '≈26 m²'
     },
     {
@@ -68,7 +66,6 @@ const RoomTypesSection = () => {
       ],
       target: 'Cupluri, escapade romantice',
       image: matrimoniala,
-      price: '85 USD',
       size: '≈24 m²'
     },
     {
@@ -86,7 +83,6 @@ const RoomTypesSection = () => {
       ],
       target: 'Călători individuali, business',
       image: singleRoom,
-      price: '45 USD',
       size: '≈16 m²'
     }
   ];
@@ -157,11 +153,6 @@ const RoomTypesSection = () => {
                 {/* Icon */}
                 <div className="absolute top-4 left-4 text-3xl">
                   {room.icon}
-                </div>
-                
-                {/* Price Badge */}
-                <div className="absolute bottom-4 right-4 bg-primary-500 text-white px-3 py-1 rounded-lg text-sm font-medium">
-                  {room.price}
                 </div>
                 
                 {/* Size Badge */}

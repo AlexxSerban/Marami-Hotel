@@ -27,7 +27,7 @@ const MenuHeroSection = () => {
             delay={100}
             duration={0.6}
             ease="power3.out"
-            splitType="words"
+            splitType="chars"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
             threshold={0.1}
