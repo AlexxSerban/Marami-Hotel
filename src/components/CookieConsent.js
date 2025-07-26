@@ -94,40 +94,40 @@ const CookieConsent = () => {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-white/20 shadow-2xl"
             >
-              <div className="container-custom py-6">
+              <div className="container-custom py-3 md:py-4 lg:py-6">
                 <div className="max-w-4xl mx-auto">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">🍪</span>
+                  <div className="flex items-start justify-between mb-3 md:mb-4">
+                    <div className="flex items-center space-x-2 md:space-x-3">
+                      <div className="w-6 h-6 md:w-8 md:h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-xs md:text-sm">🍪</span>
                       </div>
                       <div>
-                        <h3 className="text-lg font-display font-semibold text-text-primary">
+                        <h3 className="text-base md:text-lg font-display font-semibold text-text-primary">
                           Politica de Cookie-uri
                         </h3>
-                        <p className="text-sm text-text-light">
+                        <p className="text-xs md:text-sm text-text-light">
                           Folosim cookie-uri pentru a-ți oferi cea mai bună experiență pe site-ul nostru
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mb-6">
-                    <p className="text-text-light leading-relaxed mb-4">
+                  <div className="mb-4 md:mb-6">
+                    <p className="text-sm md:text-base text-text-light leading-relaxed mb-3 md:mb-4">
                       Hotel Marami folosește cookie-uri pentru a îmbunătăți experiența ta de navigare, 
                       pentru a analiza traficul site-ului și pentru a personaliza conținutul. 
                       Prin continuarea navigării, ești de acord cu utilizarea cookie-urilor.
                     </p>
 
                     {/* Cookie Types Details with checkboxes */}
-                    <div className="space-y-3 mb-6">
+                    <div className="space-y-2 md:space-y-3 mb-4 md:mb-6">
                       {cookieTypes.map((cookie) => (
-                        <div key={cookie.type} className="flex items-start space-x-3 p-3 bg-white/50 backdrop-blur-sm rounded-lg border border-white/20">
+                        <div key={cookie.type} className="flex items-start space-x-2 md:space-x-3 p-2 md:p-3 bg-white/50 backdrop-blur-sm rounded-lg border border-white/20">
                           <div className="flex-shrink-0">
                             <button
                               onClick={() => handlePreferenceChange(cookie.type)}
                               disabled={cookie.required}
-                              className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all duration-200 ${
+                              className={`w-4 h-4 md:w-5 md:h-5 rounded border-2 flex items-center justify-center transition-all duration-200 ${
                                 cookie.required 
                                   ? 'bg-green-500 border-green-500 cursor-not-allowed' 
                                   : cookiePreferences[cookie.type]
@@ -136,21 +136,21 @@ const CookieConsent = () => {
                               }`}
                             >
                               {cookiePreferences[cookie.type] && (
-                                <CheckIcon className="w-3 h-3 text-white" />
+                                <CheckIcon className="w-2 h-2 md:w-3 md:h-3 text-white" />
                               )}
                             </button>
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
-                              <h4 className="font-medium text-text-primary">{cookie.title}</h4>
+                              <h4 className="font-medium text-text-primary text-sm md:text-base">{cookie.title}</h4>
                               {cookie.required && (
-                                <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+                                <span className="text-xs bg-green-100 text-green-700 px-1.5 md:px-2 py-0.5 md:py-1 rounded">
                                   Necesar
                                 </span>
                               )}
                             </div>
-                            <p className="text-sm text-text-light mt-1">{cookie.description}</p>
-                            <div className="mt-2">
+                            <p className="text-xs md:text-sm text-text-light mt-1">{cookie.description}</p>
+                            <div className="mt-1 md:mt-2">
                               <p className="text-xs text-text-secondary">
                                 <strong>Exemple:</strong> {cookie.examples.join(', ')}
                               </p>
@@ -161,27 +161,27 @@ const CookieConsent = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
                       <button
                         onClick={handleAcceptAll}
-                        className="flex-1 bg-primary-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors shadow-lg"
+                        className="flex-1 bg-primary-500 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors shadow-lg text-sm md:text-base"
                       >
                         Accept toate cookie-urile
                       </button>
                       <button
                         onClick={handleSavePreferences}
-                        className="flex-1 bg-gray-100 text-text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors shadow-lg"
+                        className="flex-1 bg-gray-100 text-text-primary px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors shadow-lg text-sm md:text-base"
                       >
                         Salvează preferințele
                       </button>
                     </div>
 
-                    <div className="mt-4 text-center">
+                    <div className="mt-3 md:mt-4 text-center">
                       <button
                         onClick={() => setShowDetails(!showDetails)}
-                        className="text-primary-500 hover:text-primary-600 text-sm font-medium flex items-center justify-center space-x-1 mx-auto"
+                        className="text-primary-500 hover:text-primary-600 text-xs md:text-sm font-medium flex items-center justify-center space-x-1 mx-auto"
                       >
-                        <EyeIcon className="w-4 h-4" />
+                        <EyeIcon className="w-3 h-3 md:w-4 md:h-4" />
                         <span>Detalii despre cookie-uri</span>
                       </button>
                     </div>
@@ -191,10 +191,10 @@ const CookieConsent = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="mt-4 p-4 bg-white/50 backdrop-blur-sm rounded-lg border border-white/20"
+                        className="mt-3 md:mt-4 p-3 md:p-4 bg-white/50 backdrop-blur-sm rounded-lg border border-white/20"
                       >
-                        <h4 className="font-medium text-text-primary mb-2">Informații detaliate</h4>
-                        <div className="space-y-3 text-sm text-text-light">
+                        <h4 className="font-medium text-text-primary mb-2 text-sm md:text-base">Informații detaliate</h4>
+                        <div className="space-y-2 md:space-y-3 text-xs md:text-sm text-text-light">
                           <p>
                             <strong>Cookie-uri esențiale:</strong> Sunt necesare pentru funcționarea de bază a site-ului 
                             și nu pot fi dezactivate. Acestea nu stochează informații personale.
