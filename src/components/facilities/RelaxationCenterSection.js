@@ -10,11 +10,6 @@ const RelaxationCenterSection = () => {
 
   const features = [
     {
-      icon: HomeIcon,
-      title: 'Saună Finlandeză',
-      description: 'Saună tradițională pentru detoxifiere și relaxare profundă'
-    },
-    {
       icon: CheckCircleIcon,
       title: 'Jacuzzi',
       description: 'Jacuzzi cu hidromasaj pentru relaxarea mușchilor'
@@ -45,7 +40,7 @@ const RelaxationCenterSection = () => {
           />
           <p className="text-lg text-text-light mb-6">
             Centrul nostru de relaxare oferă o experiență completă de wellness, 
-            cu saună finlandeză, jacuzzi și zone dedicate pentru odihnă și meditație.
+            cu jacuzzi și zone dedicate pentru odihnă și meditație.
           </p>
           <div className="space-y-4">
             {features.map((feature, index) => {

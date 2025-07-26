@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const ContactCTASection = () => {
@@ -34,15 +35,18 @@ const ContactCTASection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
-            <motion.a
-              href="/cazare"
+            <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all duration-300 flex items-center space-x-2 group"
             >
-              <span>Vezi Camere</span>
-              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+              <Link
+                to="/cazare"
+                className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all duration-300 flex items-center space-x-2 group"
+              >
+                <span>Vezi Camere</span>
+                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
 
             <motion.a
               href="tel:+40244315000"
@@ -63,17 +67,14 @@ const ContactCTASection = () => {
             className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="text-3xl mb-2">🎯</div>
               <h3 className="font-bold mb-2">Prețuri Garantate</h3>
               <p className="text-sm opacity-90">Cel mai bun tarif direct de la noi</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="text-3xl mb-2">⚡</div>
               <h3 className="font-bold mb-2">Rezervare Instantanee</h3>
               <p className="text-sm opacity-90">Confirmare imediată prin email</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="text-3xl mb-2">🎁</div>
               <h3 className="font-bold mb-2">Beneficii Exclusive</h3>
               <p className="text-sm opacity-90">Oferte speciale pentru rezervări directe</p>
             </div>

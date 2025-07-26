@@ -72,9 +72,9 @@ const SurroundingsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg card-hover"
+                className="bg-white rounded-xl p-6 shadow-lg card-hover text-center lg:text-left"
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
                   <Icon className="w-8 h-8 text-primary-500" />
                 </div>
                 <h3 className="font-display font-semibold text-text-primary mb-3">
@@ -83,14 +83,14 @@ const SurroundingsSection = () => {
                 <p className="text-text-secondary text-sm mb-4">
                   {attraction.description}
                 </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs">
+                <div className="space-y-2 text-center">
+                  <div className="text-xs">
                     <span className="text-text-secondary">Distanță:</span>
-                    <span className="font-medium text-text-primary">{attraction.distance}</span>
+                    <span className="font-medium text-text-primary ml-1">{attraction.distance}</span>
                   </div>
-                  <div className="flex justify-between text-xs">
+                  <div className="text-xs">
                     <span className="text-text-secondary">Tip:</span>
-                    <span className="font-medium text-text-primary">{attraction.type}</span>
+                    <span className="font-medium text-text-primary ml-1">{attraction.type}</span>
                   </div>
                 </div>
               </motion.div>

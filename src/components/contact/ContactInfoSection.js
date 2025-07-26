@@ -82,27 +82,27 @@ const ContactInfoSection = () => {
                 href={info.href}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="block"
+                className="block h-full"
               >
-                <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center h-full flex flex-col justify-between">
-                  <div>
-                    <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center h-full flex flex-col justify-between min-h-[200px]">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                       <Icon className="w-6 h-6 text-primary-500" />
                     </div>
-                    <h3 className="font-semibold text-text-primary mb-2">{info.title}</h3>
-                    <p className="text-primary-500 font-medium mb-1">{info.value}</p>
+                    <h3 className="font-semibold text-text-primary mb-2 text-lg">{info.title}</h3>
+                    <p className="text-primary-500 font-medium mb-1 text-sm leading-relaxed">{info.value}</p>
                     <p className="text-text-secondary text-sm">{info.description}</p>
                   </div>
                 </div>
               </motion.a>
             ) : (
-              <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center h-full flex flex-col justify-between">
-                <div>
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-white rounded-xl p-6 shadow-lg card-hover text-center h-full flex flex-col justify-between min-h-[200px]">
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                     <Icon className="w-6 h-6 text-primary-500" />
                   </div>
-                  <h3 className="font-semibold text-text-primary mb-2">{info.title}</h3>
-                  <p className="text-primary-500 font-medium mb-1">{info.value}</p>
+                  <h3 className="font-semibold text-text-primary mb-2 text-lg">{info.title}</h3>
+                  <p className="text-primary-500 font-medium mb-1 text-sm leading-relaxed">{info.value}</p>
                   <p className="text-text-secondary text-sm">{info.description}</p>
                 </div>
               </div>
@@ -115,6 +115,7 @@ const ContactInfoSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="h-full"
               >
                 {Content}
               </motion.div>

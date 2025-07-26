@@ -112,38 +112,6 @@ const SocialLinksSection = () => {
             </motion.a>
           ))}
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-primary-50 to-background-secondary rounded-2xl p-8">
-            <div className="text-4xl mb-4">📱</div>
-            <h3 className="text-2xl font-display font-bold text-text-primary mb-4">
-              Rămâi Conectat
-            </h3>
-            <p className="text-text-light max-w-2xl mx-auto">
-              Abonează-te la newsletter-ul nostru pentru oferte exclusive și noutăți despre hotel.
-            </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                type="email"
-                placeholder="Adresa ta de email"
-                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-primary-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-600 transition-colors"
-              >
-                Abonează-te
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

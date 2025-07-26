@@ -228,27 +228,6 @@ const TerraceSection = () => {
           ))}
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-text-light mb-6">
-            Rezervă o masă pe terasă și bucură-te de experiența completă
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.02, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="btn-primary text-lg px-8 py-4"
-          >
-            Rezervă o Masă
-          </motion.button>
-        </motion.div>
-
         {/* Lightbox */}
         <AnimatePresence>
           {selectedImage && (

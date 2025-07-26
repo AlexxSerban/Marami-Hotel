@@ -7,7 +7,7 @@ import RestaurantBarSection from '../components/facilities/RestaurantBarSection'
 import RelaxationCenterSection from '../components/facilities/RelaxationCenterSection';
 import ConferenceRoomSection from '../components/facilities/ConferenceRoomSection';
 import FitnessRoomSection from '../components/facilities/FitnessRoomSection';
-import AdditionalServicesSection from '../components/facilities/AdditionalServicesSection';
+// import AdditionalServicesSection from '../components/facilities/AdditionalServicesSection';
 
 const FacilitiesPage = () => {
   return (
@@ -20,7 +20,7 @@ const FacilitiesPage = () => {
         <RelaxationCenterSection />
         <ConferenceRoomSection />
         <FitnessRoomSection />
-        <AdditionalServicesSection />
+        {/* <AdditionalServicesSection /> */}
       </main>
       <Footer />
     </div>

@@ -18,11 +18,6 @@ const FitnessRoomSection = () => {
       icon: CheckCircleIcon,
       title: 'Program Flexibil',
       description: 'Acces 24/7 pentru oaspeții hotelului'
-    },
-    {
-      icon: StarIcon,
-      title: 'Antrenor Personal',
-      description: 'Consultanță și programe personalizate (la cerere)'
     }
   ];
 

@@ -69,9 +69,9 @@ const SeasonalInfoSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg card-hover"
+                className="bg-white rounded-xl p-6 shadow-lg card-hover text-center lg:text-left"
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
                   <Icon className="w-8 h-8 text-primary-500" />
                 </div>
                 <h3 className="font-display font-semibold text-text-primary mb-3">
@@ -81,12 +81,16 @@ const SeasonalInfoSection = () => {
                   {season.description}
                 </p>
                 <div className="space-y-2">
-                  <div className="text-xs font-medium text-text-primary mb-2">Activități:</div>
-                  {season.activities.map((activity, idx) => (
-                    <div key={idx} className="text-xs text-text-secondary">
-                      • {activity}
+                  <div className="text-xs font-medium text-text-primary mb-2 text-center lg:text-left">Activități:</div>
+                  <div className="flex justify-center">
+                    <div className="text-left inline-block">
+                      {season.activities.map((activity, idx) => (
+                        <div key={idx} className="text-xs text-text-secondary">
+                          • {activity}
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
                 </div>
               </motion.div>
             );

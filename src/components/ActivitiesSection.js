@@ -138,7 +138,7 @@ const ActivitiesSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 text-center lg:text-left">
                   <h3 className="text-xl font-display font-bold text-text-primary mb-3">
                     {activity.title}
                   </h3>
@@ -147,7 +147,7 @@ const ActivitiesSection = () => {
                   </p>
                   
                   {/* Duration */}
-                  <div className="flex items-center space-x-2 text-sm text-text-secondary mb-4">
+                  <div className="flex items-center space-x-2 text-sm text-text-secondary mb-4 justify-center lg:justify-start">
                     <span>⏱️</span>
                     <span>{activity.duration}</span>
                   </div>
@@ -155,7 +155,7 @@ const ActivitiesSection = () => {
                   {/* Features */}
                   <div className="space-y-2 mb-6">
                     {activity.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-text-secondary">
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-text-secondary justify-center lg:justify-start">
                         <div className="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
                         <span>{feature}</span>
                       </div>
@@ -195,12 +195,12 @@ const ActivitiesSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {recommendations.map((rec, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                <div className="flex items-start justify-between mb-3">
+              <div key={index} className="bg-white rounded-xl p-6 shadow-sm text-center lg:text-left">
+                <div className="flex items-start justify-between mb-3 flex-col lg:flex-row">
                   <h4 className="font-display font-semibold text-text-primary">
                     {rec.name}
                   </h4>
-                  <span className="text-sm font-medium text-primary-500 bg-primary-100 px-2 py-1 rounded">
+                  <span className="text-sm font-medium text-primary-500 bg-primary-100 px-2 py-1 rounded mt-2 lg:mt-0">
                     {rec.distance}
                   </span>
                 </div>
