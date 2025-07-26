@@ -8,6 +8,9 @@ import FacilitiesPage from './pages/FacilitiesPage';
 import ActivitiesPage from './pages/ActivitiesPage';
 import ContactPage from './pages/ContactPage';
 import BookingPage from './pages/BookingPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
+import CookiesPage from './pages/CookiesPage';
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -34,6 +37,9 @@ function App() {
           <Route path="/activitati" element={<ActivitiesPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/rezervare" element={<BookingPage />} />
+          <Route path="/politica-confidentialitate" element={<PrivacyPolicyPage />} />
+          <Route path="/termeni-conditii" element={<TermsAndConditionsPage />} />
+          <Route path="/cookies" element={<CookiesPage />} />
         </Routes>
       </div>
     </Router>
