@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const CookieConsent = () => {
   const [showConsent, setShowConsent] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const [consentLevel, setConsentLevel] = useState('none');
   const [cookiePreferences, setCookiePreferences] = useState({
     essential: true,
     analytics: true,
@@ -24,21 +23,7 @@ const CookieConsent = () => {
   const handleAcceptAll = () => {
     localStorage.setItem('cookieConsent', 'all');
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
-    setConsentLevel('all');
     setShowConsent(false);
-  };
-
-  const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    localStorage.setItem('cookieConsentDate', new Date().toISOString());
-    setConsentLevel('declined');
-    setShowConsent(false);
-  };
-
-  const handleWithdraw = () => {
-    localStorage.removeItem('cookieConsent');
-    localStorage.removeItem('cookieConsentDate');
-    setShowConsent(true);
   };
 
   const handlePreferenceChange = (type) => {
@@ -60,7 +45,6 @@ const CookieConsent = () => {
     }
     localStorage.setItem('cookieConsentDate', new Date().toISOString());
     localStorage.setItem('cookiePreferences', JSON.stringify(cookiePreferences));
-    setConsentLevel('custom');
     setShowConsent(false);
   };
 
@@ -240,19 +224,6 @@ const CookieConsent = () => {
           </>
         )}
       </AnimatePresence>
-
-      {/* Cookie Settings Button (for existing users) */}
-      {!showConsent && consentLevel !== 'none' && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          onClick={handleWithdraw}
-          className="fixed bottom-4 right-4 z-40 bg-primary-500 text-white p-3 rounded-full shadow-lg hover:bg-primary-600 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
-          title="Setări cookie-uri"
-        >
-          <span className="text-lg">🍪</span>
-        </motion.button>
-      )}
     </>
   );
 };
