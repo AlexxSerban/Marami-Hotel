@@ -229,7 +229,7 @@ const RoomTypesSection = () => {
               className="bg-white rounded-2xl overflow-hidden shadow-lg card-hover group"
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-64 overflow-hidden cursor-pointer" onClick={() => openLightbox(room)}>
                 <img
                   src={room.image}
                   alt={room.name}
