@@ -117,8 +117,8 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed text-center lg:text-left">
-              Eleganță regală la poalele Peleșului. Descoperă luxul și confortul 
-              în inima munților, la doar 300m de Castelul Peleș.
+              A doua ta casă în inima munților. Descoperă confortul și caldura 
+              de acasă la doar 300m de Castelul Peleș.
             </p>
 
             {/* Contact Details */}

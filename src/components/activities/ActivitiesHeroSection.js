@@ -49,14 +49,14 @@ const ActivitiesHeroSection = () => {
           </p>
 
           <Link to="/rezervare">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center space-x-2 bg-primary-500 text-white px-8 py-4 rounded-xl font-medium hover:bg-primary-600 transition-colors duration-300 text-lg"
-            >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center space-x-2 bg-primary-500 text-white px-8 py-4 rounded-xl font-medium hover:bg-primary-600 transition-colors duration-300 text-lg"
+          >
               <span>Rezervă Camera Ta</span>
-              <ArrowRightIcon className="w-6 h-6" />
-            </motion.button>
+            <ArrowRightIcon className="w-6 h-6" />
+          </motion.button>
           </Link>
         </motion.div>
       </div>

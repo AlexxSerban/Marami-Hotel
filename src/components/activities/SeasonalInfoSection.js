@@ -84,11 +84,11 @@ const SeasonalInfoSection = () => {
                   <div className="text-xs font-medium text-text-primary mb-2 text-center lg:text-left">Activități:</div>
                   <div className="flex justify-center">
                     <div className="text-left inline-block">
-                      {season.activities.map((activity, idx) => (
-                        <div key={idx} className="text-xs text-text-secondary">
-                          • {activity}
-                        </div>
-                      ))}
+                  {season.activities.map((activity, idx) => (
+                    <div key={idx} className="text-xs text-text-secondary">
+                      • {activity}
+                    </div>
+                  ))}
                     </div>
                   </div>
                 </div>

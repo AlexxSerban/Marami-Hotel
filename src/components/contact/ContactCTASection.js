@@ -41,10 +41,10 @@ const ContactCTASection = () => {
             >
               <Link
                 to="/cazare"
-                className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all duration-300 flex items-center space-x-2 group"
-              >
-                <span>Vezi Camere</span>
-                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              className="bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-lg shadow-lg transition-all duration-300 flex items-center space-x-2 group"
+            >
+              <span>Vezi Camere</span>
+              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
 
