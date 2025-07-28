@@ -37,7 +37,7 @@ const SocialLinksSection = () => {
       icon: HeartIcon,
       title: 'TripAdvisor',
       description: 'Citește recenziile oaspeților noștri',
-      link: 'https://tripadvisor.com/hotelmarami',
+      link: 'https://www.tripadvisor.com/Hotel_Review-g315907-d622941-Reviews-Marami_Hotel-Sinaia_Prahova_County_Southern_Romania.html#/media/622941/?albumid=101&type=ALL_INCLUDING_RESTRICTED&category=101',
       color: 'bg-green-500',
       logo: (
         <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
