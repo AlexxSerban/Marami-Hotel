@@ -98,24 +98,7 @@ const RecommendationsSection = () => {
           })}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-gradient-to-r from-primary-50 to-background-primary rounded-2xl p-8">
-            <div className="text-4xl mb-4">🗺️</div>
-            <h3 className="text-2xl font-display font-bold text-text-primary mb-4">
-              Ghidare Turistică
-            </h3>
-            <p className="text-text-light max-w-2xl mx-auto">
-              Oferim servicii de ghidare pentru vizitarea atracțiilor turistice. 
-              Contactează-ne pentru programări și detalii.
-            </p>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

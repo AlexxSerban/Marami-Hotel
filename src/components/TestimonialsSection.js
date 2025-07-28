@@ -212,7 +212,7 @@ const TestimonialsSection = () => {
               Recenzii Google Maps
             </motion.a>
             <motion.a
-              href="https://www.google.com/maps/place/Marami/@45.3574447,25.5398979,15z/data=!4m11!3m10!1s0x40b310d34e8642e5:0x1396870e25205b19!5m2!4m1!1i2!8m2!3d45.3574801!4d25.5398897!9m1!1b1!16s%2Fg%2F1hc2637yc?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D"
+              href="https://www.booking.com/hotel/ro/marami.ro.html"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
