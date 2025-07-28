@@ -18,17 +18,11 @@ const RoomGallerySection = () => {
     console.log('RoomGallery title animation completed!');
   };
 
-  const [selectedCategory, setSelectedCategory] = useState('all');
+
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const categories = [
-    { id: 'all', name: 'Toate' },
-    { id: 'double-standard', name: 'Double' },
-    { id: 'double-lux', name: 'Double de Lux' },
-    { id: 'matrimonial', name: 'Matrimonială' },
-    { id: 'single', name: 'Single' }
-  ];
+
 
   const galleryImages = [
     {
@@ -113,14 +107,12 @@ const RoomGallerySection = () => {
     }
   ];
 
-  const filteredImages = selectedCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
+  const filteredImages = galleryImages;
 
-  // Reset current slide when category changes
+  // Reset current slide when component mounts
   useEffect(() => {
     setCurrentSlide(0);
-  }, [selectedCategory]);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % filteredImages.length);
@@ -172,28 +164,7 @@ const RoomGallerySection = () => {
           </p>
         </motion.div>
 
-        {/* Filter Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category.id
-                  ? 'bg-primary-500 text-white shadow-lg'
-                  : 'bg-white text-text-secondary hover:bg-primary-50 hover:text-primary-500'
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
-        </motion.div>
+
 
         {/* Carousel */}
         <motion.div
