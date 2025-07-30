@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Marami-Hotel/static/css/main.e9ea7136.css",
-    "main.js": "/Marami-Hotel/static/js/main.11ee4ef2.js",
+    "main.js": "/Marami-Hotel/static/js/main.4181787b.js",
     "static/media/BaieDoublede Lux2.jpg": "/Marami-Hotel/static/media/BaieDoublede Lux2.90d011d4611f82e6b359.jpg",
     "static/media/BaieSingle.JPG": "/Marami-Hotel/static/media/BaieSingle.0ec8267b42bfd830d2d4.JPG",
     "static/media/BaieSingle2.JPG": "/Marami-Hotel/static/media/BaieSingle2.e772ce3def036772564d.JPG",
@@ -20,33 +20,34 @@
     "static/media/Terrace7.jpg": "/Marami-Hotel/static/media/Terrace7.8167fa3596b57a5fddb9.jpg",
     "static/media/Terrace12.jpg": "/Marami-Hotel/static/media/Terrace12.a30095adb597a0857551.jpg",
     "static/media/CameraMatrimoniala2.JPG": "/Marami-Hotel/static/media/CameraMatrimoniala2.ded834d44a1815005c9c.JPG",
-    "static/media/CameraSingle2.JPG": "/Marami-Hotel/static/media/CameraSingle2.14a6afdcbc6449e6e478.JPG",
     "static/media/CameraMatrimoniala3.JPG": "/Marami-Hotel/static/media/CameraMatrimoniala3.3c3afe5eb7a3c2203271.JPG",
     "static/media/Terrace13.jpg": "/Marami-Hotel/static/media/Terrace13.ab63ba00ffa813ea7f2d.jpg",
     "static/media/Terrace8.jpg": "/Marami-Hotel/static/media/Terrace8.2562ca94ee8780a2edee.jpg",
     "static/media/CamereDoublede Lux4.jpg": "/Marami-Hotel/static/media/CamereDoublede Lux4.169d3d756c4b8a8d3cb3.jpg",
-    "static/media/CameraSingle.JPG": "/Marami-Hotel/static/media/CameraSingle.0e4cafde92cbed2e7ce8.JPG",
     "static/media/CameraSingle4.JPG": "/Marami-Hotel/static/media/CameraSingle4.755ef9e3f028aa1d5894.JPG",
     "static/media/BaieMatrimoniala2.JPG": "/Marami-Hotel/static/media/BaieMatrimoniala2.2e71cd18f71e6e411c9f.JPG",
     "static/media/CameraMatrimoniala.JPG": "/Marami-Hotel/static/media/CameraMatrimoniala.11c58c1b5310dfb3d295.JPG",
     "static/media/BaieMatrimoniala3.JPG": "/Marami-Hotel/static/media/BaieMatrimoniala3.f6f583e6f536afe27c4d.JPG",
-    "static/media/CameraDouble Standard3.JPG": "/Marami-Hotel/static/media/CameraDouble Standard3.6f09c50fa2cd2397a2c0.JPG",
-    "static/media/CameraDouble Standard2.JPG": "/Marami-Hotel/static/media/CameraDouble Standard2.ef3611a48ad53295f09a.JPG",
     "static/media/Terrace1.jpg": "/Marami-Hotel/static/media/Terrace1.e1ddcf23c9bd5cf5c0f7.jpg",
-    "static/media/CameraDouble Standard.JPG": "/Marami-Hotel/static/media/CameraDouble Standard.df47c84fa8d87131f47f.JPG",
+    "static/media/CameraSingle.JPG": "/Marami-Hotel/static/media/CameraSingle.72bf9131cf7082aa107c.JPG",
+    "static/media/CameraSingle2.JPG": "/Marami-Hotel/static/media/CameraSingle2.64de84afd11c2909dff9.JPG",
+    "static/media/CameraDouble Standard2.JPG": "/Marami-Hotel/static/media/CameraDouble Standard2.6ec2957cfcea5f5f316d.JPG",
     "static/media/Terrace3.jpg": "/Marami-Hotel/static/media/Terrace3.51f5987c21fd414ab157.jpg",
     "static/media/Terrace6.jpg": "/Marami-Hotel/static/media/Terrace6.a198d5d8abecd592f7bb.jpg",
     "static/media/food2.JPG": "/Marami-Hotel/static/media/food2.69a5b04c318caa8b57e5.JPG",
+    "static/media/CameraSingle3.JPG": "/Marami-Hotel/static/media/CameraSingle3.d931d6a19c7387efbda0.JPG",
     "static/media/food4.JPG": "/Marami-Hotel/static/media/food4.6cb0a398a3963f2a1cbb.JPG",
     "static/media/Terrace2.jpg": "/Marami-Hotel/static/media/Terrace2.e7585ef4223d60a5893b.jpg",
+    "static/media/CameraDouble Standard4.JPG": "/Marami-Hotel/static/media/CameraDouble Standard4.6d687d6e95b96419ef89.JPG",
     "static/media/food5.JPG": "/Marami-Hotel/static/media/food5.b4bbe1b4d23921ac5aea.JPG",
     "static/media/food1.JPG": "/Marami-Hotel/static/media/food1.c8143de18d0d81fc869b.JPG",
+    "static/media/CameraDouble Standard3.JPG": "/Marami-Hotel/static/media/CameraDouble Standard3.471cdfc8fdeb9c480af7.JPG",
     "static/media/restaurant2.jpg": "/Marami-Hotel/static/media/restaurant2.e526b47d7e43070e4db9.jpg",
     "static/media/restaurant3.jpg": "/Marami-Hotel/static/media/restaurant3.4de24b7412d963af876f.jpg",
+    "static/media/CameraDouble Standard.JPG": "/Marami-Hotel/static/media/CameraDouble Standard.484691eb8f5e773325b8.JPG",
     "static/media/salaConferinta4.jpg": "/Marami-Hotel/static/media/salaConferinta4.446994459c67ae252e26.jpg",
     "static/media/Terrace5.jpg": "/Marami-Hotel/static/media/Terrace5.0f63f3ee474f7dcca28f.jpg",
     "static/media/Terrace4.jpg": "/Marami-Hotel/static/media/Terrace4.f52c19c57fd250805e9b.jpg",
-    "static/media/CameraSingle3.JPG": "/Marami-Hotel/static/media/CameraSingle3.019a86b68746feaffbe7.JPG",
     "static/media/salaConferinta3.jpg": "/Marami-Hotel/static/media/salaConferinta3.16166db7e85fef25a1d7.jpg",
     "static/media/salaConferinta5.jpg": "/Marami-Hotel/static/media/salaConferinta5.8fa993cd765c7855ae8a.jpg",
     "static/media/BaieDoublede Lux.jpg": "/Marami-Hotel/static/media/BaieDoublede Lux.af2bd626bdf8c52d3b33.jpg",
@@ -58,10 +59,10 @@
     "static/media/peles-castle-sinaia-romania.jpg": "/Marami-Hotel/static/media/peles-castle-sinaia-romania.c7d9d9a31a0d80e12db8.jpg",
     "index.html": "/Marami-Hotel/index.html",
     "main.e9ea7136.css.map": "/Marami-Hotel/static/css/main.e9ea7136.css.map",
-    "main.11ee4ef2.js.map": "/Marami-Hotel/static/js/main.11ee4ef2.js.map"
+    "main.4181787b.js.map": "/Marami-Hotel/static/js/main.4181787b.js.map"
   },
   "entrypoints": [
     "static/css/main.e9ea7136.css",
-    "static/js/main.11ee4ef2.js"
+    "static/js/main.4181787b.js"
   ]
 }
