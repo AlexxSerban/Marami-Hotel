@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HomeIcon, SparklesIcon, HeartIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, SparklesIcon, HeartIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const SurroundingsSection = () => {
@@ -12,21 +12,28 @@ const SurroundingsSection = () => {
     {
       icon: HomeIcon,
       title: 'Castelul Peleș',
-      description: 'Castelul regal cu arhitectură neorenascentistă',
+      description: 'Castelul regal cu arhitectură neorenascentistă, la doar 300m de hotel',
       distance: '5 min',
       type: 'Istoric'
     },
     {
       icon: SparklesIcon,
       title: 'Mânăstirea Sinaia',
-      description: 'Mânăstire ortodoxă cu istorie bogată',
+      description: 'Mânăstire ortodoxă cu istorie bogată, la 10 minute de mers pe jos',
       distance: '10 min',
       type: 'Religios'
     },
     {
+      icon: MapPinIcon,
+      title: 'Telegondola Sinaia',
+      description: 'Telecabina care duce la Cota 1400, accesibilă din apropierea hotelului',
+      distance: '8 min',
+      type: 'Transport'
+    },
+    {
       icon: HeartIcon,
       title: 'Cota 1400',
-      description: 'Stațiunea de schi cu priveliști panoramice',
+      description: 'Stațiunea de schi cu priveliști panoramice, accesibilă cu telegondola',
       distance: '15 min',
       type: 'Sport'
     }

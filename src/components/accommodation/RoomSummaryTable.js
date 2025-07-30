@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { 
   UserGroupIcon,
   HomeIcon,
-  EyeIcon,
   CheckIcon
 } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
@@ -20,7 +19,6 @@ const RoomSummaryTable = () => {
       type: 'Double',
       capacity: '2 persoane',
       mainAmenities: ['Pat matrimonial', 'Baie cu duș', 'Wi-Fi gratuit', 'TV prin cablu'],
-      view: 'Vedere la munte',
       price: 'de la 340 RON',
       size: '≈20 m²'
     },
@@ -28,8 +26,7 @@ const RoomSummaryTable = () => {
       id: 'double-lux',
       type: 'Double de Lux',
       capacity: '2 persoane',
-      mainAmenities: ['Pat matrimonial', 'Baie cu cadă', 'Wi-Fi gratuit', 'Vedere panoramică'],
-      view: 'Vedere panoramică',
+      mainAmenities: ['Pat matrimonial', 'Baie cu cadă', 'Wi-Fi gratuit', 'TV prin cablu'],
       price: 'de la 430 RON',
       size: '≈26 m²'
     },
@@ -38,7 +35,6 @@ const RoomSummaryTable = () => {
       type: 'Matrimonială',
       capacity: '2 persoane',
       mainAmenities: ['Pat matrimonial mare', 'Baie elegantă', 'Balcon privat', 'Decor romantic'],
-      view: 'Vedere la munte',
       price: 'de la 380 RON',
       size: '≈24 m²'
     },
@@ -47,7 +43,6 @@ const RoomSummaryTable = () => {
       type: 'Single',
       capacity: '1 persoană',
       mainAmenities: ['Pat single', 'Baie cu duș', 'Wi-Fi gratuit', 'Design funcțional'],
-      view: 'Vedere la munte',
       price: 'de la 200 RON',
       size: '≈16 m²'
     }
@@ -100,9 +95,6 @@ const RoomSummaryTable = () => {
                       Dotări Principale
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-text-primary">
-                      Vedere
-                    </th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-text-primary">
                       Preț
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-text-primary">
@@ -143,12 +135,6 @@ const RoomSummaryTable = () => {
                               {amenity}
                             </span>
                           ))}
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <div className="flex items-center space-x-2">
-                          <EyeIcon className="w-4 h-4 text-primary-500" />
-                          <span className="text-text-secondary">{room.view}</span>
                         </div>
                       </td>
                       <td className="px-6 py-4">
@@ -198,14 +184,10 @@ const RoomSummaryTable = () => {
               </div>
 
               {/* Details Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-1 gap-4 mb-4">
                 <div className="flex items-center space-x-2">
                   <UserGroupIcon className="w-4 h-4 text-primary-500" />
                   <span className="text-sm text-text-secondary">{room.capacity}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <EyeIcon className="w-4 h-4 text-primary-500" />
-                  <span className="text-sm text-text-secondary">{room.view}</span>
                 </div>
               </div>
 
