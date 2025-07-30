@@ -5,6 +5,7 @@ import AboutLocationSection from '../components/AboutLocationSection';
 import RoomsSection from '../components/RoomsSection';
 import AmenitiesSection from '../components/AmenitiesSection';
 import EatAndDrinkSection from '../components/EatAndDrinkSection';
+import GallerySection from '../components/GallerySection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -20,6 +21,7 @@ const HomePage = () => {
         <RoomsSection />
         <AmenitiesSection />
         <EatAndDrinkSection />
+        <GallerySection />
         <TestimonialsSection />
         <ContactSection />
       </main>

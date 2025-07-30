@@ -6,6 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
 import restaurant1 from '../assets/restaurantImages/restaurant1.jpg';
+import salaConferinta3 from '../assets/salaConferinta3.jpg';
 
 const AmenitiesSection = () => {
   const handleAnimationComplete = () => {
@@ -18,7 +19,7 @@ const AmenitiesSection = () => {
       title: 'Sală de Conferințe',
       description: 'Spațiu modern pentru evenimente și conferințe, cu capacitate de 40 de persoane.',
       capacity: '40 persoane',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+      image: salaConferinta3
     },
     {
       icon: BeakerIcon,
