@@ -2,9 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   UsersIcon,
-  SparklesIcon,
-  BeakerIcon,
-  BuildingOfficeIcon
+  BeakerIcon
 } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
 import restaurant1 from '../assets/restaurantImages/restaurant1.jpg';
@@ -21,20 +19,6 @@ const AmenitiesSection = () => {
       description: 'Spațiu modern pentru evenimente și conferințe, cu capacitate de 40 de persoane.',
       capacity: '40 persoane',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    },
-    {
-      icon: SparklesIcon,
-      title: 'Centru de Relaxare',
-      description: 'Centru spa complet cu saună, jacuzzi și masaj pentru relaxare și recuperare.',
-      capacity: 'Saună, Jacuzzi, Masaj',
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-    },
-    {
-      icon: BuildingOfficeIcon,
-      title: 'Sală Fitness',
-      description: 'Sală de fitness modernă cu echipamente de ultimă generație pentru menținerea formei.',
-      capacity: 'Echipamente moderne',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
     },
     {
       icon: BeakerIcon,
