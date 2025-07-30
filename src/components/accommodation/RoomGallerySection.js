@@ -11,6 +11,7 @@ import singleRoom from '../../assets/rooms/CameraSingle.JPG';
 import singleRoom2 from '../../assets/rooms/CameraSingle2.JPG';
 import doubleRoom2 from '../../assets/rooms/CameraDouble Standard2.JPG';
 import doubleRoom3 from '../../assets/rooms/CameraDouble Standard3.JPG';
+import doubleRoom4 from '../../assets/rooms/CameraDouble Standard4.JPG';
 import baie from '../../assets/rooms/BaieDouble Standard.JPG';
 
 const RoomGallerySection = () => {
@@ -103,7 +104,15 @@ const RoomGallerySection = () => {
       alt: 'Cameră Double - Interior',
       category: 'double-standard',
       title: 'Double - Interior',
-      description: 'Design modern și confortabil'
+      description: 'Interior elegant și confortabil'
+    },
+    {
+      id: 11,
+      src: doubleRoom4,
+      alt: 'Cameră Double - Vedere 4',
+      category: 'double-standard',
+      title: 'Double - Vedere 4',
+      description: 'Cameră cu design modern și funcțional'
     }
   ];
 

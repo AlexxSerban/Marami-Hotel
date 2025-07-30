@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XMarkIcon, PlayIcon } from '@heroicons/react/24/outline';
 import doubleRoom from '../assets/rooms/CameraDouble Standard.JPG';
+import doubleRoom4 from '../assets/rooms/CameraDouble Standard4.JPG';
 import doubleLux from '../assets/rooms/CamereDoublede Lux.jpg';
 import salaConferinta3 from '../assets/salaConferinta3.jpg';
 import salaConferinta4 from '../assets/salaConferinta4.jpg';
@@ -20,60 +21,66 @@ const GallerySection = () => {
     },
     {
       id: 2,
+      src: doubleRoom4,
+      alt: 'Camera Standard - Hotel Marami - Vedere 4',
+      category: 'camere'
+    },
+    {
+      id: 3,
       src: doubleLux,
       alt: 'Camera Lux - Hotel Marami',
       category: 'camere'
     },
     {
-      id: 3,
+      id: 4,
       src: salaConferinta3,
       alt: 'Sala de conferințe Hotel Marami - Vedere 1',
       category: 'facilitati'
     },
     {
-      id: 4,
+      id: 5,
       src: salaConferinta4,
       alt: 'Sala de conferințe Hotel Marami - Vedere 2',
       category: 'facilitati'
     },
     {
-      id: 5,
+      id: 6,
       src: salaConferinta5,
       alt: 'Sala de conferințe Hotel Marami - Vedere 3',
       category: 'facilitati'
     },
     {
-      id: 6,
+      id: 7,
       src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Restaurant Hotel Marami',
       category: 'restaurant'
     },
     {
-      id: 7,
+      id: 8,
       src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Bar Hotel Marami',
       category: 'bar'
     },
     {
-      id: 8,
+      id: 9,
       src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Spa & Wellness Hotel Marami',
       category: 'spa'
     },
     {
-      id: 9,
+      id: 10,
       src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Vedere spre Castelul Peleș',
       category: 'imprejurimi'
     },
     {
-      id: 10,
+      id: 11,
       src: 'https://images.unsplash.com/photo-1551524164-4876eb6e4a09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Munții Bucegi din Sinaia',
       category: 'imprejurimi'
     },
     {
-      id: 11,
+      id: 12,
       src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Hotel Marami - Vedere exterioară',
       category: 'exterior'

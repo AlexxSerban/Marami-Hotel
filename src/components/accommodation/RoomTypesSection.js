@@ -17,6 +17,7 @@ import singleRoom from '../../assets/rooms/CameraSingle.JPG';
 // Import additional images for each room type
 import doubleRoom2 from '../../assets/rooms/CameraDouble Standard2.JPG';
 import doubleRoom3 from '../../assets/rooms/CameraDouble Standard3.JPG';
+import doubleRoom4 from '../../assets/rooms/CameraDouble Standard4.JPG';
 import doubleLux2 from '../../assets/rooms/CamereDoublede Lux2.jpg';
 import doubleLux3 from '../../assets/rooms/CamereDoublede Lux3.jpg';
 import doubleLux4 from '../../assets/rooms/CamereDoublede Lux4.jpg';
@@ -65,6 +66,7 @@ const RoomTypesSection = () => {
         { src: doubleRoom, alt: 'Camera Double Standard' },
         { src: doubleRoom2, alt: 'Camera Double Standard - Vedere 2' },
         { src: doubleRoom3, alt: 'Camera Double Standard - Vedere 3' },
+        { src: doubleRoom4, alt: 'Camera Double Standard - Vedere 4' },
         { src: baieDouble, alt: 'Baie Double Standard' }
       ]
     },
