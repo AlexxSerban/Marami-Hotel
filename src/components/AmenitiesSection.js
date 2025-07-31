@@ -2,11 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   UsersIcon,
-  BeakerIcon
+  BeakerIcon,
+  HomeIcon,
+  StarIcon
 } from '@heroicons/react/24/outline';
 import BlurText from './BlurText';
 import restaurant1 from '../assets/restaurantImages/restaurant1.jpg';
 import salaConferinta3 from '../assets/salaConferinta3.jpg';
+import terrace11 from '../assets/terraceImages/Terrace11.jpg';
+import cameraMatrimoniala2 from '../assets/rooms/CameraMatrimoniala2.JPG';
 
 const AmenitiesSection = () => {
   const handleAnimationComplete = () => {
@@ -27,6 +31,20 @@ const AmenitiesSection = () => {
       description: 'Bar modern cu cocktailuri și băuturi de calitate, perfect pentru relaxare.',
       capacity: 'Cocktailuri & Băuturi',
       image: restaurant1
+    },
+    {
+      icon: HomeIcon,
+      title: 'Camere Confortabile',
+      description: 'Fiecare cameră este gândită pentru confortul tău, spațioase și toate facilitățile necesare.',
+      capacity: '4 tipuri',
+      image: cameraMatrimoniala2
+    },
+    {
+      icon: StarIcon,
+      title: 'Terasă Liniștită',
+      description: 'Ideală pentru micul dejun în aer liber sau seara cu o băutură răcoritoare.',
+      capacity: 'Zonă liniștită',
+      image: terrace11
     }
   ];
 

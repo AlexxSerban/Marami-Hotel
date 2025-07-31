@@ -80,7 +80,7 @@ const TermsAndConditionsPage = () => {
                         </div>
                         <div>
                           <p className="text-text-light leading-relaxed">
-                            <strong>"Servicii"</strong> se referă la toate serviciile oferite de hotel, inclusiv cazare, restaurant, spa și alte facilități.
+                            <strong>"Servicii"</strong> se referă la toate serviciile oferite de hotel, inclusiv cazare, restaurant și alte facilități.
                           </p>
                         </div>
                         <div>
@@ -209,7 +209,7 @@ const TermsAndConditionsPage = () => {
                             Servicii suplimentare (cu taxă):
                           </h3>
                           <ul className="list-disc list-inside text-text-light space-y-2 ml-4">
-                            <li>Servicii de spa și wellness</li>
+                            <li>Servicii de room service</li>
                             <li>Organizare evenimente</li>
                             <li>Servicii de room service</li>
                             <li>Parcare privată</li>

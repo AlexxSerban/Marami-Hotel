@@ -63,24 +63,18 @@ const GallerySection = () => {
     },
     {
       id: 9,
-      src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Spa & Wellness Hotel Marami',
-      category: 'spa'
-    },
-    {
-      id: 10,
       src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Vedere spre Castelul Peleș',
       category: 'imprejurimi'
     },
     {
-      id: 11,
+      id: 10,
       src: 'https://images.unsplash.com/photo-1551524164-4876eb6e4a09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Munții Bucegi din Sinaia',
       category: 'imprejurimi'
     },
     {
-      id: 12,
+      id: 11,
       src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       alt: 'Hotel Marami - Vedere exterioară',
       category: 'exterior'
@@ -92,7 +86,6 @@ const GallerySection = () => {
     { id: 'camere', name: 'Camere', count: galleryImages.filter(img => img.category === 'camere').length },
     { id: 'facilitati', name: 'Facilități', count: galleryImages.filter(img => img.category === 'facilitati').length },
     { id: 'restaurant', name: 'Restaurant', count: galleryImages.filter(img => img.category === 'restaurant').length },
-    { id: 'spa', name: 'Spa', count: galleryImages.filter(img => img.category === 'spa').length },
     { id: 'imprejurimi', name: 'Împrejurimi', count: galleryImages.filter(img => img.category === 'imprejurimi').length }
   ];
 

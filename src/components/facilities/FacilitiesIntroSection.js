@@ -27,7 +27,7 @@ const FacilitiesIntroSection = () => {
     {
       icon: StarIcon,
       title: 'Servicii Premium',
-      description: 'Centru de relaxare și facilități complete'
+      description: 'Servicii personalizate și facilități complete'
     }
   ];
 
@@ -93,13 +93,13 @@ const FacilitiesIntroSection = () => {
               </h2>
               <p className="text-text-light mb-6 leading-relaxed">
                 Hotel Marami îți oferă toate facilitățile necesare pentru o ședere memorabilă. 
-                De la camere confortabile la centrul de relaxare, restaurant și sală de conferințe, 
+                De la camere confortabile la restaurant și sală de conferințe, 
                 totul este gândit pentru confortul și satisfacția ta.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                  <span className="text-text-secondary">Acces gratuit la centrul de relaxare</span>
+                  <span className="text-text-secondary">Acces gratuit la toate facilitățile</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
