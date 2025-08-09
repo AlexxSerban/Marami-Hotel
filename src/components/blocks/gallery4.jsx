@@ -12,20 +12,20 @@ import telegondolaSinaia from '../../assets/attractions/telegondola-sinaia.jpg';
 
 export function Gallery4Item({ id, title, description, image }) {
   return (
-    <div className="group rounded-xl w-full max-w-full">
-      <div className="group relative h-full min-h-[20rem] sm:min-h-[27rem] w-full max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
+    <div className="group rounded-xl w-full h-full">
+      <div className="group relative w-full h-full min-h-[16rem] sm:min-h-[20rem] md:min-h-[24rem] lg:min-h-[27rem] overflow-hidden rounded-xl">
         <img
           src={image}
           alt={title}
           className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute inset-0 h-full bg-[linear-gradient(hsl(var(--primary)/0),hsl(var(--primary)/0.4),hsl(var(--primary)/0.8)_100%)] mix-blend-multiply" />
-        <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-4 sm:p-6 md:p-8 transition-all duration-300 group-hover:opacity-0">
-          <div className="backdrop-blur-md bg-white/20 rounded-xl p-3 sm:p-4 border border-white/30 shadow-lg w-full max-w-full">
-            <div className="mb-2 text-lg sm:text-xl font-semibold text-white">
+        <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-3 sm:p-4 md:p-6 lg:p-8 transition-all duration-300 group-hover:opacity-0">
+          <div className="backdrop-blur-md bg-white/20 rounded-xl p-2 sm:p-3 md:p-4 border border-white/30 shadow-lg w-full">
+            <div className="mb-1 sm:mb-2 text-base sm:text-lg md:text-xl font-semibold text-white leading-tight">
               {title}
             </div>
-            <div className="text-white/90 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4">
+            <div className="text-white/90 text-xs sm:text-sm md:text-base leading-relaxed line-clamp-2 sm:line-clamp-3 md:line-clamp-4">
               {description}
             </div>
           </div>
@@ -66,28 +66,28 @@ const Gallery4 = ({
   ],
 }) => {
   return (
-    <section className="py-32">
-      <div className="container mx-auto">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <BlurText
             text={title}
-            className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary mb-4"
             delay={150}
             animateBy="words"
             direction="top"
           />
-          <p className="text-lg text-text-light max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-text-light max-w-2xl sm:max-w-3xl mx-auto px-2">
             {description}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 w-full">
           {items.map((item) => (
             <Gallery4Item key={item.id} {...item} />
           ))}
