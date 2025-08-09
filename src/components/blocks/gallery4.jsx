@@ -1,15 +1,7 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-
-import { Button } from "../ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "../ui/carousel";
 import BlurText from "../BlurText";
 
 // Import imaginile pentru atracții
@@ -73,27 +65,6 @@ const Gallery4 = ({
     },
   ],
 }) => {
-  const [carouselApi, setCarouselApi] = useState();
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    if (!carouselApi) {
-      return;
-    }
-    const updateSelection = () => {
-      setCanScrollPrev(carouselApi.canScrollPrev());
-      setCanScrollNext(carouselApi.canScrollNext());
-      setCurrentSlide(carouselApi.selectedScrollSnap());
-    };
-    updateSelection();
-    carouselApi.on("select", updateSelection);
-    return () => {
-      carouselApi.off("select", updateSelection);
-    };
-  }, [carouselApi]);
-
   return (
     <section className="py-32">
       <div className="container mx-auto">
@@ -116,39 +87,9 @@ const Gallery4 = ({
           </p>
         </motion.div>
 
-      </div>
-      <div className="w-full">
-        <Carousel
-          setApi={setCarouselApi}
-          opts={{
-            breakpoints: {
-              "(max-width: 768px)": {
-                dragFree: true,
-              },
-            },
-          }}
-        >
-          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
-            {items.map((item) => (
-              <CarouselItem
-                key={item.id}
-                className="max-w-[320px] pl-[20px] lg:max-w-[360px]"
-              >
-                <Gallery4Item {...item} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className="mt-8 flex justify-center gap-2">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                currentSlide === index ? "bg-primary" : "bg-primary/20"
-              }`}
-              onClick={() => carouselApi?.scrollTo(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {items.map((item) => (
+            <Gallery4Item key={item.id} {...item} />
           ))}
         </div>
       </div>

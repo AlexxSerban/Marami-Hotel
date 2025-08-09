@@ -6,7 +6,6 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Typography,
 } from "@material-tailwind/react";
 
@@ -75,41 +74,38 @@ const SeasonalInfoSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto"
         >
-          {seasons.map((season, index) => {
-            const Icon = season.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="w-full max-w-sm overflow-hidden h-full">
-                  <CardHeader
-                    floated={false}
-                    shadow={false}
-                    color="transparent"
-                    className="m-0 rounded-none h-48"
-                  >
-                    <img
-                      src={season.image}
-                      alt={season.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </CardHeader>
-                  <CardBody className="flex-1">
-                    <Typography variant="h4" color="blue-gray">
-                      {season.title}
-                    </Typography>
-                    <Typography variant="lead" color="gray" className="mt-3 font-normal">
-                      {season.description}
-                    </Typography>
-                  </CardBody>
-                </Card>
-              </motion.div>
-            );
-          })}
+          {seasons.map((season, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <Card className="w-full max-w-sm overflow-hidden h-full">
+                <CardHeader
+                  floated={false}
+                  shadow={false}
+                  color="transparent"
+                  className="m-0 rounded-none h-48"
+                >
+                  <img
+                    src={season.image}
+                    alt={season.title}
+                    className="w-full h-full object-cover"
+                  />
+                </CardHeader>
+                <CardBody className="flex-1">
+                  <Typography variant="h4" color="blue-gray">
+                    {season.title}
+                  </Typography>
+                  <Typography variant="lead" color="gray" className="mt-3 font-normal">
+                    {season.description}
+                  </Typography>
+                </CardBody>
+              </Card>
+            </motion.div>
+          ))}
         </motion.div>
 
         <motion.div
