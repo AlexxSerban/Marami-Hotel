@@ -10,7 +10,7 @@ const ActivitiesHeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden pb-16">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img

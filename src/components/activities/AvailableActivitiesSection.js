@@ -48,7 +48,7 @@ const AvailableActivitiesSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-background-primary">
+    <section className="section-padding bg-background-primary pb-20">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
