@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Marami-Hotel/static/css/main.b1179325.css",
-    "main.js": "/Marami-Hotel/static/js/main.473935f8.js",
+    "main.js": "/Marami-Hotel/static/js/main.f34aa6f6.js",
     "static/media/BaieDoublede Lux2.jpg": "/Marami-Hotel/static/media/BaieDoublede Lux2.90d011d4611f82e6b359.jpg",
     "static/media/BaieSingle.JPG": "/Marami-Hotel/static/media/BaieSingle.0ec8267b42bfd830d2d4.JPG",
     "static/media/BaieSingle2.JPG": "/Marami-Hotel/static/media/BaieSingle2.e772ce3def036772564d.JPG",
@@ -69,10 +69,10 @@
     "static/media/Iarnă Sinaia-min.jpg": "/Marami-Hotel/static/media/Iarnă Sinaia-min.ae2b7f9de350abe906e5.jpg",
     "index.html": "/Marami-Hotel/index.html",
     "main.b1179325.css.map": "/Marami-Hotel/static/css/main.b1179325.css.map",
-    "main.473935f8.js.map": "/Marami-Hotel/static/js/main.473935f8.js.map"
+    "main.f34aa6f6.js.map": "/Marami-Hotel/static/js/main.f34aa6f6.js.map"
   },
   "entrypoints": [
     "static/css/main.b1179325.css",
-    "static/js/main.473935f8.js"
+    "static/js/main.f34aa6f6.js"
   ]
 }
