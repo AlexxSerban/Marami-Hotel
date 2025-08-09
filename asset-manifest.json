@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Marami-Hotel/static/css/main.e9ea7136.css",
-    "main.js": "/Marami-Hotel/static/js/main.7cf0dbc9.js",
+    "main.css": "/Marami-Hotel/static/css/main.f172f312.css",
+    "main.js": "/Marami-Hotel/static/js/main.897ef388.js",
     "static/media/BaieDoublede Lux2.jpg": "/Marami-Hotel/static/media/BaieDoublede Lux2.90d011d4611f82e6b359.jpg",
     "static/media/BaieSingle.JPG": "/Marami-Hotel/static/media/BaieSingle.0ec8267b42bfd830d2d4.JPG",
     "static/media/BaieSingle2.JPG": "/Marami-Hotel/static/media/BaieSingle2.e772ce3def036772564d.JPG",
@@ -55,14 +55,24 @@
     "static/media/CamereDoublede Lux.jpg": "/Marami-Hotel/static/media/CamereDoublede Lux.7b440d5908ec13256b24.jpg",
     "static/media/food3.JPG": "/Marami-Hotel/static/media/food3.0ccbae0f54b17de778d1.JPG",
     "static/media/food6.JPG": "/Marami-Hotel/static/media/food6.efe18bd742cd8429372d.JPG",
+    "static/media/Cota-1400-min.png": "/Marami-Hotel/static/media/Cota-1400-min.0def4b49526aed984a6a.png",
     "static/media/CamereDoublede Lux2.jpg": "/Marami-Hotel/static/media/CamereDoublede Lux2.1c82fb0a2acc30d69ba1.jpg",
+    "static/media/Vară Sinaia-min.jpg": "/Marami-Hotel/static/media/Vară Sinaia-min.9a7f141f603afbcf1cdf.jpg",
     "static/media/peles-castle-sinaia-romania.jpg": "/Marami-Hotel/static/media/peles-castle-sinaia-romania.c7d9d9a31a0d80e12db8.jpg",
+    "static/media/Ciclism Montan-min.jpg": "/Marami-Hotel/static/media/Ciclism Montan-min.e5a56b5b15a88f7c4adc.jpg",
+    "static/media/telegondola-sinaia.jpg": "/Marami-Hotel/static/media/telegondola-sinaia.981dd9709475b8d2660c.jpg",
+    "static/media/Schi & Snowboard-min.jpg": "/Marami-Hotel/static/media/Schi & Snowboard-min.da0843414225119273d9.jpg",
+    "static/media/castelul-peles.jpg": "/Marami-Hotel/static/media/castelul-peles.12c6a7e9adc95281cf94.jpg",
+    "static/media/Primăvară Sinaia-min.jpg": "/Marami-Hotel/static/media/Primăvară Sinaia-min.57d770d2eb1fae6b9797.jpg",
+    "static/media/Drumetii în Munte-min.jpg": "/Marami-Hotel/static/media/Drumetii în Munte-min.8ac023a3df79b5597e7a.jpg",
+    "static/media/manastirea-Sinaia.jpg": "/Marami-Hotel/static/media/manastirea-Sinaia.1b46201315ca89a8b4b7.jpg",
+    "static/media/Iarnă Sinaia-min.jpg": "/Marami-Hotel/static/media/Iarnă Sinaia-min.ae2b7f9de350abe906e5.jpg",
     "index.html": "/Marami-Hotel/index.html",
-    "main.e9ea7136.css.map": "/Marami-Hotel/static/css/main.e9ea7136.css.map",
-    "main.7cf0dbc9.js.map": "/Marami-Hotel/static/js/main.7cf0dbc9.js.map"
+    "main.f172f312.css.map": "/Marami-Hotel/static/css/main.f172f312.css.map",
+    "main.897ef388.js.map": "/Marami-Hotel/static/js/main.897ef388.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9ea7136.css",
-    "static/js/main.7cf0dbc9.js"
+    "static/css/main.f172f312.css",
+    "static/js/main.897ef388.js"
   ]
 }
