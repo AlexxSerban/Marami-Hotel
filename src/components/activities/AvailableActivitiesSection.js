@@ -2,6 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { HomeIcon, SparklesIcon, HeartIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+} from "@material-tailwind/react";
+
+// Import imaginile locale pentru activități
+import schiSnowboard from '../../assets/attractions/Schi & Snowboard-min.jpg';
+import drumetiiMunte from '../../assets/attractions/Drumetii în Munte-min.jpg';
+import ciclismMontan from '../../assets/attractions/Ciclism Montan-min.jpg';
 
 const AvailableActivitiesSection = () => {
   const handleAnimationComplete = () => {
@@ -14,21 +26,24 @@ const AvailableActivitiesSection = () => {
       title: 'Schi & Snowboard',
       description: 'Pârtii pentru toate nivelurile, de la începători la avansați',
       season: 'Iarnă',
-      difficulty: 'Toate nivelurile'
+      difficulty: 'Toate nivelurile',
+      image: schiSnowboard
     },
     {
       icon: SparklesIcon,
       title: 'Drumetii în Munte',
       description: 'Trasee marcate prin munții Bucegi cu priveliști spectaculoase',
       season: 'Toate anotimpurile',
-      difficulty: 'Ușor - Mediu'
+      difficulty: 'Ușor - Mediu',
+      image: drumetiiMunte
     },
     {
       icon: HeartIcon,
       title: 'Ciclism Montan',
       description: 'Trasee pentru ciclism montan și downhill',
       season: 'Primăvară - Toamnă',
-      difficulty: 'Mediu - Greu'
+      difficulty: 'Mediu - Greu',
+      image: ciclismMontan
     }
   ];
 
@@ -61,7 +76,7 @@ const AvailableActivitiesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto"
         >
           {activities.map((activity, index) => {
             const Icon = activity.icon;
@@ -72,33 +87,45 @@ const AvailableActivitiesSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-lg card-hover text-center lg:text-left"
               >
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4 mx-auto lg:mx-0">
-                  <Icon className="w-8 h-8 text-primary-500" />
-                </div>
-                <h3 className="font-display font-semibold text-text-primary mb-3">
-                  {activity.title}
-                </h3>
-                <p className="text-text-secondary text-sm mb-4">
-                  {activity.description}
-                </p>
-                <div className="space-y-2 text-center">
-                  <div className="text-xs">
-                    <span className="text-text-secondary">Sezon:</span>
-                    <span className="font-medium text-text-primary ml-1">{activity.season}</span>
-                  </div>
-                  <div className="text-xs">
-                    <span className="text-text-secondary">Dificultate:</span>
-                    <span className="font-medium text-text-primary ml-1">{activity.difficulty}</span>
-                  </div>
-                </div>
+                <Card className="w-full max-w-sm overflow-hidden h-full">
+                  <CardHeader
+                    floated={false}
+                    shadow={false}
+                    color="transparent"
+                    className="m-0 rounded-none h-48"
+                  >
+                    <img
+                      src={activity.image}
+                      alt={activity.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </CardHeader>
+                  <CardBody className="flex-1">
+                    <Typography variant="h4" color="blue-gray">
+                      {activity.title}
+                    </Typography>
+                    <Typography variant="lead" color="gray" className="mt-3 font-normal">
+                      {activity.description}
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="flex items-center justify-between mt-auto">
+                    <div className="flex items-center space-x-2">
+                      <div className="text-sm">
+                        <span className="text-gray-600">Sezon:</span>
+                        <span className="font-medium text-blue-gray ml-1">{activity.season}</span>
+                      </div>
+                      <div className="text-sm">
+                        <span className="text-gray-600">Dificultate:</span>
+                        <span className="font-medium text-blue-gray ml-1">{activity.difficulty}</span>
+                      </div>
+                    </div>
+                  </CardFooter>
+                </Card>
               </motion.div>
             );
           })}
         </motion.div>
-
-
       </div>
     </section>
   );

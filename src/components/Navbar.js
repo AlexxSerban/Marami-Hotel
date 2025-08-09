@@ -107,7 +107,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <span>💬</span>
-                <span>WhatsApp: +40 700 123 456</span>
+                <span>WhatsApp: +40 759 033 047</span>
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -255,13 +255,13 @@ const Navbar = () => {
                       <span>info@hotelmarami.ro</span>
                     </a>
                     <a 
-                      href="https://wa.me/40700123456" 
+                      href="https://wa.me/40759033047" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center justify-center space-x-2 text-sm text-text-secondary hover:text-primary-500 transition-colors"
                     >
                       <span>💬</span>
-                      <span>WhatsApp: +40 700 123 456</span>
+                      <span>WhatsApp: +40 759 033 047</span>
                     </a>
                   </div>
                   
