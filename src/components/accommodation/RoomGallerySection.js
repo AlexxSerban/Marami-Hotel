@@ -29,17 +29,17 @@ const RoomGallerySection = () => {
     {
       id: 1,
       src: doubleRoom,
-      alt: 'Cameră Double',
+      alt: 'Cameră Dublă',
       category: 'double-standard',
-      title: 'Cameră Double',
+      title: 'Cameră Dublă',
       description: 'Cameră confortabilă pentru 2 persoane'
     },
     {
       id: 2,
       src: doubleLux,
-      alt: 'Cameră Double de Lux',
+      alt: 'Cameră Dublă de Lux',
       category: 'double-lux',
-      title: 'Cameră Double de Lux',
+      title: 'Cameră Dublă de Lux',
       description: 'Cameră elegantă cu design premium'
     },
     {
@@ -69,9 +69,9 @@ const RoomGallerySection = () => {
     {
       id: 6,
       src: doubleLux1,
-      alt: 'Cameră Double de Lux - Vedere',
+      alt: 'Cameră Dublă de Lux - Vedere',
       category: 'double-lux',
-      title: 'Double de Lux',
+      title: 'Dublă de Lux',
       description: 'Cameră elegantă cu design premium și confort superior'
     },
     {
@@ -93,25 +93,25 @@ const RoomGallerySection = () => {
     {
       id: 9,
       src: doubleRoom2,
-      alt: 'Cameră Double - Vedere',
+      alt: 'Cameră Dublă - Vedere',
       category: 'double-standard',
-      title: 'Double - Vedere',
+      title: 'Dublă - Vedere',
       description: 'Cameră cu vedere spre exterior'
     },
     {
       id: 10,
       src: doubleRoom3,
-      alt: 'Cameră Double - Interior',
+      alt: 'Cameră Dublă - Interior',
       category: 'double-standard',
-      title: 'Double - Interior',
+      title: 'Dublă - Interior',
       description: 'Interior elegant și confortabil'
     },
     {
       id: 11,
       src: doubleRoom4,
-      alt: 'Cameră Double - Vedere 4',
+      alt: 'Cameră Dublă - Vedere 4',
       category: 'double-standard',
-      title: 'Double - Vedere 4',
+      title: 'Dublă - Vedere 4',
       description: 'Cameră cu design modern și funcțional'
     }
   ];

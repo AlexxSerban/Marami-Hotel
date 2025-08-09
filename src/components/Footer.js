@@ -18,7 +18,6 @@ const Footer = () => {
         { name: 'Acasă', href: '/' },
         { name: 'Cazare', href: '/cazare' },
         { name: 'Restaurant', href: '/restaurant' },
-        { name: 'Meniu', href: '/meniu' },
         { name: 'Dotări', href: '/dotari' }
       ]
     },

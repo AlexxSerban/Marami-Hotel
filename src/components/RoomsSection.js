@@ -39,60 +39,64 @@ const RoomsSection = () => {
   };
 
   const rooms = [
-    {
-      id: 1,
-      name: 'Double',
-      persons: '2 persoane',
-      bathroom: 'Baie privată',
-      price: '280',
-      image: doubleRoom,
+            {
+          id: 1,
+          name: 'Dublă Twin',
+          persons: '2 persoane',
+          bathroom: 'Baie privată',
+          price: '330',
+          priceNote: 'fara mic dejun',
+          image: doubleRoom,
       images: [
-        { src: doubleRoom, alt: 'Camera Double Standard' },
-        { src: doubleRoom2, alt: 'Camera Double Standard - Vedere 2' },
-        { src: doubleRoom3, alt: 'Camera Double Standard - Vedere 3' },
-        { src: doubleRoom4, alt: 'Camera Double Standard - Vedere 4' },
-        { src: baieDouble, alt: 'Baie Double Standard' }
+        { src: doubleRoom, alt: 'Camera Dublă Twin' },
+        { src: doubleRoom2, alt: 'Camera Dublă Twin - Vedere 2' },
+        { src: doubleRoom3, alt: 'Camera Dublă Twin - Vedere 3' },
+        { src: doubleRoom4, alt: 'Camera Dublă Twin - Vedere 4' },
+        { src: baieDouble, alt: 'Baie Dublă Twin' }
       ]
     },
-    {
-      id: 2,
-      name: 'Double de lux',
-      persons: '2 persoane',
-      bathroom: 'Baie privată',
-      price: '420',
-      image: doubleLux,
+            {
+          id: 2,
+          name: 'Dublă de Lux',
+          persons: '2 persoane',
+          bathroom: 'Baie privată',
+          price: '370',
+          priceNote: 'fara mic dejun',
+          image: doubleLux,
       images: [
-        { src: doubleLux, alt: 'Camera Double de Lux' },
-        { src: doubleLux2, alt: 'Camera Double de Lux - Vedere 2' },
-        { src: doubleLux3, alt: 'Camera Double de Lux - Vedere 3' },
-        { src: doubleLux4, alt: 'Camera Double de Lux - Vedere 4' },
-        { src: baieDoubleLux, alt: 'Baie Double de Lux' },
-        { src: baieDoubleLux2, alt: 'Baie Double de Lux - Vedere 2' }
+        { src: doubleLux, alt: 'Camera Dublă de Lux' },
+        { src: doubleLux2, alt: 'Camera Dublă de Lux - Vedere 2' },
+        { src: doubleLux3, alt: 'Camera Dublă de Lux - Vedere 3' },
+        { src: doubleLux4, alt: 'Camera Dublă de Lux - Vedere 4' },
+        { src: baieDoubleLux, alt: 'Baie Dublă de Lux' },
+        { src: baieDoubleLux2, alt: 'Baie Dublă de Lux - Vedere 2' }
       ]
     },
-    {
-      id: 3,
-      name: 'Matrimonială',
-      persons: '2 persoane',
-      bathroom: 'Baie privată',
-      price: '380',
-      image: matrimoniala,
+            {
+          id: 3,
+          name: 'Dublă Matrimonială',
+          persons: '2 persoane',
+          bathroom: 'Baie privată',
+          price: '330',
+          priceNote: 'fara mic dejun',
+          image: matrimoniala,
       images: [
-        { src: matrimoniala, alt: 'Camera Matrimonială' },
-        { src: matrimoniala2, alt: 'Camera Matrimonială - Vedere 2' },
-        { src: matrimoniala3, alt: 'Camera Matrimonială - Vedere 3' },
-        { src: baieMatrimoniala, alt: 'Baie Matrimonială' },
-        { src: baieMatrimoniala2, alt: 'Baie Matrimonială - Vedere 2' },
-        { src: baieMatrimoniala3, alt: 'Baie Matrimonială - Vedere 3' }
+        { src: matrimoniala, alt: 'Camera Dublă Matrimonială' },
+        { src: matrimoniala2, alt: 'Camera Dublă Matrimonială - Vedere 2' },
+        { src: matrimoniala3, alt: 'Camera Dublă Matrimonială - Vedere 3' },
+        { src: baieMatrimoniala, alt: 'Baie Dublă Matrimonială' },
+        { src: baieMatrimoniala2, alt: 'Baie Dublă Matrimonială - Vedere 2' },
+        { src: baieMatrimoniala3, alt: 'Baie Dublă Matrimonială - Vedere 3' }
       ]
     },
-    {
-      id: 4,
-      name: 'Single',
-      persons: '1 persoană',
-      bathroom: 'Baie privată',
-      price: '180',
-      image: singleRoom,
+            {
+          id: 4,
+          name: 'Single',
+          persons: '1 persoană',
+          bathroom: 'Baie privată',
+          price: '320',
+          priceNote: 'fara mic dejun',
+          image: singleRoom,
       images: [
         { src: singleRoom, alt: 'Camera Single' },
         { src: singleRoom2, alt: 'Camera Single - Vedere 2' },
@@ -206,12 +210,13 @@ const RoomsSection = () => {
               <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
                 <div className="text-xs text-text-light">Începând de la</div>
                 <div className="text-lg font-bold text-text-primary">{room.price} RON</div>
+                <div className="text-xs text-text-light">{room.priceNote}</div>
               </div>
 
               {/* Room Info - Bottom Left */}
               <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white rounded-lg px-3 py-2">
                 <div className="font-semibold text-sm">{room.name}</div>
-                <div className="text-xs opacity-90">{room.persons} | {room.bathroom}</div>
+                <div className="text-xs opacity-90">{room.persons}</div>
               </div>
 
               {/* Click indicator */}
@@ -274,8 +279,9 @@ const RoomsSection = () => {
                 {/* Room Info */}
                 <div className="mt-4 text-center text-white">
                   <h3 className="text-2xl font-bold mb-2">{selectedRoom.name}</h3>
-                  <p className="text-lg opacity-90">{selectedRoom.persons} | {selectedRoom.bathroom}</p>
+                  <p className="text-lg opacity-90">{selectedRoom.persons}</p>
                   <p className="text-xl font-semibold mt-2">{selectedRoom.price} RON / noapte</p>
+                  <p className="text-sm opacity-80 mt-1">{selectedRoom.priceNote}</p>
                 </div>
 
                 {/* Image Dots */}

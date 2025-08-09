@@ -25,37 +25,83 @@ const BookingFormSection = () => {
     specialRequests: ''
   });
 
+  const [breakfastFilter, setBreakfastFilter] = useState('with'); // 'with', 'without'
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
   const roomTypes = [
     {
-      id: 'single',
+      id: 'single-no-breakfast',
       name: 'Single',
-      price: 180,
+      price: 320,
+      priceNote: 'fara mic dejun',
       capacity: '1 persoană',
-      features: ['Pat single', 'Baie privată', 'WiFi gratuit']
+      features: ['Pat single', 'Baie privată', 'WiFi gratuit'],
+      breakfast: false
     },
     {
-      id: 'double',
-      name: 'Double',
-      price: 220,
-      capacity: '2 persoane',
-      features: ['Pat dublu', 'Baie privată', 'WiFi gratuit', 'Balcon']
+      id: 'single-with-breakfast',
+      name: 'Single',
+      price: 350,
+      priceNote: 'cu mic dejun',
+      capacity: '1 persoană',
+      features: ['Pat single', 'Baie privată', 'WiFi gratuit', 'Mic dejun inclus'],
+      breakfast: true
     },
     {
-      id: 'double-lux',
-      name: 'Double de Lux',
-      price: 280,
+      id: 'double-twin-no-breakfast',
+      name: 'Dublă Twin',
+      price: 330,
+      priceNote: 'fara mic dejun',
       capacity: '2 persoane',
-      features: ['Pat dublu', 'Baie privată', 'WiFi gratuit', 'Jacuzzi']
+      features: ['Pat dublu', 'Baie privată', 'WiFi gratuit', 'Balcon'],
+      breakfast: false
     },
     {
-      id: 'matrimonial',
-      name: 'Matrimonială',
-      price: 250,
+      id: 'double-twin-with-breakfast',
+      name: 'Dublă Twin',
+      price: 390,
+      priceNote: 'cu mic dejun',
       capacity: '2 persoane',
-      features: ['Pat matrimonial', 'Baie privată', 'WiFi gratuit', 'Decor romantic']
+      features: ['Pat dublu', 'Baie privată', 'WiFi gratuit', 'Balcon', 'Mic dejun inclus'],
+      breakfast: true
+    },
+    {
+      id: 'double-lux-no-breakfast',
+      name: 'Dublă de Lux',
+      price: 370,
+      priceNote: 'fara mic dejun',
+      capacity: '2 persoane',
+      features: ['Pat dublu', 'Baie privată', 'WiFi gratuit', 'Jacuzzi'],
+      breakfast: false
+    },
+    {
+      id: 'double-lux-with-breakfast',
+      name: 'Dublă de Lux',
+      price: 430,
+      priceNote: 'cu mic dejun',
+      capacity: '2 persoane',
+      features: ['Pat dublu', 'Baie privată', 'WiFi gratuit', 'Jacuzzi', 'Mic dejun inclus'],
+      breakfast: true
+    },
+    {
+      id: 'matrimonial-no-breakfast',
+      name: 'Dublă Matrimonială',
+      price: 330,
+      priceNote: 'fara mic dejun',
+      capacity: '2 persoane',
+      features: ['Pat matrimonial', 'Baie privată', 'WiFi gratuit', 'Decor romantic'],
+      breakfast: false
+    },
+    {
+      id: 'matrimonial-with-breakfast',
+      name: 'Dublă Matrimonială',
+      price: 390,
+      priceNote: 'cu mic dejun',
+      capacity: '2 persoane',
+      features: ['Pat matrimonial', 'Baie privată', 'WiFi gratuit', 'Decor romantic', 'Mic dejun inclus'],
+      breakfast: true
     }
   ];
 
@@ -119,6 +165,13 @@ const BookingFormSection = () => {
 
   const nights = calculateNights();
   const selectedRoomData = roomTypes.find(room => room.id === formData.selectedRoom);
+
+  // Filter rooms based on breakfast preference
+  const filteredRoomTypes = roomTypes.filter(room => {
+    if (breakfastFilter === 'with') return room.breakfast === true;
+    if (breakfastFilter === 'without') return room.breakfast === false;
+    return false;
+  });
 
   return (
     <section className="section-padding bg-background-primary">
@@ -254,13 +307,40 @@ const BookingFormSection = () => {
 
                 {/* Room Selection */}
                 <div>
-                  <h3 className="text-xl font-display font-bold text-text-primary mb-6 flex items-center">
-                    <HomeIcon className="w-6 h-6 text-primary-500 mr-3" />
-                    Tip Camera
+                  <h3 className="text-xl font-display font-bold text-text-primary mb-6 flex items-center justify-between">
+                    <div className="flex items-center">
+                      <HomeIcon className="w-6 h-6 text-primary-500 mr-3" />
+                      Tip Camera
+                    </div>
+                    {/* Breakfast Filter Buttons */}
+                    <div className="flex space-x-2">
+                      <button
+                        type="button"
+                        onClick={() => setBreakfastFilter('without')}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                          breakfastFilter === 'without'
+                            ? 'bg-primary-500 text-white'
+                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        }`}
+                      >
+                        Fără mic dejun
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setBreakfastFilter('with')}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                          breakfastFilter === 'with'
+                            ? 'bg-primary-500 text-white'
+                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        }`}
+                      >
+                        Cu mic dejun
+                      </button>
+                    </div>
                   </h3>
                   
                   <div className="space-y-4">
-                    {roomTypes.map((room, index) => (
+                    {filteredRoomTypes.map((room, index) => (
                       <motion.div
                         key={room.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -294,7 +374,12 @@ const BookingFormSection = () => {
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="text-sm text-text-secondary">{room.capacity}</div>
-                          <div className="font-bold text-primary-600">{room.price} RON/noapte</div>
+                          <div className="text-right">
+                            <div className="font-bold text-primary-600">{room.price} RON/noapte</div>
+                            {room.priceNote && (
+                              <div className="text-xs text-text-light">{room.priceNote}</div>
+                            )}
+                          </div>
                         </div>
                         <div className="mt-2 flex flex-wrap gap-1">
                           {room.features.map((feature, featureIndex) => (

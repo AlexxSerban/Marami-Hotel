@@ -48,7 +48,7 @@ const RoomTypesSection = () => {
   const roomTypes = [
     {
       id: 'double',
-      name: 'Camere Double Standard',
+      name: 'Camere Dublă Standard',
       icon: '🛌',
       description: 'Camere spațioase și luminoase, dotate cu toate facilitățile necesare pentru o ședere confortabilă.',
       features: [
@@ -63,16 +63,16 @@ const RoomTypesSection = () => {
       image: doubleRoom,
       size: '≈20 m²',
       images: [
-        { src: doubleRoom, alt: 'Camera Double Standard' },
-        { src: doubleRoom2, alt: 'Camera Double Standard - Vedere 2' },
-        { src: doubleRoom3, alt: 'Camera Double Standard - Vedere 3' },
-        { src: doubleRoom4, alt: 'Camera Double Standard - Vedere 4' },
-        { src: baieDouble, alt: 'Baie Double Standard' }
+        { src: doubleRoom, alt: 'Camera Dublă Standard' },
+        { src: doubleRoom2, alt: 'Camera Dublă Standard - Vedere 2' },
+        { src: doubleRoom3, alt: 'Camera Dublă Standard - Vedere 3' },
+        { src: doubleRoom4, alt: 'Camera Dublă Standard - Vedere 4' },
+        { src: baieDouble, alt: 'Baie Dublă Standard' }
       ]
     },
     {
       id: 'double-lux',
-      name: 'Camere Double de Lux',
+      name: 'Camere Dublă de Lux',
       icon: '🛌',
       description: 'Camere mai mari, pentru un plus de confort și eleganță, perfecte pentru oaspeții care apreciază luxul.',
       features: [
@@ -87,12 +87,12 @@ const RoomTypesSection = () => {
       image: doubleLux,
       size: '≈26 m²',
       images: [
-        { src: doubleLux, alt: 'Camera Double de Lux' },
-        { src: doubleLux2, alt: 'Camera Double de Lux - Vedere 2' },
-        { src: doubleLux3, alt: 'Camera Double de Lux - Vedere 3' },
-        { src: doubleLux4, alt: 'Camera Double de Lux - Vedere 4' },
-        { src: baieDoubleLux, alt: 'Baie Double de Lux' },
-        { src: baieDoubleLux2, alt: 'Baie Double de Lux - Vedere 2' }
+        { src: doubleLux, alt: 'Camera Dublă de Lux' },
+        { src: doubleLux2, alt: 'Camera Dublă de Lux - Vedere 2' },
+        { src: doubleLux3, alt: 'Camera Dublă de Lux - Vedere 3' },
+        { src: doubleLux4, alt: 'Camera Dublă de Lux - Vedere 4' },
+        { src: baieDoubleLux, alt: 'Baie Dublă de Lux' },
+        { src: baieDoubleLux2, alt: 'Baie Dublă de Lux - Vedere 2' }
       ]
     },
     {

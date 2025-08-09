@@ -19,7 +19,7 @@ const BookingSummarySection = () => {
     adults: 2,
     children: 0,
     rooms: 1,
-    roomType: 'Double',
+    roomType: 'Dublă',
     roomPrice: 220,
     selectedServices: ['Parcare Privată', 'Check-in Devreme'],
     servicePrices: {
