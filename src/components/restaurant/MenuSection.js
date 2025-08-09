@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline';
 import BlurText from '../BlurText';
 
 const MenuSection = () => {
@@ -43,21 +42,21 @@ const MenuSection = () => {
           </p>
 
           {/* Call to Action Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
             className="flex justify-center"
           >
-            <Link
-              to="/meniu"
-              className="inline-flex items-center space-x-3 bg-primary-500 text-white px-8 py-4 rounded-xl font-medium hover:bg-primary-600 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl"
+            <a
+              href={process.env.PUBLIC_URL + '/meniu-restaurant.pdf'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-3 bg-primary-500 text-white px-8 py-4 rounded-xl font-medium hover:bg-primary-600 transition-colors duration-300 text-lg shadow-lg hover:shadow-xl cursor-pointer group"
+              title="Deschide meniul complet în tab nou"
             >
+              <DocumentArrowDownIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span>Vezi meniul complet</span>
-              <ArrowRightIcon className="w-5 h-5" />
-            </Link>
-          </motion.div>
+              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
