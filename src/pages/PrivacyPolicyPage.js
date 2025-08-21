@@ -239,7 +239,7 @@ const PrivacyPolicyPage = () => {
                         <div className="space-y-2">
                           <p className="text-text-primary font-medium">Hotel Marami</p>
                           <p className="text-text-light">Marami, Strada Furnica 52, Sinaia 106100, România</p>
-                          <p className="text-text-light">Email: info@hotelmarami.ro</p>
+                          <p className="text-text-light">Email: hotel@marami.ro</p>
                           <p className="text-text-light">Telefon: +40 759 033 047</p>
                         </div>
                       </div>

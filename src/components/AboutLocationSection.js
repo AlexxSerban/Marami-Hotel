@@ -64,7 +64,7 @@ const AboutLocationSection = () => {
           />
           
           <p className="text-lg text-text-light max-w-4xl mx-auto">
-            Hotel Marami este amplasat într-o zonă liniștită, departe de agitația orașului, dar suficient de aproape de tot ce merită vizitat. În apropierea Castelului Peleș, ai access ușor la centrul orașului și principalele.
+            Hotel Marami este amplasat într-o zonă liniștită, departe de agitația orașului, dar suficient de aproape de tot ce merită vizitat. În apropierea Castelului Peleș, ai acces ușor la centrul orașului și principalele.
           </p>
           <p className="text-lg text-text-light max-w-3xl mx-auto mt-4">
             Un sejur relaxant, într-un loc care îți oferă echilibrul perfect între relaxare și explorare.

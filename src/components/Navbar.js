@@ -103,7 +103,7 @@ const Navbar = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <EnvelopeIcon className="w-4 h-4" />
-                <span>info@hotelmarami.ro</span>
+                <span>hotel@marami.ro</span>
               </div>
               <div className="flex items-center space-x-2">
                 <span>💬</span>
@@ -248,11 +248,11 @@ const Navbar = () => {
                       <span>+40 759 033 047</span>
                     </a>
                     <a 
-                      href="mailto:info@hotelmarami.ro" 
+                      href="mailto:hotel@marami.ro" 
                       className="flex items-center justify-center space-x-2 text-sm text-text-secondary hover:text-primary-500 transition-colors"
                     >
                       <EnvelopeIcon className="w-4 h-4" />
-                      <span>info@hotelmarami.ro</span>
+                      <span>hotel@marami.ro</span>
                     </a>
                     <a 
                       href="https://wa.me/40759033047" 

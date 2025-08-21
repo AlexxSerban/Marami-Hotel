@@ -162,7 +162,7 @@ Pentru a actualiza conținutul:
 ## 📞 Suport
 
 Pentru întrebări sau suport tehnic, contactează-ne la:
-- Email: info@hotelmarami.ro
+- Email: hotel@marami.ro
 - Telefon: +40 759 033 047
 
 ## 📄 Licență

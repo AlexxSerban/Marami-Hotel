@@ -77,9 +77,9 @@ const ContactSection = () => {
     {
       icon: EnvelopeIcon,
       title: 'Email',
-      value: 'info@hotelmarami.ro',
+      value: 'hotel@marami.ro',
       subtitle: 'Răspuns în 24h',
-      link: 'mailto:info@hotelmarami.ro'
+      link: 'mailto:hotel@marami.ro'
     },
     {
       icon: MapPinIcon,

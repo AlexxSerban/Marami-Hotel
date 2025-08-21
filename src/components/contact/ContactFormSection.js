@@ -243,7 +243,7 @@ const ContactFormSection = () => {
                     <EnvelopeIcon className="w-6 h-6 text-primary-500" />
                     <div>
                       <div className="font-semibold text-text-primary">Email</div>
-                      <div className="text-text-secondary">rezervari@hotelmarami.ro</div>
+                      <div className="text-text-secondary">hotel@marami.ro</div>
                     </div>
                   </div>
                 </div>

@@ -14,9 +14,9 @@ const BookingConfirmationSection = () => {
     {
       icon: EnvelopeIcon,
       title: 'Email',
-      value: 'rezervari@hotelmarami.ro',
+      value: 'hotel@marami.ro',
       description: 'Răspuns în 2 ore',
-      href: 'mailto:rezervari@hotelmarami.ro'
+      href: 'mailto:hotel@marami.ro'
     },
     {
       icon: MapPinIcon,

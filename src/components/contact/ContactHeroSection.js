@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SplitText from '../SplitText';
+import cameraMatrimoniala2 from '../../assets/rooms/CameraMatrimoniala2.JPG';
 
 const ContactHeroSection = () => {
   const handleAnimationComplete = () => {
@@ -11,8 +12,8 @@ const ContactHeroSection = () => {
     <section className="section-padding bg-background-primary relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80"
-          alt="Recepția Hotel Marami"
+          src={cameraMatrimoniala2}
+          alt="Camera Matrimonială Hotel Marami"
           className="w-full h-full object-cover object-center opacity-60"
           loading="lazy"
         />

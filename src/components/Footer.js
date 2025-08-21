@@ -87,7 +87,7 @@ const Footer = () => {
     },
     {
       icon: EnvelopeIcon,
-      text: 'info@hotelmarami.ro',
+      text: 'hotel@marami.ro',
       subtitle: 'Răspuns în 24h'
     },
     {
