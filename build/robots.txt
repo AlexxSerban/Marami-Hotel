@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://hotelmarami.ro/sitemap.xml
+Sitemap: https://marami.ro/sitemap.xml
 
 # Allow all pages to be crawled
 Allow: /cazare

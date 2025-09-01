@@ -11,13 +11,13 @@
 #### **Opțiunea A: Domeniu (Recomandat)**
 - Click **"Adaugă proprietate"**
 - Selectează **"Domeniu"**
-- Introdu: `hotelmarami.ro`
+- Introdu: `marami.ro`
 - Click **"Continuă"**
 
 #### **Opțiunea B: Prefix URL**
 - Click **"Adaugă proprietate"**
 - Selectează **"Prefix URL"**
-- Introdu: `https://hotelmarami.ro/`
+- Introdu: `https://marami.ro/`
 - Click **"Continuă"**
 
 ### **3. Verifică Proprietatea**
@@ -64,17 +64,17 @@ Adaugă tag-ul în `<head>` după `<meta charset="utf-8"/>`:
 
 ### **Sitemap XML**
 După verificare, adaugă sitemap-ul:
-- URL: `https://hotelmarami.ro/sitemap.xml`
+- URL: `https://marami.ro/sitemap.xml`
 - Click **"Adaugă/Testează sitemap"**
 
 ### **Inspect URL**
 - Folosește **"Inspect URL"** pentru a verifica indexarea paginilor
 - Testează URL-urile principale:
-  - `https://hotelmarami.ro/`
-  - `https://hotelmarami.ro/cazare`
-  - `https://hotelmarami.ro/restaurant`
-  - `https://hotelmarami.ro/activitati`
-  - `https://hotelmarami.ro/contact`
+  - `https://marami.ro/`
+  - `https://marami.ro/cazare`
+  - `https://marami.ro/restaurant`
+  - `https://marami.ro/activitati`
+  - `https://marami.ro/contact`
 
 ### **Core Web Vitals**
 - Monitorizează **Core Web Vitals** pentru performanța site-ului
