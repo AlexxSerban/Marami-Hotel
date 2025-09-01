@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.b101fee4.css",
-    "main.js": "./static/js/main.270f7f03.js",
+    "main.js": "./static/js/main.ec464140.js",
     "static/media/BaieDoublede Lux2.jpg": "./static/media/BaieDoublede Lux2.90d011d4611f82e6b359.jpg",
     "static/media/BaieSingle.JPG": "./static/media/BaieSingle.0ec8267b42bfd830d2d4.JPG",
     "static/media/BaieSingle2.JPG": "./static/media/BaieSingle2.e772ce3def036772564d.JPG",
@@ -68,10 +68,10 @@
     "static/media/Iarnă Sinaia-min.jpg": "./static/media/Iarnă Sinaia-min.ae2b7f9de350abe906e5.jpg",
     "index.html": "./index.html",
     "main.b101fee4.css.map": "./static/css/main.b101fee4.css.map",
-    "main.270f7f03.js.map": "./static/js/main.270f7f03.js.map"
+    "main.ec464140.js.map": "./static/js/main.ec464140.js.map"
   },
   "entrypoints": [
     "static/css/main.b101fee4.css",
-    "static/js/main.270f7f03.js"
+    "static/js/main.ec464140.js"
   ]
 }
